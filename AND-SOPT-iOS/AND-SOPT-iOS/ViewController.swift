@@ -59,11 +59,13 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // isHidden 속성
     private lazy var pushModeToggleButton: UIButton = {
         let button = UIButton()
         button.setTitle("전환 모드 변경", for: .normal)
         button.backgroundColor = .tintColor
         button.setTitleColor(.white, for: .normal)
+        button.isHidden = true
         button.addTarget(self, action: #selector(toggleButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -220,6 +222,7 @@ class ViewController: UIViewController {
                 for: .normal
             )
             nextButton.backgroundColor = .red
+            pushModeToggleButton.isHidden = false
         }
     }
 }
