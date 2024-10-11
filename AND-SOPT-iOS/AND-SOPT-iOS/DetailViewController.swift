@@ -9,17 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private let userAnswerLabel: UILabel = {
+    private let answerCntLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
-        return label
-    }()
-    
-    private let answerLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.numberOfLines = 0
-        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
     }()
     
@@ -32,8 +24,7 @@ class DetailViewController: UIViewController {
         return button
     }()
     
-    private var receivedTitle: String?
-    private var receivedContent: String?
+    private var receivedCount: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +38,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setUI() {
-        [userAnswerLabel, answerLabel, backButton].forEach {
+        [answerCntLabel, backButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -56,19 +47,14 @@ class DetailViewController: UIViewController {
     private func setLayout() {
         NSLayoutConstraint.activate(
             [
-                userAnswerLabel.topAnchor.constraint(
+                answerCntLabel.topAnchor.constraint(
                     equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 20
+                    constant: 50
                 ),
-                userAnswerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                answerCntLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
-                answerLabel.topAnchor.constraint(
-                    equalTo: userAnswerLabel.bottomAnchor,
-                    constant: 20
-                ),
-                answerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 backButton.topAnchor.constraint(
-                    equalTo: answerLabel.bottomAnchor,
+                    equalTo: answerCntLabel.bottomAnchor,
                     constant: 20
                 ),
                 backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -79,16 +65,11 @@ class DetailViewController: UIViewController {
     }
     
     func updateUI() {
-        self.userAnswerLabel.text = "입력한 답 : \(receivedTitle ?? "")"
-        self.answerLabel.text = "정답은..... \(receivedContent ?? "")"
+        answerCntLabel.text = "정답 개수 : \(receivedCount ?? 0)"
     }
     
-    func dataBind(
-        userAnswer: String,
-        answer: String
-    ) {
-        self.receivedTitle = userAnswer
-        self.receivedContent = answer
+    func dataBind(cnt: Int) {
+        self.receivedCount = cnt
         updateUI()
     }
     

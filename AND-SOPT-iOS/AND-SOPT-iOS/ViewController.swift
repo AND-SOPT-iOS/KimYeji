@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.text = "티니핑 맞추기"
+        label.text = "티니핑 맞추기 "
         label.font = .systemFont(ofSize: 23)
         return label
     }()
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     private let answerTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "정답을 입력해주세요."
@@ -32,10 +32,28 @@ class ViewController: UIViewController {
         return textField
     }()
     
-    private lazy var nextButton : UIButton = {
+    private let answerLabelField: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = .systemFont(ofSize: 18)
+        label.textAlignment = .center
+        label.textColor = .blue
+        return label
+    }()
+    
+    private lazy var checkAnswerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("정답 확인하러 가기", for: .normal)
-        button.backgroundColor = .tintColor
+        button.setTitle("정답 확인", for: .normal)
+        button.backgroundColor = .brown
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(checkAnswerTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var nextButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("다음 문제", for: .normal)
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
@@ -50,20 +68,12 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private let quizImgs = ["waffle.png", "donut.png", "pipo.png", "pogen.png"]
+    private let answers = ["와플핑", "또너핑", "삐뽀핑", "포근핑"]
+    
     private var pushMode = true
-    
-    private let progressView: UIProgressView = {
-        let progress = UIProgressView(progressViewStyle: .default)
-        progress.progress = 1.0
-        return progress
-    }()
-    
-    
-    private let quizImg = "pogen.png"
-    
-
-    private let answer = "포근핑"
-
+    private var idx = 0
+    private var cnt = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +93,9 @@ class ViewController: UIViewController {
             titleLabel,
             questionImageView,
             answerTextField,
+            answerLabelField,
             nextButton,
+            checkAnswerButton,
             pushModeToggleButton,
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -119,10 +131,15 @@ class ViewController: UIViewController {
                 ),
                 answerTextField.heightAnchor.constraint(equalToConstant: 40),
                 
-                nextButton.topAnchor.constraint(
-                    equalTo: answerTextField.bottomAnchor,
-                    constant: 20
-                ),
+                answerLabelField.topAnchor.constraint(equalTo: answerTextField.bottomAnchor, constant: 20),
+                answerLabelField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                checkAnswerButton.topAnchor.constraint(equalTo: answerLabelField.bottomAnchor, constant: 20),
+                checkAnswerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                checkAnswerButton.heightAnchor.constraint(equalToConstant: 44),
+                checkAnswerButton.widthAnchor.constraint(equalToConstant: 300),
+                
+                nextButton.topAnchor.constraint(equalTo: checkAnswerButton.bottomAnchor, constant: 20),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 nextButton.heightAnchor.constraint(equalToConstant: 44),
                 nextButton.widthAnchor.constraint(equalToConstant: 300),
@@ -140,22 +157,22 @@ class ViewController: UIViewController {
     
     private func updateUI() {
         let mode  = pushMode ? "(네비게이션)" : "(모달)"
-        self.titleLabel.text = "티니핑 맞추기 \(mode)"
+        self.titleLabel.text = "티니핑 맞추기 " + mode
     }
     
-    @objc func nextButtonTapped() {
-        transitionToNextViewController()
+    private func loadQuestion() {
+        let imgFile = quizImgs[idx]
+        questionImageView.image = UIImage(named: imgFile)
+        answerTextField.text = ""
+        answerLabelField.text = ""
     }
     
     private func transitionToNextViewController() {
         let nextViewController = DetailViewController()
+        nextViewController.dataBind(
+            cnt: cnt
+        )
         
-        guard let userAnswer = answerTextField.text, !userAnswer.isEmpty else {
-            return
-        }
-        
-        nextViewController.dataBind(userAnswer: userAnswer, answer: answer)
-
         if pushMode {
             self.navigationController?.pushViewController(
                 nextViewController,
@@ -174,9 +191,35 @@ class ViewController: UIViewController {
         self.updateUI()
     }
     
-    // 퀴즈이미지
-    private func loadQuestion() {
-        questionImageView.image = UIImage(named: quizImg)
-        answerTextField.text = ""
+    @objc func nextButtonTapped() {
+        if idx < quizImgs.count - 1 {
+            idx += 1
+            loadQuestion()
+        } else {
+            transitionToNextViewController()
+        }
+    }
+    
+    @objc func checkAnswerTapped() {
+        guard let userAnswer = answerTextField.text else {
+            return
+        }
+        
+        if userAnswer == answers[idx]{
+            answerLabelField.textColor = .blue
+            answerLabelField.text = "정답입니다!!!!!!!!!!!!"
+            cnt += 1
+        } else {
+            answerLabelField.textColor = .red
+            answerLabelField.text = "오답입니다.. 정답은....... " + answers[idx]
+        }
+        
+        if idx ==  quizImgs.count - 1 {
+            nextButton.setTitle(
+                "정답 개수 확인하러 가기",
+                for: .normal
+            )
+            nextButton.backgroundColor = .red
+        }
     }
 }
