@@ -11,33 +11,30 @@ class ViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.text = "카카오톡"
-        label.font = .systemFont(ofSize: 16)
+        label.text = "티니핑 맞추기"
+        label.font = .systemFont(ofSize: 23)
         return label
     }()
     
-    private let titleTextField : UITextField = {
+    // ImageView 추가
+    private let questionImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    private let answerTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "제목을 입력해주세요."
+        textField.placeholder = "정답을 입력해주세요."
         textField.clearButtonMode = .whileEditing
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1
         return textField
     }()
     
-    private let contentTextView : UITextView = {
-        let textView = UITextView()
-        textView.font = .systemFont(ofSize: 14)
-        textView.layer.borderColor = UIColor.gray.cgColor
-        textView.layer.borderWidth = 1
-        textView.layer.cornerRadius = 5
-        return textView
-    }()
-    
-    
     private lazy var nextButton : UIButton = {
         let button = UIButton()
-        button.setTitle("다음", for: .normal)
+        button.setTitle("정답 확인하러 가기", for: .normal)
         button.backgroundColor = .tintColor
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
@@ -55,14 +52,26 @@ class ViewController: UIViewController {
     
     private var pushMode = true
     
+    private let progressView: UIProgressView = {
+        let progress = UIProgressView(progressViewStyle: .default)
+        progress.progress = 1.0
+        return progress
+    }()
+    
+    
+    private let quizImg = "pogen.png"
+    
+
+    private let answer = "포근핑"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setUI()
         setLayout()
+        loadQuestion()
     }
-    
     
     private func setStyle() {
         self.view.backgroundColor = .white
@@ -72,17 +81,16 @@ class ViewController: UIViewController {
     private func setUI() {
         [
             titleLabel,
-            titleTextField,
-            contentTextView,
+            questionImageView,
+            answerTextField,
             nextButton,
-            pushModeToggleButton
+            pushModeToggleButton,
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
     }
     
-    // 오토 레이아웃?
     private func setLayout() {
         NSLayoutConstraint.activate(
             [
@@ -92,38 +100,27 @@ class ViewController: UIViewController {
                 ),
                 titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
-                titleTextField.topAnchor.constraint(
-                    equalTo: titleLabel.bottomAnchor,
-                    constant: 20
-                ),
-                titleTextField.leadingAnchor.constraint(
-                    equalTo: view.leadingAnchor,
-                    constant: 20
-                ),
-                titleTextField.trailingAnchor.constraint(
-                    equalTo: view.trailingAnchor,
-                    constant: -20
-                ),
-                titleTextField.heightAnchor.constraint(equalToConstant: 40),
+                questionImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+                questionImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                questionImageView.widthAnchor.constraint(equalToConstant: 200),
+                questionImageView.heightAnchor.constraint(equalToConstant: 200),
                 
-                contentTextView.topAnchor.constraint(
-                    equalTo: titleTextField.bottomAnchor,
+                answerTextField.topAnchor.constraint(
+                    equalTo: questionImageView.bottomAnchor,
                     constant: 20
                 ),
-                contentTextView.leadingAnchor.constraint(
+                answerTextField.leadingAnchor.constraint(
                     equalTo: view.leadingAnchor,
                     constant: 20
                 ),
-                contentTextView.trailingAnchor.constraint(
+                answerTextField.trailingAnchor.constraint(
                     equalTo: view.trailingAnchor,
                     constant: -20
                 ),
-                contentTextView.heightAnchor.constraint(
-                    equalToConstant: 200
-                ),
+                answerTextField.heightAnchor.constraint(equalToConstant: 40),
                 
                 nextButton.topAnchor.constraint(
-                    equalTo: contentTextView.bottomAnchor,
+                    equalTo: answerTextField.bottomAnchor,
                     constant: 20
                 ),
                 nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -142,7 +139,8 @@ class ViewController: UIViewController {
     }
     
     private func updateUI() {
-        self.titleLabel.text = pushMode ? "네비게이션" : "모달"
+        let mode  = pushMode ? "(네비게이션)" : "(모달)"
+        self.titleLabel.text = "티니핑 맞추기 \(mode)"
     }
     
     @objc func nextButtonTapped() {
@@ -152,20 +150,12 @@ class ViewController: UIViewController {
     private func transitionToNextViewController() {
         let nextViewController = DetailViewController()
         
-        // if let 사용
-        //  if let title = titleTextField.text, ...
-        
-        guard let title = titleTextField.text, // guard let 사용
-              let content = contentTextView.text
-        else {
-            // 텍스트의 값들이 없으면 함수가 return
+        guard let userAnswer = answerTextField.text, !userAnswer.isEmpty else {
             return
         }
-        // 존재할 경우 함수를 그대로 실행
-        nextViewController.dataBind(
-            title: title,
-            content: content
-        )
+        
+        nextViewController.dataBind(userAnswer: userAnswer, answer: answer)
+
         if pushMode {
             self.navigationController?.pushViewController(
                 nextViewController,
@@ -184,7 +174,9 @@ class ViewController: UIViewController {
         self.updateUI()
     }
     
+    // 퀴즈이미지
+    private func loadQuestion() {
+        questionImageView.image = UIImage(named: quizImg)
+        answerTextField.text = ""
+    }
 }
-
-
-
