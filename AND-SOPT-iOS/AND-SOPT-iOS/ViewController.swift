@@ -74,8 +74,8 @@ class ViewController: UIViewController {
     private let answers = ["와플핑", "또너핑", "삐뽀핑", "포근핑"]
     
     private var pushMode = true
-    private var idx = 0
-    private var cnt = 0
+    private var index = 0
+    private var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,18 +91,15 @@ class ViewController: UIViewController {
     }
     
     private func setUI() {
-        [
+        view.addSubviews(
             titleLabel,
             questionImageView,
             answerTextField,
             answerLabelField,
             nextButton,
             checkAnswerButton,
-            pushModeToggleButton,
-        ].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview($0)
-        }
+            pushModeToggleButton
+        )
     }
     
     private func setLayout() {
@@ -163,7 +160,7 @@ class ViewController: UIViewController {
     }
     
     private func loadQuestion() {
-        let imgFile = quizImgs[idx]
+        let imgFile = quizImgs[index]
         questionImageView.image = UIImage(named: imgFile)
         answerTextField.text = ""
         answerLabelField.text = ""
@@ -172,7 +169,7 @@ class ViewController: UIViewController {
     private func transitionToNextViewController() {
         let nextViewController = DetailViewController()
         nextViewController.dataBind(
-            cnt: cnt
+            count: count
         )
         
         if pushMode {
@@ -194,8 +191,8 @@ class ViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
-        if idx < quizImgs.count - 1 {
-            idx += 1
+        if index < quizImgs.count - 1 {
+            index += 1
             loadQuestion()
         } else {
             transitionToNextViewController()
@@ -207,22 +204,23 @@ class ViewController: UIViewController {
             return
         }
         
-        if userAnswer == answers[idx]{
-            answerLabelField.textColor = .blue
-            answerLabelField.text = "정답입니다!!!!!!!!!!!!"
-            cnt += 1
-        } else {
-            answerLabelField.textColor = .red
-            answerLabelField.text = "오답입니다.. 정답은....... " + answers[idx]
-        }
+        displayAnswer(isAnswer: userAnswer == answers[index])
         
-        if idx ==  quizImgs.count - 1 {
-            nextButton.setTitle(
-                "정답 개수 확인하러 가기",
-                for: .normal
-            )
-            nextButton.backgroundColor = .red
-            pushModeToggleButton.isHidden = false
+        if index == quizImgs.count - 1 {
+            changeNextButton()
         }
+    }
+    
+    private func displayAnswer(isAnswer: Bool) {
+        answerLabelField.textColor = isAnswer ? .blue : .red
+        answerLabelField.text = isAnswer ? "정답입니다!!!!!!!!!!!!" : "오답입니다.. 정답은....... " + answers[index]
+        
+        if isAnswer { count += 1 }
+    }
+    
+    private func changeNextButton() {
+        nextButton.setTitle("정답 개수 확인하러 가기", for: .normal)
+        nextButton.backgroundColor = .red
+        pushModeToggleButton.isHidden = false
     }
 }

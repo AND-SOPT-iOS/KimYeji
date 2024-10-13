@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private let answerCntLabel: UILabel = {
+    private let answerCountLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -38,23 +38,20 @@ class DetailViewController: UIViewController {
     }
     
     private func setUI() {
-        [answerCntLabel, backButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview($0)
-        }
+        view.addSubviews(answerCountLabel, backButton)
     }
     
     private func setLayout() {
         NSLayoutConstraint.activate(
             [
-                answerCntLabel.topAnchor.constraint(
+                answerCountLabel.topAnchor.constraint(
                     equalTo: view.safeAreaLayoutGuide.topAnchor,
                     constant: 50
                 ),
-                answerCntLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                answerCountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
                 backButton.topAnchor.constraint(
-                    equalTo: answerCntLabel.bottomAnchor,
+                    equalTo: answerCountLabel.bottomAnchor,
                     constant: 20
                 ),
                 backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -65,11 +62,11 @@ class DetailViewController: UIViewController {
     }
     
     func updateUI() {
-        answerCntLabel.text = "정답 개수 : \(receivedCount ?? 0)"
+        answerCountLabel.text = "정답 개수 : \(receivedCount ?? 0)"
     }
     
-    func dataBind(cnt: Int) {
-        self.receivedCount = cnt
+    func dataBind(count: Int) {
+        self.receivedCount = count
         updateUI()
     }
     

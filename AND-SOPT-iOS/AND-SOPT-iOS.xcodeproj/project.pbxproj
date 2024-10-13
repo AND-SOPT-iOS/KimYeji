@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84036832CBC3389004AAAB4 /* UIView+.swift */; };
 		B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */; };
 		B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */; };
 		B84C07F52CB7A0F500AFE373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F42CB7A0F500AFE373 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B84036832CBC3389004AAAB4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B84C07ED2CB7A0F500AFE373 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B84036812CBC32B7004AAAB4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				B84036832CBC3389004AAAB4 /* UIView+.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		B84C07E42CB7A0F500AFE373 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		B84C07EF2CB7A0F500AFE373 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B84036812CBC32B7004AAAB4 /* Global */,
 				B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */,
 				B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */,
 				B84C07F42CB7A0F500AFE373 /* ViewController.swift */,
@@ -261,6 +272,7 @@
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* DetailViewController.swift in Sources */,
+				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
