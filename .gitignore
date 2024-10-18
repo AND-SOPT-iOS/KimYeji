@@ -140,8 +140,8 @@ xcuserdata
 ## Xcode 8 and earlier
 
 # Ignore folder
-AND-SOPT-iOS/AND-SOPT-iOS/Seminar/
-AND-SOPT-iOS/Seminar/
+/AND-SOPT-iOS/AND-SOPT-iOS/Seminar/
+/AND-SOPT-iOS/Seminar/
 
 
 ### Xcode Patch ###
