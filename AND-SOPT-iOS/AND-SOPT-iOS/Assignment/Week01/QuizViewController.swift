@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuizViewController.swift
 //  AND-SOPT-iOS
 //
 //  Created by 김예지 on 10/10/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
@@ -167,7 +167,7 @@ class ViewController: UIViewController {
     }
     
     private func transitionToNextViewController() {
-        let nextViewController = DetailViewController()
+        let nextViewController = AnswerCountViewController()
         nextViewController.dataBind(
             count: count
         )

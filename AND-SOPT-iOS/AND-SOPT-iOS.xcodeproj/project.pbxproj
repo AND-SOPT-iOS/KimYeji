@@ -10,13 +10,13 @@
 		B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84036832CBC3389004AAAB4 /* UIView+.swift */; };
 		B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */; };
 		B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */; };
-		B84C07F52CB7A0F500AFE373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F42CB7A0F500AFE373 /* ViewController.swift */; };
+		B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */; };
 		B84C07FA2CB7A0F600AFE373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84C07F92CB7A0F600AFE373 /* Assets.xcassets */; };
 		B84C07FD2CB7A0F600AFE373 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B84C07FC2CB7A0F600AFE373 /* Base */; };
 		B84C08082CB7A0F600AFE373 /* AND_SOPT_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08072CB7A0F600AFE373 /* AND_SOPT_iOSTests.swift */; };
 		B84C08122CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */; };
 		B84C08142CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */; };
-		B84C08212CB7A5A400AFE373 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08202CB7A5A400AFE373 /* DetailViewController.swift */; };
+		B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		B84C07ED2CB7A0F500AFE373 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B84C07F42CB7A0F500AFE373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B84C07F92CB7A0F600AFE373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B84C07FC2CB7A0F600AFE373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84C07FE2CB7A0F600AFE373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		B84C080D2CB7A0F600AFE373 /* AND-SOPT-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AND-SOPT-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITests.swift; sourceTree = "<group>"; };
 		B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B84C08202CB7A5A400AFE373 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80ADC682CC23980005AC520 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				B80ADC692CC23A35005AC520 /* Week01 */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		B80ADC692CC23A35005AC520 /* Week01 */ = {
+			isa = PBXGroup;
+			children = (
+				B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */,
+				B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */,
+			);
+			path = Week01;
+			sourceTree = "<group>";
+		};
+		B80ADC6A2CC23B55005AC520 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */,
+				B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		B84036812CBC32B7004AAAB4 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +135,12 @@
 		B84C07EF2CB7A0F500AFE373 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B80ADC6A2CC23B55005AC520 /* Application */,
+				B80ADC682CC23980005AC520 /* Assignment */,
 				B84036812CBC32B7004AAAB4 /* Global */,
-				B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */,
-				B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */,
-				B84C07F42CB7A0F500AFE373 /* ViewController.swift */,
 				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
 				B84C07FB2CB7A0F600AFE373 /* LaunchScreen.storyboard */,
 				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
-				B84C08202CB7A5A400AFE373 /* DetailViewController.swift */,
 			);
 			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
@@ -268,10 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84C07F52CB7A0F500AFE373 /* ViewController.swift in Sources */,
+				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
-				B84C08212CB7A5A400AFE373 /* DetailViewController.swift in Sources */,
+				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

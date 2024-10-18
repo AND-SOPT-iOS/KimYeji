@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  AnswerCountViewController.swift
 //  AND-SOPT-iOS
 //
 //  Created by 김예지 on 10/10/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class AnswerCountViewController: UIViewController {
     
     private let answerCountLabel: UILabel = {
         let label = UILabel()
