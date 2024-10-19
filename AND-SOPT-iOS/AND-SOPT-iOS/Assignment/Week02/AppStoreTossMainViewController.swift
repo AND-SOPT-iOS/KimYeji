@@ -95,7 +95,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let rateTextLabel: UILabel = {
         let label = UILabel()
         label.text = "4.4"
-        label.font = .systemFont(ofSize: 25, weight: .black)
+        label.font = .systemFont(ofSize: 20, weight: .black)
         label.textColor = .systemGray
         return label
     }()
@@ -103,7 +103,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let rateStarLabel: UILabel = {
         let label = UILabel()
         label.text = "★★★★☆"
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
         return label
     }()
@@ -145,7 +145,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let awardCategoryLabel: UILabel = {
         let label = UILabel()
         label.text = "앱"
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
         return label
     }()
@@ -176,7 +176,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let ageTextLabel: UILabel = {
         let label = UILabel()
         label.text = "4+"
-        label.font = .systemFont(ofSize: 25, weight: .black)
+        label.font = .systemFont(ofSize: 20, weight: .black)
         label.textColor = .systemGray
         return label
     }()
@@ -184,7 +184,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let ageUnitLabel: UILabel = {
         let label = UILabel()
         label.text = "세"
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
         return label
     }()
@@ -196,6 +196,54 @@ class AppStoreTossMainViewController: UIViewController {
         return view
     }()
     
+    // MARK: 세번째 섹션(새로운 소식)
+    private let newNewsTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "새로운 뉴스"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
+    private let versionTextLabel: UILabel = {
+        let label = UILabel()
+        label.text = "버전 5.185.0"
+        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.textColor = .systemGray
+        return label
+    }()
+    
+    private let versionUpdateDateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "2일 전"
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .systemGray
+        return label
+    }()
+    
+    private let versionUpdateRecordButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("버전 기록", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+        button.setTitleColor(.systemBlue, for: .normal)
+        return button
+    }()
+    
+    private let versionUpdateDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "• 구석구석 숨어있던 버그들을 잡았어요. 또 다른 버그가 나타나면 토스 고객센터를 찾아주세요. 늘 열려있답니다.  365일 24시간 언제든지요."
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .white
+        return label
+    }()
+    
+    private let separateLine3: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -219,8 +267,16 @@ class AppStoreTossMainViewController: UIViewController {
             openButton,
             shareButton,
             separateLine1,
+            
             infoStackView,
-            separateLine2
+            separateLine2,
+            
+            newNewsTitleLabel,
+            versionTextLabel,
+            versionUpdateDateLabel,
+            versionUpdateDescriptionLabel,
+            versionUpdateRecordButton,
+            separateLine3
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -256,7 +312,7 @@ class AppStoreTossMainViewController: UIViewController {
         // MARK: 첫번째 섹션
         appImageImageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            $0.leading.equalTo(contentView).offset(20)
+            $0.leading.equalToSuperview().inset(20)
             $0.width.height.equalTo(120)
         }
         
@@ -281,7 +337,7 @@ class AppStoreTossMainViewController: UIViewController {
         
         shareButton.snp.makeConstraints {
             $0.centerY.equalTo(openButton.snp.centerY)
-            $0.leading.equalTo(openButton.snp.trailing).offset(110)
+            $0.trailing.equalToSuperview().inset(20)
             $0.width.height.equalTo(30)
         }
         
@@ -310,5 +366,39 @@ class AppStoreTossMainViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
+        
+        // MARK: 세번째 섹션
+        newNewsTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(separateLine2.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        versionUpdateRecordButton.snp.makeConstraints{
+            $0.centerY.equalTo(newNewsTitleLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        versionTextLabel.snp.makeConstraints{
+            $0.top.equalTo(newNewsTitleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        versionUpdateDateLabel.snp.makeConstraints{
+            $0.centerY.equalTo(versionTextLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        versionUpdateDescriptionLabel.snp.makeConstraints{
+            $0.top.equalTo(versionTextLabel.snp.bottom).offset(15)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        separateLine3.snp.makeConstraints{
+            $0.top.equalTo(versionUpdateDescriptionLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(0.3)
+        }
+        
     }
 }
