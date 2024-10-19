@@ -11,6 +11,7 @@
 		B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC702CC24123005AC520 /* NickNameMainViewController.swift */; };
 		B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */; };
 		B80ADC762CC25A2C005AC520 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B80ADC752CC25A2C005AC520 /* SnapKit */; };
+		B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC792CC35E3F005AC520 /* UIStackView+.swift */; };
 		B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84036832CBC3389004AAAB4 /* UIView+.swift */; };
 		B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */; };
 		B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 		B80ADC6E2CC24105005AC520 /* NickNameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDetailViewController.swift; sourceTree = "<group>"; };
 		B80ADC702CC24123005AC520 /* NickNameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameMainViewController.swift; sourceTree = "<group>"; };
 		B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTossMainViewController.swift; sourceTree = "<group>"; };
+		B80ADC792CC35E3F005AC520 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		B84036832CBC3389004AAAB4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B84C07ED2CB7A0F500AFE373 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B84036832CBC3389004AAAB4 /* UIView+.swift */,
+				B80ADC792CC35E3F005AC520 /* UIStackView+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
+				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
