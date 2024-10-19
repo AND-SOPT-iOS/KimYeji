@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC6E2CC24105005AC520 /* NickNameDetailViewController.swift */; };
+		B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC702CC24123005AC520 /* NickNameMainViewController.swift */; };
+		B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */; };
+		B80ADC762CC25A2C005AC520 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B80ADC752CC25A2C005AC520 /* SnapKit */; };
 		B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84036832CBC3389004AAAB4 /* UIView+.swift */; };
 		B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */; };
 		B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */; };
@@ -37,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80ADC6E2CC24105005AC520 /* NickNameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDetailViewController.swift; sourceTree = "<group>"; };
+		B80ADC702CC24123005AC520 /* NickNameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameMainViewController.swift; sourceTree = "<group>"; };
+		B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTossMainViewController.swift; sourceTree = "<group>"; };
 		B84036832CBC3389004AAAB4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B84C07ED2CB7A0F500AFE373 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80ADC762CC25A2C005AC520 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,7 @@
 		B80ADC682CC23980005AC520 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				B80ADC6B2CC240CF005AC520 /* Week02 */,
 				B80ADC692CC23A35005AC520 /* Week01 */,
 			);
 			path = Assignment;
@@ -102,6 +111,31 @@
 				B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		B80ADC6B2CC240CF005AC520 /* Week02 */ = {
+			isa = PBXGroup;
+			children = (
+				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
+			);
+			path = Week02;
+			sourceTree = "<group>";
+		};
+		B80ADC6C2CC240D7005AC520 /* Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				B80ADC6D2CC240DC005AC520 /* Week02 */,
+			);
+			path = Seminar;
+			sourceTree = "<group>";
+		};
+		B80ADC6D2CC240DC005AC520 /* Week02 */ = {
+			isa = PBXGroup;
+			children = (
+				B80ADC6E2CC24105005AC520 /* NickNameDetailViewController.swift */,
+				B80ADC702CC24123005AC520 /* NickNameMainViewController.swift */,
+			);
+			path = Week02;
 			sourceTree = "<group>";
 		};
 		B84036812CBC32B7004AAAB4 /* Global */ = {
@@ -135,12 +169,13 @@
 		B84C07EF2CB7A0F500AFE373 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
+				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
 				B80ADC6A2CC23B55005AC520 /* Application */,
 				B80ADC682CC23980005AC520 /* Assignment */,
 				B84036812CBC32B7004AAAB4 /* Global */,
-				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
 				B84C07FB2CB7A0F600AFE373 /* LaunchScreen.storyboard */,
-				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
+				B80ADC6C2CC240D7005AC520 /* Seminar */,
 			);
 			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
@@ -250,6 +285,9 @@
 				Base,
 			);
 			mainGroup = B84C07E42CB7A0F500AFE373;
+			packageReferences = (
+				B80ADC742CC25A2C005AC520 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B84C07EE2CB7A0F500AFE373 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,7 +332,10 @@
 			files = (
 				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
+				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
+				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
+				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
@@ -629,6 +670,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B80ADC742CC25A2C005AC520 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B80ADC752CC25A2C005AC520 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B80ADC742CC25A2C005AC520 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B84C07E52CB7A0F500AFE373 /* Project object */;
 }
