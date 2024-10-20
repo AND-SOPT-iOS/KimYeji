@@ -289,8 +289,70 @@ class AppStoreTossMainViewController: UIViewController {
         return view
     }()
     
+    // MARK: 다섯번째 섹션(앱 상세 정보, 개발자 정보)
+    private let appInstallLabel: UILabel = {
+        let label = UILabel()
+        label.text = "토스뱅크, 토스증권 서비스를 이용하시려면 토스 앱 설치가\n필요합니다."
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .white
+        
+        return label
+    }()
+
     
+    private let appInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "● 내 금융 현황을 한눈에, 홈·소비"
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .white
+        
+        return label
+    }()
     
+    private let appInfoMoreButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("더 보기", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        
+        return button
+    }()
+    
+    private let devloperInfoTextButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Viva Republica", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        
+        return button
+    }()
+    
+    private let developerAppMoreButton: UIButton = {
+        let button = UIButton()
+        let shareIcon = UIImage(systemName: "chevron.forward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
+        button.setImage(shareIcon, for: .normal)
+        button.tintColor = .lightGray
+        button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+    
+    private let developerTextLabel: UILabel = {
+        let label = UILabel()
+        label.text = "개발자"
+        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.textColor = .lightGray
+        
+        return label
+    }()
+    
+    private let separateLine5: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        
+        return view
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -329,7 +391,15 @@ class AppStoreTossMainViewController: UIViewController {
             previewImageView,
             deviceImageView,
             deviceLabel,
-            separateLine4
+            separateLine4,
+            
+            appInstallLabel,
+            appInfoLabel,
+            appInfoMoreButton,
+            developerTextLabel,
+            devloperInfoTextButton,
+            developerAppMoreButton,
+            separateLine5
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -484,9 +554,45 @@ class AppStoreTossMainViewController: UIViewController {
             $0.top.equalTo(deviceLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
-            $0.bottom.equalTo(contentView)
         }
         
+        // MARK: 다섯번째 섹션
+        appInstallLabel.snp.makeConstraints{
+            $0.top.equalTo(separateLine4.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+        }
         
+        appInfoLabel.snp.makeConstraints{
+            $0.top.equalTo(appInstallLabel.snp.bottom).offset(5)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        appInfoMoreButton.snp.makeConstraints{
+            $0.centerY.equalTo(appInfoLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        devloperInfoTextButton.snp.makeConstraints {
+            $0.top.equalTo(appInfoLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        developerTextLabel.snp.makeConstraints {
+            $0.top.equalTo(devloperInfoTextButton.snp.bottom)
+            $0.leading.equalTo(devloperInfoTextButton.snp.leading)
+        }
+        
+        developerAppMoreButton.snp.makeConstraints {
+            $0.centerY.equalTo(devloperInfoTextButton.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        separateLine5.snp.makeConstraints {
+            $0.top.equalTo(developerTextLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(0.3)
+            $0.bottom.equalTo(contentView.snp.bottom)
+        }
     }
 }
