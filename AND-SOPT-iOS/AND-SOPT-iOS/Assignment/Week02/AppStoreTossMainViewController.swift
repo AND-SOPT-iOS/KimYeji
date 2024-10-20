@@ -19,7 +19,7 @@ class AppStoreTossMainViewController: UIViewController {
         image.image = UIImage(named: "toss.png")
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 20
-        image.clipsToBounds = true
+        image.layer.masksToBounds = true
         return image
     }()
     
@@ -43,10 +43,10 @@ class AppStoreTossMainViewController: UIViewController {
         let button = UIButton()
         button.setTitle("열기", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 17
-        button.clipsToBounds = true
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -245,6 +245,53 @@ class AppStoreTossMainViewController: UIViewController {
         return view
     }()
     
+    // MARK: 네번째 섹션(미리 보기 이미지)
+    private let previewImageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "미리 보기"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
+    private let previewImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "preview.png")
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        
+        return imageView
+    }()
+    
+    private let deviceImageView: UIImageView = {
+        let imageView = UIImageView()
+        let deviceIcon = UIImage(systemName: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
+        imageView.image = deviceIcon
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .lightGray
+        
+        return imageView
+    }()
+    
+    private let deviceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "iPhone"
+        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .lightGray
+        return label
+    }()
+    
+    private let separateLine4: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        
+        return view
+    }()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -276,7 +323,13 @@ class AppStoreTossMainViewController: UIViewController {
             versionUpdateDateLabel,
             versionUpdateDescriptionLabel,
             versionUpdateRecordButton,
-            separateLine3
+            separateLine3,
+            
+            previewImageLabel,
+            previewImageView,
+            deviceImageView,
+            deviceLabel,
+            separateLine4
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -301,17 +354,21 @@ class AppStoreTossMainViewController: UIViewController {
     
     private func setLayout() {
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
         }
         
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView)
             $0.width.equalTo(scrollView.snp.width)
+            $0.height.greaterThanOrEqualTo(scrollView.snp.height).offset(1)
+            //            $0.height.greaterThanOrEqualToSuperview().priority(.low)
         }
         
         // MARK: 첫번째 섹션
         appImageImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            $0.top.equalTo(contentView)
             $0.leading.equalToSuperview().inset(20)
             $0.width.height.equalTo(120)
         }
@@ -399,6 +456,37 @@ class AppStoreTossMainViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
+        
+        // MARK: 네번째 섹션
+        previewImageLabel.snp.makeConstraints{
+            $0.top.equalTo(separateLine3.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        previewImageView.snp.makeConstraints {
+            $0.top.equalTo(previewImageLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(400)
+            $0.height.equalTo(600)
+        }
+        
+        deviceImageView.snp.makeConstraints{
+            $0.top.equalTo(previewImageView.snp.bottom).offset(15)
+            $0.leading.equalTo(previewImageLabel.snp.leading)
+        }
+        
+        deviceLabel.snp.makeConstraints{
+            $0.centerY.equalTo(deviceImageView.snp.centerY)
+            $0.leading.equalTo(deviceImageView.snp.trailing).offset(5)
+        }
+        
+        separateLine4.snp.makeConstraints{
+            $0.top.equalTo(deviceLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(0.3)
+            $0.bottom.equalTo(contentView)
+        }
+        
         
     }
 }
