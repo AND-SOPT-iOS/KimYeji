@@ -489,7 +489,7 @@ class AppStoreTossMainViewController: UIViewController {
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 2
-
+        
         return label
     }()
     
@@ -498,10 +498,39 @@ class AppStoreTossMainViewController: UIViewController {
         label.text = "10월 22일"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .lightGray
+        
         return label
     }()
     
+    // 리뷰작성, 앱 지원
+    private let reviewWriteButton: UIButton = {
+        let button = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(systemName: "square.and.pencil")
+        config.title = "리뷰 작성"
+        config.baseForegroundColor = .systemBlue
+        config.imagePadding = 5
+        button.configuration = config
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        
+        return button
+    }()
     
+    private let appSupportButton: UIButton = {
+        let button = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(systemName: "questionmark.circle")
+        config.title = "앱 지원"
+        config.baseForegroundColor = .systemBlue
+        config.imagePadding = 5
+        button.configuration = config
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        
+        return button
+    }()
+    
+    
+    // 함수
     // 별 버튼 5개 생성 (탭하여 평가하기)
     private func createReviewStarsButton() -> UIButton {
         let button = UIButton()
@@ -585,7 +614,10 @@ class AppStoreTossMainViewController: UIViewController {
             
             developerResponseTextLabel,
             developerResponseDateLabel,
-            developerResponseContentLabel
+            developerResponseContentLabel,
+            
+            reviewWriteButton,
+            appSupportButton
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -832,7 +864,6 @@ class AppStoreTossMainViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(200)
             $0.leading.trailing.equalToSuperview().inset(15)
-            $0.bottom.equalTo(contentView.snp.bottom)
         }
         
         reviewTitleLabel.snp.makeConstraints{
@@ -877,8 +908,16 @@ class AppStoreTossMainViewController: UIViewController {
             $0.leading.equalTo(developerResponseTextLabel.snp.leading)
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
+        
+        reviewWriteButton.snp.makeConstraints{
+            $0.top.equalTo(reviewBackgroundGrayView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(5) // ?
+        }
+        
+        appSupportButton.snp.makeConstraints{
+            $0.centerY.equalTo(reviewWriteButton.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalTo(contentView.snp.bottom)
+        }
     }
-    
-    
-    
 }
