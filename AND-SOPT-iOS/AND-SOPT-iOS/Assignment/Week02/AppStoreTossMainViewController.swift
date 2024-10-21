@@ -478,23 +478,25 @@ class AppStoreTossMainViewController: UIViewController {
     private let developerResponseTextLabel: UILabel = {
         let label = UILabel()
         label.text = "개발자 답변"
-        label.font = .systemFont(ofSize: 12)
-        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.textColor = .white
         return label
     }()
     
     private let developerResponseContentLabel: UILabel = {
         let label = UILabel()
         label.text = "안녕하세요. 토스팀입니다. 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
-        label.font = .systemFont(ofSize: 12)
-        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.textColor = .white
+        label.numberOfLines = 2
+
         return label
     }()
     
     private let developerResponseDateLabel: UILabel = {
         let label = UILabel()
         label.text = "10월 22일"
-        label.font = .systemFont(ofSize: 12)
+        label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .lightGray
         return label
     }()
@@ -507,7 +509,7 @@ class AppStoreTossMainViewController: UIViewController {
         button.setImage(starImage, for: .normal)
         button.tintColor = .systemBlue
         button.imageView?.contentMode = .scaleAspectFit
-    
+        
         return button
     }
     
@@ -580,6 +582,10 @@ class AppStoreTossMainViewController: UIViewController {
             reviewStarScoreLabel,
             userNameLabel,
             reviewContentLabel,
+            
+            developerResponseTextLabel,
+            developerResponseDateLabel,
+            developerResponseContentLabel
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -819,7 +825,7 @@ class AppStoreTossMainViewController: UIViewController {
             $0.width.equalTo(200)
             $0.height.equalTo(40)
         }
-
+        
         // 리뷰
         reviewBackgroundGrayView.snp.makeConstraints{
             $0.top.equalTo(tapToRateLabel.snp.bottom).offset(20)
@@ -827,7 +833,6 @@ class AppStoreTossMainViewController: UIViewController {
             $0.height.equalTo(200)
             $0.leading.trailing.equalToSuperview().inset(15)
             $0.bottom.equalTo(contentView.snp.bottom)
-
         }
         
         reviewTitleLabel.snp.makeConstraints{
@@ -853,6 +858,23 @@ class AppStoreTossMainViewController: UIViewController {
         reviewContentLabel.snp.makeConstraints{
             $0.top.equalTo(reviewStarScoreLabel.snp.bottom).offset(10)
             $0.leading.equalTo(reviewStarScoreLabel.snp.leading)
+            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+        }
+        
+        
+        developerResponseTextLabel.snp.makeConstraints{
+            $0.top.equalTo(reviewContentLabel.snp.bottom).offset(13)
+            $0.leading.equalTo(reviewContentLabel.snp.leading)
+        }
+        
+        developerResponseDateLabel.snp.makeConstraints{
+            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+            $0.centerY.equalTo(developerResponseTextLabel.snp.centerY)
+        }
+        
+        developerResponseContentLabel.snp.makeConstraints{
+            $0.top.equalTo(developerResponseTextLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(developerResponseTextLabel.snp.leading)
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
     }
