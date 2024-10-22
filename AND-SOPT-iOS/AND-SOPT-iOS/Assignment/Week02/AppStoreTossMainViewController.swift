@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class AppStoreTossMainViewController: UIViewController {
-    
+    private let navigationBar = UINavigationBar()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -566,9 +566,25 @@ class AppStoreTossMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationStyle()
         setStyle()
         setUI()
         setLayout()
+    }
+    
+    private func setNavigationStyle() {
+        self.navigationController?.navigationBar.tintColor = .systemBlue
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let backButton = UIButton(type: .system)
+        backButton.setTitle("앱", for: .normal)
+        backButton.setImage(UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
+        backButton.tintColor = .systemBlue
+        backButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+
+        let backBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backBarButtonItem
     }
     
     private func setStyle() {
@@ -576,6 +592,7 @@ class AppStoreTossMainViewController: UIViewController {
     }
     
     private func setUI(){
+        view.addSubview(navigationBar)
         scrollView.addSubview(contentView)
         view.addSubview(scrollView)
         
@@ -711,11 +728,11 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         verticalLine1.snp.makeConstraints {
-            $0.width.equalTo(2)
+            $0.width.equalTo(0.3)
         }
         
         verticalLine2.snp.makeConstraints {
-            $0.width.equalTo(2)
+            $0.width.equalTo(0.3)
         }
         
         separateLine2.snp.makeConstraints {
@@ -853,7 +870,7 @@ class AppStoreTossMainViewController: UIViewController {
         separateLine6.snp.makeConstraints {
             $0.top.equalTo(maxRatingLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(0.4) 
+            $0.height.equalTo(0.4)
         }
         
         // 리뷰 부분
