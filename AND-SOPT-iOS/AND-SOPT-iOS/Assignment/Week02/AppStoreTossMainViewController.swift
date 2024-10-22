@@ -70,8 +70,9 @@ class AppStoreTossMainViewController: UIViewController {
     private let infoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 15
         stackView.distribution = .fillProportionally
+//        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
         return stackView
     }()
     
@@ -87,7 +88,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let rateCountLabel: UILabel = {
         let label = UILabel()
         label.text = "8.4만개의 평가"
-        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray
         return label
     }()
@@ -95,7 +96,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let rateTextLabel: UILabel = {
         let label = UILabel()
         label.text = "4.4"
-        label.font = .systemFont(ofSize: 20, weight: .black)
+        label.font = .systemFont(ofSize: 18, weight: .black)
         label.textColor = .systemGray
         return label
     }()
@@ -127,7 +128,7 @@ class AppStoreTossMainViewController: UIViewController {
     private let awardLabel: UILabel = {
         let label = UILabel()
         label.text = "수상"
-        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray
         return label
     }()
@@ -199,7 +200,7 @@ class AppStoreTossMainViewController: UIViewController {
     // MARK: 세번째 섹션(새로운 소식)
     private let newNewsTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "새로운 뉴스"
+        label.text = "새로운 소식"
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .white
         return label
@@ -468,11 +469,21 @@ class AppStoreTossMainViewController: UIViewController {
     
     private let reviewContentLabel: UILabel = {
         let label = UILabel()
-        label.text = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"
+        label.text = "최근 업데이트가 토스 만의 ux 색깔 개성 자체를 잃어버린 것 같습니다. 메인 화면 볼때마다 되게 부드럽고 한눈에 보기 편했는데, 이번 업데이트로 인해 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 3
         return label
+    }()
+    
+    private let readMoreReviewContentButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("더 보기", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        button.backgroundColor = .darkGray
+        
+        return button
     }()
     
     private let developerResponseTextLabel: UILabel = {
@@ -485,12 +496,22 @@ class AppStoreTossMainViewController: UIViewController {
     
     private let developerResponseContentLabel: UILabel = {
         let label = UILabel()
-        label.text = "안녕하세요. 토스팀입니다. 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
+        label.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서 너무나 감사합니다. 토스 화면 UI를 사용자의 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 2
         
         return label
+    }()
+    
+    private let readMoredeveloperResponseButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("더 보기", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        button.backgroundColor = .darkGray
+        
+        return button
     }()
     
     private let developerResponseDateLabel: UILabel = {
@@ -611,10 +632,12 @@ class AppStoreTossMainViewController: UIViewController {
             reviewStarScoreLabel,
             userNameLabel,
             reviewContentLabel,
+            readMoreReviewContentButton,
             
             developerResponseTextLabel,
             developerResponseDateLabel,
             developerResponseContentLabel,
+            readMoredeveloperResponseButton,
             
             reviewWriteButton,
             appSupportButton
@@ -623,21 +646,10 @@ class AppStoreTossMainViewController: UIViewController {
             contentView.addSubview($0)
         }
         
-        [rateCountLabel, rateTextLabel, rateStarLabel].forEach {
-            rateStackView.addArrangedSubview($0)
-        }
-        
-        [awardLabel, awardTitleLabel, awardCategoryLabel].forEach {
-            awardStackView.addArrangedSubview($0)
-        }
-        
-        [ageTitleLabel, ageTextLabel, ageUnitLabel].forEach {
-            ageStackView.addArrangedSubview($0)
-        }
-        
+        rateStackView.addArrangedSubviews(rateCountLabel, rateTextLabel, rateStarLabel)
+        awardStackView.addArrangedSubviews(awardLabel, awardTitleLabel, awardCategoryLabel)
+        ageStackView.addArrangedSubviews(ageTitleLabel, ageTextLabel, ageUnitLabel)
         infoStackView.addArrangedSubviews(rateStackView, verticalLine1, awardStackView, verticalLine2, ageStackView)
-        
-        
     }
     
     private func setLayout() {
@@ -699,11 +711,11 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         verticalLine1.snp.makeConstraints {
-            $0.width.equalTo(0.3)
+            $0.width.equalTo(2)
         }
         
         verticalLine2.snp.makeConstraints {
-            $0.width.equalTo(0.3)
+            $0.width.equalTo(2)
         }
         
         separateLine2.snp.makeConstraints {
@@ -841,7 +853,7 @@ class AppStoreTossMainViewController: UIViewController {
         separateLine6.snp.makeConstraints {
             $0.top.equalTo(maxRatingLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(0.4) // ??
+            $0.height.equalTo(0.4) 
         }
         
         // 리뷰 부분
@@ -892,6 +904,11 @@ class AppStoreTossMainViewController: UIViewController {
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
         
+        readMoreReviewContentButton.snp.makeConstraints{
+            $0.centerY.equalTo(reviewContentLabel.snp.centerY).offset(17)
+            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+        }
+        
         
         developerResponseTextLabel.snp.makeConstraints{
             $0.top.equalTo(reviewContentLabel.snp.bottom).offset(13)
@@ -909,9 +926,15 @@ class AppStoreTossMainViewController: UIViewController {
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
         
+        readMoredeveloperResponseButton.snp.makeConstraints{
+            $0.centerY.equalTo(developerResponseContentLabel.snp.centerY).offset(7)
+            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+        }
+        
+        
         reviewWriteButton.snp.makeConstraints{
             $0.top.equalTo(reviewBackgroundGrayView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().inset(5) // ?
+            $0.leading.equalToSuperview().inset(5)
         }
         
         appSupportButton.snp.makeConstraints{
