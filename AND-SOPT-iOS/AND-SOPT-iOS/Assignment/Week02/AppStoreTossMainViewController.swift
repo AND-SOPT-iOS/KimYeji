@@ -575,14 +575,17 @@ class AppStoreTossMainViewController: UIViewController {
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
         self.navigationController?.navigationBar.barTintColor = .black
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         let backButton = UIButton(type: .system)
-        backButton.setTitle("앱", for: .normal)
-        backButton.setImage(UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
-        backButton.tintColor = .systemBlue
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        config.title = "앱"
+        config.baseForegroundColor = .systemBlue
+        config.imagePadding = 4
+        
+        backButton.configuration = config
         backButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-
+        
         let backBarButtonItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = backBarButtonItem
     }
@@ -723,7 +726,7 @@ class AppStoreTossMainViewController: UIViewController {
         
         // MARK: 두번째 섹션
         infoStackView.snp.makeConstraints {
-            $0.top.equalTo(separateLine1.snp.bottom).offset(20)
+            $0.top.equalTo(separateLine1.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
@@ -736,14 +739,14 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         separateLine2.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(20)
+            $0.top.equalTo(infoStackView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         // MARK: 세번째 섹션
         newNewsTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(separateLine2.snp.bottom).offset(20)
+            $0.top.equalTo(separateLine2.snp.bottom).offset(10)
             $0.leading.equalToSuperview().inset(20)
         }
         
@@ -753,7 +756,7 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         versionTextLabel.snp.makeConstraints{
-            $0.top.equalTo(newNewsTitleLabel.snp.bottom).offset(10)
+            $0.top.equalTo(newNewsTitleLabel.snp.bottom).offset(8)
             $0.leading.equalToSuperview().inset(20)
         }
         
@@ -776,19 +779,19 @@ class AppStoreTossMainViewController: UIViewController {
         
         // MARK: 네번째 섹션
         previewImageLabel.snp.makeConstraints{
-            $0.top.equalTo(separateLine3.snp.bottom).offset(20)
+            $0.top.equalTo(separateLine3.snp.bottom).offset(10)
             $0.leading.equalToSuperview().inset(20)
         }
         
         previewImageView.snp.makeConstraints {
-            $0.top.equalTo(previewImageLabel.snp.bottom).offset(20)
+            $0.top.equalTo(previewImageLabel.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(400)
             $0.height.equalTo(600)
         }
         
         deviceImageView.snp.makeConstraints{
-            $0.top.equalTo(previewImageView.snp.bottom).offset(15)
+            $0.top.equalTo(previewImageView.snp.bottom).offset(10)
             $0.leading.equalTo(previewImageLabel.snp.leading)
         }
         
@@ -805,7 +808,7 @@ class AppStoreTossMainViewController: UIViewController {
         
         // MARK: 다섯번째 섹션
         appInstallLabel.snp.makeConstraints{
-            $0.top.equalTo(separateLine4.snp.bottom).offset(20)
+            $0.top.equalTo(separateLine4.snp.bottom).offset(15)
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalToSuperview().inset(20)
         }
@@ -826,7 +829,7 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         developerTextLabel.snp.makeConstraints {
-            $0.top.equalTo(devloperInfoTextButton.snp.bottom)
+            $0.top.equalTo(devloperInfoTextButton.snp.bottom).offset(-5)
             $0.leading.equalTo(devloperInfoTextButton.snp.leading)
         }
         
@@ -843,7 +846,7 @@ class AppStoreTossMainViewController: UIViewController {
         
         // MARK: 여섯번째 섹션 (평가 및 리뷰 탭)
         ratingAndReviewLabel.snp.makeConstraints {
-            $0.top.equalTo(separateLine5.snp.bottom).offset(20)
+            $0.top.equalTo(separateLine5.snp.bottom).offset(10)
             $0.leading.equalToSuperview().inset(20)
         }
         
@@ -868,7 +871,7 @@ class AppStoreTossMainViewController: UIViewController {
         }
         
         separateLine6.snp.makeConstraints {
-            $0.top.equalTo(maxRatingLabel.snp.bottom).offset(20)
+            $0.top.equalTo(maxRatingLabel.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.4)
         }
