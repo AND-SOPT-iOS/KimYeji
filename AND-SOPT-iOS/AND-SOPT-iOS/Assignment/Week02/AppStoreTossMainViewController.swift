@@ -939,19 +939,12 @@ class AppStoreTossMainViewController: UIViewController {
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
         self.navigationController?.navigationBar.barTintColor = .black
-        
-        let backButton = UIButton(type: .system)
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-        config.title = "앱"
-        config.baseForegroundColor = .systemBlue
-        config.imagePadding = 4
-        
-        backButton.configuration = config
-        backButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        
-        let backBarButtonItem = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = backBarButtonItem
+
+        self.title = "앱"
+
+        let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
     }
     
     // 별 버튼 5개 생성 (탭하여 평가하기)
