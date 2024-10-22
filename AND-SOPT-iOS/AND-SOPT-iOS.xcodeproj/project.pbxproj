@@ -22,6 +22,8 @@
 		B84C08122CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */; };
 		B84C08142CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */; };
 		B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */; };
+		B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */; };
+		B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITests.swift; sourceTree = "<group>"; };
 		B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCountViewController.swift; sourceTree = "<group>"; };
+		B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRecordViewController.swift; sourceTree = "<group>"; };
+		B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
+				B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */,
+				B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */,
 			);
 			path = Week02;
 			sourceTree = "<group>";
@@ -339,8 +345,10 @@
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
+				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
+				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

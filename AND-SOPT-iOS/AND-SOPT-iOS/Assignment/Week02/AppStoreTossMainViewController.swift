@@ -71,7 +71,7 @@ class AppStoreTossMainViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-//        stackView.distribution = .fillEqually
+        //        stackView.distribution = .fillEqually
         stackView.alignment = .fill
         return stackView
     }()
@@ -227,6 +227,8 @@ class AppStoreTossMainViewController: UIViewController {
         button.setTitle("버전 기록", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
         button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(nil, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
+        
         return button
     }()
     
@@ -369,6 +371,7 @@ class AppStoreTossMainViewController: UIViewController {
         button.setTitle("모두 보기", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.addTarget(nil, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -550,20 +553,6 @@ class AppStoreTossMainViewController: UIViewController {
         return button
     }()
     
-    
-    // 함수
-    // 별 버튼 5개 생성 (탭하여 평가하기)
-    private func createReviewStarsButton() -> UIButton {
-        let button = UIButton()
-        let starImage = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
-        button.setImage(starImage, for: .normal)
-        button.tintColor = .systemBlue
-        button.imageView?.contentMode = .scaleAspectFit
-        
-        return button
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationStyle()
@@ -572,23 +561,6 @@ class AppStoreTossMainViewController: UIViewController {
         setLayout()
     }
     
-    private func setNavigationStyle() {
-        self.navigationController?.navigationBar.tintColor = .systemBlue
-        self.navigationController?.navigationBar.barTintColor = .black
-        
-        let backButton = UIButton(type: .system)
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-        config.title = "앱"
-        config.baseForegroundColor = .systemBlue
-        config.imagePadding = 4
-        
-        backButton.configuration = config
-        backButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        
-        let backBarButtonItem = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = backBarButtonItem
-    }
     
     private func setStyle() {
         self.view.backgroundColor = .black
@@ -962,5 +934,44 @@ class AppStoreTossMainViewController: UIViewController {
             $0.trailing.equalToSuperview().inset(20)
             $0.bottom.equalTo(contentView.snp.bottom)
         }
+    }
+    
+    private func setNavigationStyle() {
+        self.navigationController?.navigationBar.tintColor = .systemBlue
+        self.navigationController?.navigationBar.barTintColor = .black
+        
+        let backButton = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        config.title = "앱"
+        config.baseForegroundColor = .systemBlue
+        config.imagePadding = 4
+        
+        backButton.configuration = config
+        backButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+        
+        let backBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backBarButtonItem
+    }
+    
+    // 별 버튼 5개 생성 (탭하여 평가하기)
+    private func createReviewStarsButton() -> UIButton {
+        let button = UIButton()
+        let starImage = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
+        button.setImage(starImage, for: .normal)
+        button.tintColor = .systemBlue
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        return button
+    }
+    
+    @objc private func versionUpdateRecordButtonTapped(){
+        let versionRecordViewController = VersionRecordViewController()
+        self.navigationController?.pushViewController(versionRecordViewController, animated: true)
+    }
+    
+    @objc private func seeAllReviewsButtonTapped(){
+        let allReviewsViewController = AllReviewsViewController()
+        self.navigationController?.pushViewController(allReviewsViewController, animated: true)
     }
 }
