@@ -8,14 +8,15 @@
 import UIKit
 
 class AppDescriptionView: UIView {
+    // MARK: - Components
     // MARK: 앱 상세 정보, 개발자 정보
-
     private let appInstallLabel: UILabel = {
         let label = UILabel()
         label.text = "토스뱅크, 토스증권 서비스를 이용하시려면 토스 앱 설치가\n필요합니다."
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .white
+        
         return label
     }()
 
@@ -25,6 +26,7 @@ class AppDescriptionView: UIView {
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .white
         label.numberOfLines = 0
+        
         return label
     }()
 
@@ -34,6 +36,7 @@ class AppDescriptionView: UIView {
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         button.addTarget(nil, action: #selector(appInfoMoreButtonTapped), for: .touchUpInside)
+        
         return button
     }()
 
@@ -42,6 +45,7 @@ class AppDescriptionView: UIView {
         button.setTitle("Viva Republica", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        
         return button
     }()
 
@@ -51,6 +55,7 @@ class AppDescriptionView: UIView {
         button.setImage(shareIcon, for: .normal)
         button.tintColor = .lightGray
         button.imageView?.contentMode = .scaleAspectFit
+        
         return button
     }()
 
@@ -59,6 +64,7 @@ class AppDescriptionView: UIView {
         label.text = "개발자"
         label.font = .systemFont(ofSize: 12, weight: .medium)
         label.textColor = .lightGray
+        
         return label
     }()
 

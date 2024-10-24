@@ -7,14 +7,21 @@
 
 import UIKit
 
+protocol NewNewsViewDelegate: AnyObject {
+    func versionUpdateRecordButtonTapped()
+}
+
 class NewNewsView: UIView {
-    // MARK: 새로운 소식, 버전기록 
-    
+    weak var delegate: NewNewsViewDelegate?
+
+    // MARK: - Components
+    // MARK: 새로운 소식, 버전기록
     private let newNewsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "새로운 소식"
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .white
+        
         return label
     }()
     
@@ -23,6 +30,8 @@ class NewNewsView: UIView {
         label.text = "버전 5.185.0"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
+        
+        
         return label
     }()
     
@@ -31,6 +40,7 @@ class NewNewsView: UIView {
         label.text = "2일 전"
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -39,7 +49,7 @@ class NewNewsView: UIView {
         button.setTitle("버전 기록", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
         button.setTitleColor(.systemBlue, for: .normal)
-//        button.addTarget(nil, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -99,5 +109,9 @@ class NewNewsView: UIView {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    @objc private func versionUpdateRecordButtonTapped() {
+        delegate?.versionUpdateRecordButtonTapped()
     }
 }

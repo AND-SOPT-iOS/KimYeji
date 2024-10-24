@@ -8,14 +8,15 @@
 import UIKit
 
 class AppInfoSummaryView: UIView {
+    // MARK: - Components
     // MARK: 평가 개수, 앱 수상 내역, 연령 정보
-    
     private let infoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
         //        stackView.distribution = .fillEqually
         stackView.alignment = .fill
+        
         return stackView
     }()
     
@@ -25,6 +26,7 @@ class AppInfoSummaryView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.alignment = .center
+        
         return stackView
     }()
     
@@ -33,6 +35,7 @@ class AppInfoSummaryView: UIView {
         label.text = "8.4만개의 평가"
         label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -41,6 +44,7 @@ class AppInfoSummaryView: UIView {
         label.text = "4.4"
         label.font = .systemFont(ofSize: 18, weight: .black)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -49,12 +53,14 @@ class AppInfoSummaryView: UIView {
         label.text = "★★★★☆"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
     private let verticalLine1: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
+        
         return view
     }()
     
@@ -65,6 +71,7 @@ class AppInfoSummaryView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.alignment = .center
+        
         return stackView
     }()
     
@@ -73,6 +80,7 @@ class AppInfoSummaryView: UIView {
         label.text = "수상"
         label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -83,6 +91,7 @@ class AppInfoSummaryView: UIView {
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 12, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -91,12 +100,14 @@ class AppInfoSummaryView: UIView {
         label.text = "앱"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
     private let verticalLine2: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
+        
         return view
     }()
     
@@ -106,6 +117,7 @@ class AppInfoSummaryView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.alignment = .center
+        
         return stackView
     }()
     
@@ -114,6 +126,7 @@ class AppInfoSummaryView: UIView {
         label.text = "연령"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -122,6 +135,7 @@ class AppInfoSummaryView: UIView {
         label.text = "4+"
         label.font = .systemFont(ofSize: 20, weight: .black)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -130,6 +144,7 @@ class AppInfoSummaryView: UIView {
         label.text = "세"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .systemGray
+        
         return label
     }()
     

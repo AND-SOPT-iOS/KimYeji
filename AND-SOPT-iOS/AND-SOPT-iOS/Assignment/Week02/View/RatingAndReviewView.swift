@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol RatingAndReviewViewDelegate: AnyObject {
+    func seeAllReviewsButtonTapped()
+}
+
 class RatingAndReviewView: UIView {
+    // MARK: - Properties
+    weak var delegate: RatingAndReviewViewDelegate?
+    
+    // MARK: - Components
     // MARK: 평가 및 리뷰
     private let ratingAndReviewLabel: UILabel = {
         let label = UILabel()
@@ -23,7 +31,7 @@ class RatingAndReviewView: UIView {
         button.setTitle("모두 보기", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
-//        button.addTarget(nil, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -78,6 +86,7 @@ class RatingAndReviewView: UIView {
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
+        
         return stackView
     }();
     
@@ -87,6 +96,7 @@ class RatingAndReviewView: UIView {
         view.backgroundColor = .darkGray
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
+        
         return view
     }()
     
@@ -95,6 +105,7 @@ class RatingAndReviewView: UIView {
         label.text = "김예지(리뷰제목)"
         label.font = .systemFont(ofSize: 16, weight: .bold)
         label.textColor = .white
+        
         return label
     }()
     
@@ -103,6 +114,7 @@ class RatingAndReviewView: UIView {
         label.text = "10월 21일"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .lightGray
+        
         return label
     }()
     
@@ -111,6 +123,7 @@ class RatingAndReviewView: UIView {
         label.text = "ENFJ"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .lightGray
+        
         return label
     }()
     
@@ -119,6 +132,7 @@ class RatingAndReviewView: UIView {
         label.text = "★★★★★"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .orange
+        
         return label
     }()
     
@@ -128,6 +142,7 @@ class RatingAndReviewView: UIView {
         label.font = .systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 3
+        
         return label
     }()
     
@@ -146,6 +161,7 @@ class RatingAndReviewView: UIView {
         label.text = "개발자 답변"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.textColor = .white
+        
         return label
     }()
     
@@ -228,7 +244,6 @@ class RatingAndReviewView: UIView {
             readMoreReviewContentButton, developerResponseTextLabel, developerResponseDateLabel,
             developerResponseContentLabel, readMoredeveloperResponseButton, reviewWriteButton, appSupportButton
         )
-        
         
         for _ in 1...5 {
             let starButton = createReviewStarsButton()
@@ -351,10 +366,9 @@ class RatingAndReviewView: UIView {
         }
     }
     
-//    @objc private func seeAllReviewsButtonTapped(){
-//        let allReviewsViewController = AllReviewsViewController()
-//        self.navigationController?.pushViewController(allReviewsViewController, animated: true)
-//    }
+    @objc private func seeAllReviewsButtonTapped() {
+        delegate?.seeAllReviewsButtonTapped()
+    }
     
     // 별 버튼 5개 생성 (탭하여 평가하기)
     private func createReviewStarsButton() -> UIButton {

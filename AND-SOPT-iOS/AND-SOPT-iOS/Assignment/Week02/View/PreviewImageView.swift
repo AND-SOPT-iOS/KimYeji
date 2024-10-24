@@ -8,13 +8,14 @@
 import UIKit
 
 class PreviewImageView: UIView {
+    // MARK: - Components
     // MARK: 미리보기 이미지
-    
     private let previewImageLabel: UILabel = {
         let label = UILabel()
         label.text = "미리 보기"
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = .white
+        
         return label
     }()
     
@@ -24,6 +25,7 @@ class PreviewImageView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
+        
         return imageView
     }()
     
@@ -33,6 +35,7 @@ class PreviewImageView: UIView {
         imageView.image = deviceIcon
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .lightGray
+        
         return imageView
     }()
     
@@ -41,6 +44,7 @@ class PreviewImageView: UIView {
         label.text = "iPhone"
         label.font = .systemFont(ofSize: 12, weight: .bold)
         label.textColor = .lightGray
+        
         return label
     }()
     

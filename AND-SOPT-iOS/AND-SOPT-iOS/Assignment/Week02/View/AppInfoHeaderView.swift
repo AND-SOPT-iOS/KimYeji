@@ -8,14 +8,15 @@
 import UIKit
 
 class AppInfoHeaderView: UIView {
-    // MARK: 앱 이미지, 타이틀, 설명, 버튼 - 확인 
-    
+    // MARK: - Components
+    // MARK: 앱 이미지, 타이틀, 설명, 버튼 - 확인
     private let appImageImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "toss.png")
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 20
         image.layer.masksToBounds = true
+        
         return image
     }()
     
@@ -24,6 +25,7 @@ class AppInfoHeaderView: UIView {
         label.text = "토스"
         label.font = .systemFont(ofSize: 23 , weight: .bold)
         label.textColor = .white
+        
         return label
     }()
     
@@ -32,6 +34,7 @@ class AppInfoHeaderView: UIView {
         label.text = "금융이 쉬워진다"
         label.font = .systemFont(ofSize: 17 , weight: .medium)
         label.textColor = .systemGray
+        
         return label
     }()
     
@@ -43,6 +46,7 @@ class AppInfoHeaderView: UIView {
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 17
         button.layer.masksToBounds = true
+        
         return button
     }()
     
@@ -52,6 +56,7 @@ class AppInfoHeaderView: UIView {
         button.setImage(shareIcon, for: .normal)
         button.tintColor = .systemBlue
         button.imageView?.contentMode = .scaleAspectFit
+        
         return button
     }()
     

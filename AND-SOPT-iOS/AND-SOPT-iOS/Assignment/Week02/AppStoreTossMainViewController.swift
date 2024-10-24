@@ -8,11 +8,13 @@
 import UIKit
 import SnapKit
 
-class AppStoreTossMainViewController: UIViewController {
+class AppStoreTossMainViewController: UIViewController, RatingAndReviewViewDelegate, NewNewsViewDelegate  {
+    // MARK: - Properties
     private let navigationBar = UINavigationBar()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
+    // MARK: - Components
     // MARK: 첫번째 섹션 (앱 이름, 아이콘, 열기 버튼, 공유 버튼)
     private let appInfoHeaderView = AppInfoHeaderView()
     
@@ -65,13 +67,14 @@ class AppStoreTossMainViewController: UIViewController {
     
     // MARK: 여섯번째 섹션 (평가 및 리뷰, 리뷰 내용) - 마지막
     private let ratingAndReviewView = RatingAndReviewView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationStyle()
         setStyle()
         setUI()
         setLayout()
+        setDelegates()
     }
     
     private func setStyle() {
@@ -168,24 +171,29 @@ class AppStoreTossMainViewController: UIViewController {
         }
     }
     
+    private func setDelegates() {
+        ratingAndReviewView.delegate = self
+        newNewsView.delegate = self
+    }
+    
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
         self.navigationController?.navigationBar.barTintColor = .black
         
-        self.title = "앱"
+        self.title = ""
         
         let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
     }
     
-    // 나중에 옮기기
-    @objc private func versionUpdateRecordButtonTapped(){
+    // MARK: Delegate 메소드
+    func versionUpdateRecordButtonTapped(){
         let versionRecordViewController = VersionRecordViewController()
         self.navigationController?.pushViewController(versionRecordViewController, animated: true)
     }
     
-    @objc private func seeAllReviewsButtonTapped(){
+    func seeAllReviewsButtonTapped() {
         let allReviewsViewController = AllReviewsViewController()
         self.navigationController?.pushViewController(allReviewsViewController, animated: true)
     }
