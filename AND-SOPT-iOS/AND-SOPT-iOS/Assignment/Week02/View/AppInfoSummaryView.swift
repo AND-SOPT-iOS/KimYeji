@@ -159,7 +159,7 @@ class AppInfoSummaryView: UIView {
     
     private func setLayout() {
         infoStackView.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         

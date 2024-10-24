@@ -81,7 +81,7 @@ class AppDescriptionView: UIView {
 
     private func setLayout() {
         appInstallLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(15)
+            $0.top.equalToSuperview().offset(10)
             $0.leading.trailing.equalToSuperview()
         }
 
@@ -92,7 +92,7 @@ class AppDescriptionView: UIView {
 
         appInfoMoreButton.snp.makeConstraints {
             $0.centerY.equalTo(appInfoLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview()
         }
 
         devloperInfoTextButton.snp.makeConstraints {
@@ -101,13 +101,14 @@ class AppDescriptionView: UIView {
         }
 
         developerTextLabel.snp.makeConstraints {
-            $0.top.equalTo(devloperInfoTextButton.snp.bottom).offset(-5)
+            $0.top.equalTo(devloperInfoTextButton.snp.bottom).offset(-3)
             $0.leading.equalTo(devloperInfoTextButton.snp.leading)
         }
 
         developerAppMoreButton.snp.makeConstraints {
             $0.centerY.equalTo(devloperInfoTextButton.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
     

@@ -84,6 +84,7 @@ class PreviewImageView: UIView {
         deviceLabel.snp.makeConstraints{
             $0.centerY.equalTo(deviceImageView.snp.centerY)
             $0.leading.equalTo(deviceImageView.snp.trailing).offset(5)
+            $0.bottom.equalToSuperview()
         }
     }
 }

@@ -341,12 +341,13 @@ class RatingAndReviewView: UIView {
         
         reviewWriteButton.snp.makeConstraints {
             $0.top.equalTo(reviewBackgroundGrayView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().inset(5)
+            $0.leading.equalToSuperview().inset(-10)
         }
         
         appSupportButton.snp.makeConstraints {
             $0.centerY.equalTo(reviewWriteButton.snp.centerY)
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview()
         }
     }
     

@@ -13,7 +13,6 @@ class AppStoreTossMainViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
-    
     // MARK: 첫번째 섹션 (앱 이름, 아이콘, 열기 버튼, 공유 버튼)
     private let appInfoHeaderView = AppInfoHeaderView()
     
@@ -75,9 +74,7 @@ class AppStoreTossMainViewController: UIViewController {
         setLayout()
     }
     
-    
     private func setStyle() {
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.view.backgroundColor = .black
     }
     
@@ -94,20 +91,19 @@ class AppStoreTossMainViewController: UIViewController {
     
     private func setLayout() {
         scrollView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
+            $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
         
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView)
             $0.width.equalTo(scrollView.snp.width)
-            $0.height.greaterThanOrEqualToSuperview().priority(.low)
         }
         
         // MARK: 첫번째 섹션
         appInfoHeaderView.snp.makeConstraints{
             $0.top.equalTo(contentView.snp.top)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(130)
         }
         
         separateLine1.snp.makeConstraints {
@@ -120,7 +116,6 @@ class AppStoreTossMainViewController: UIViewController {
         appInfoSummaryView.snp.makeConstraints {
             $0.top.equalTo(separateLine1.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(80)
         }
         
         separateLine2.snp.makeConstraints {
@@ -133,20 +128,18 @@ class AppStoreTossMainViewController: UIViewController {
         newNewsView.snp.makeConstraints {
             $0.top.equalTo(separateLine2.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(100)
         }
         
         separateLine3.snp.makeConstraints {
-            $0.top.equalTo(newNewsView.snp.bottom).offset(30)
+            $0.top.equalTo(newNewsView.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         // MARK: 네번째 섹션
         previewImageView.snp.makeConstraints {
-            $0.top.equalTo(separateLine3.snp.bottom).offset(10)
+            $0.top.equalTo(separateLine3.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(670)
         }
         
         separateLine4.snp.makeConstraints{
@@ -159,21 +152,19 @@ class AppStoreTossMainViewController: UIViewController {
         appDescriptionView.snp.makeConstraints {
             $0.top.equalTo(separateLine4.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(140)
         }
         
         separateLine5.snp.makeConstraints{
-            $0.top.equalTo(appDescriptionView.snp.bottom).offset(20)
+            $0.top.equalTo(appDescriptionView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         // MARK: 여섯번째 섹션 (평가 및 리뷰 탭)
         ratingAndReviewView.snp.makeConstraints {
-            $0.top.equalTo(separateLine5.snp.bottom).offset(10)
+            $0.top.equalTo(separateLine5.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview().inset(20)
-//            $0.height.greaterThanOrEqualTo(500)
-            $0.bottom.equalTo(contentView)
+            $0.bottom.equalToSuperview()
         }
     }
     

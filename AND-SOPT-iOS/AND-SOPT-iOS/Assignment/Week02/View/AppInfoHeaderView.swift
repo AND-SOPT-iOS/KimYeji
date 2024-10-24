@@ -77,8 +77,8 @@ class AppInfoHeaderView: UIView {
     
     private func setLayout() {
         appImageImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.height.equalTo(120)
+            $0.top.leading.bottom.equalToSuperview()
+            $0.size.equalTo(120)
         }
         
         appTitleLabel.snp.makeConstraints {
@@ -92,8 +92,8 @@ class AppInfoHeaderView: UIView {
         }
         
         openButton.snp.makeConstraints {
-            $0.top.equalTo(appDescriptionLabel.snp.bottom).offset(30)
             $0.leading.equalTo(appTitleLabel.snp.leading)
+            $0.bottom.equalTo(appImageImageView.snp.bottom) 
             $0.width.equalTo(75)
             $0.height.equalTo(35)
         }

@@ -97,6 +97,7 @@ class NewNewsView: UIView {
         versionUpdateDescriptionLabel.snp.makeConstraints{
             $0.top.equalTo(versionTextLabel.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 }
