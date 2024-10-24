@@ -24,6 +24,13 @@
 		B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */; };
 		B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */; };
 		B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */; };
+		B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14CA2CC9E0ED00E025AF /* AppInfoHeaderView.swift */; };
+		B86B14CD2CC9E29200E025AF /* AppInfoSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14CC2CC9E29200E025AF /* AppInfoSummaryView.swift */; };
+		B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14CE2CC9E2CD00E025AF /* NewNewsView.swift */; };
+		B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D02CC9E2F400E025AF /* PreviewImageView.swift */; };
+		B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D22CC9E30E00E025AF /* AppDescriptionView.swift */; };
+		B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */; };
+		B86B14D72CC9F04600E025AF /* File in Resources */ = {isa = PBXBuildFile; fileRef = B86B14D62CC9F04600E025AF /* File */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,13 @@
 		B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCountViewController.swift; sourceTree = "<group>"; };
 		B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRecordViewController.swift; sourceTree = "<group>"; };
 		B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
+		B86B14CA2CC9E0ED00E025AF /* AppInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoHeaderView.swift; sourceTree = "<group>"; };
+		B86B14CC2CC9E29200E025AF /* AppInfoSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoSummaryView.swift; sourceTree = "<group>"; };
+		B86B14CE2CC9E2CD00E025AF /* NewNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNewsView.swift; sourceTree = "<group>"; };
+		B86B14D02CC9E2F400E025AF /* PreviewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
+		B86B14D22CC9E30E00E025AF /* AppDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionView.swift; sourceTree = "<group>"; };
+		B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAndReviewView.swift; sourceTree = "<group>"; };
+		B86B14D62CC9F04600E025AF /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +136,11 @@
 		B80ADC6B2CC240CF005AC520 /* Week02 */ = {
 			isa = PBXGroup;
 			children = (
+				B86B14C92CC9DD9E00E025AF /* View */,
 				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
 				B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */,
 				B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */,
+				B86B14D62CC9F04600E025AF /* File */,
 			);
 			path = Week02;
 			sourceTree = "<group>";
@@ -204,6 +220,19 @@
 				B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */,
 			);
 			path = "AND-SOPT-iOSUITests";
+			sourceTree = "<group>";
+		};
+		B86B14C92CC9DD9E00E025AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B86B14CA2CC9E0ED00E025AF /* AppInfoHeaderView.swift */,
+				B86B14CC2CC9E29200E025AF /* AppInfoSummaryView.swift */,
+				B86B14CE2CC9E2CD00E025AF /* NewNewsView.swift */,
+				B86B14D02CC9E2F400E025AF /* PreviewImageView.swift */,
+				B86B14D22CC9E30E00E025AF /* AppDescriptionView.swift */,
+				B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +344,7 @@
 			files = (
 				B84C07FA2CB7A0F600AFE373 /* Assets.xcassets in Resources */,
 				B84C07FD2CB7A0F600AFE373 /* Base in Resources */,
+				B86B14D72CC9F04600E025AF /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +372,18 @@
 				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
+				B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */,
+				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
+				B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */,
+				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
+				B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */,
+				B86B14CD2CC9E29200E025AF /* AppInfoSummaryView.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
