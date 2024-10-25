@@ -9,7 +9,7 @@ import UIKit
 
 class AppDescriptionView: UIView {
     // MARK: - Components
-    // MARK: 앱 상세 정보, 개발자 정보
+    
     private let appInstallLabel: UILabel = {
         let label = UILabel()
         label.text = "토스뱅크, 토스증권 서비스를 이용하시려면 토스 앱 설치가\n필요합니다."
@@ -68,6 +68,7 @@ class AppDescriptionView: UIView {
         return label
     }()
 
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -78,6 +79,7 @@ class AppDescriptionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(
             appInstallLabel, appInfoLabel, appInfoMoreButton,

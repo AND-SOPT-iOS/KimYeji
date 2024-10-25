@@ -9,7 +9,7 @@ import UIKit
 
 class AppInfoHeaderView: UIView {
     // MARK: - Components
-    // MARK: 앱 이미지, 타이틀, 설명, 버튼 - 확인
+
     private let appImageImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "toss.png")
@@ -60,10 +60,9 @@ class AppInfoHeaderView: UIView {
         return button
     }()
     
-    
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setStyle()
         setUI()
         setLayout()
     }
@@ -72,10 +71,7 @@ class AppInfoHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setStyle(){
-        self.backgroundColor = .black
-    }
-    
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(appImageImageView, appTitleLabel, appDescriptionLabel, openButton, shareButton)
     }

@@ -16,7 +16,6 @@ class RatingAndReviewView: UIView {
     weak var delegate: RatingAndReviewViewDelegate?
     
     // MARK: - Components
-    // MARK: 평가 및 리뷰
     private let ratingAndReviewLabel: UILabel = {
         let label = UILabel()
         label.text = "평가 및 리뷰"
@@ -52,6 +51,14 @@ class RatingAndReviewView: UIView {
         label.textColor = .lightGray
         
         return label
+    }()
+    
+    private let reviewStarImage: UIImageView = {
+        let starImage = UIImage(named: "star.png")
+        let imageView = UIImageView(image: starImage)
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
     }()
     
     private let reviewCountsLabel: UILabel = {
@@ -221,9 +228,9 @@ class RatingAndReviewView: UIView {
         return button
     }()
     
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setStyle()
         setUI()
         setLayout()
     }
@@ -232,13 +239,10 @@ class RatingAndReviewView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setStyle(){
-        self.backgroundColor = .black
-    }
-    
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(
-            ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, maxRatingLabel,
+            ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, reviewStarImage, maxRatingLabel,
             reviewCountsLabel, separateLine6, tapToRateLabel, rateStarStackView, reviewBackgroundGrayView,
             reviewTitleLabel, reviewDateLabel, reviewStarScoreLabel, userNameLabel, reviewContentLabel,
             readMoreReviewContentButton, developerResponseTextLabel, developerResponseDateLabel,
@@ -250,6 +254,7 @@ class RatingAndReviewView: UIView {
             rateStarStackView.addArrangedSubview(starButton)
         }
     }
+    
     private func setLayout() {
         ratingAndReviewLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -271,8 +276,15 @@ class RatingAndReviewView: UIView {
             $0.centerX.equalTo(ratingScoreLabel.snp.centerX)
         }
         
-        reviewCountsLabel.snp.makeConstraints {
+        reviewStarImage.snp.makeConstraints {
             $0.centerY.equalTo(ratingScoreLabel.snp.centerY)
+            $0.trailing.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+        }
+        
+        reviewCountsLabel.snp.makeConstraints {
+            $0.top.equalTo(reviewStarImage.snp.bottom).offset(5)
             $0.trailing.equalToSuperview()
         }
         
@@ -366,11 +378,7 @@ class RatingAndReviewView: UIView {
         }
     }
     
-    @objc private func seeAllReviewsButtonTapped() {
-        delegate?.seeAllReviewsButtonTapped()
-    }
-    
-    // 별 버튼 5개 생성 (탭하여 평가하기)
+    // 별 버튼 5개 생성 (탭하여 평가하기 UI)
     private func createReviewStarsButton() -> UIButton {
         let button = UIButton()
         let starImage = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -379,5 +387,10 @@ class RatingAndReviewView: UIView {
         button.imageView?.contentMode = .scaleAspectFit
         
         return button
+    }
+    
+    // MARK: - Actions
+    @objc private func seeAllReviewsButtonTapped() {
+        delegate?.seeAllReviewsButtonTapped()
     }
 }

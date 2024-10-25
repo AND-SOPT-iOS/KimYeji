@@ -12,10 +12,11 @@ protocol NewNewsViewDelegate: AnyObject {
 }
 
 class NewNewsView: UIView {
+    // MARK: - Properties
     weak var delegate: NewNewsViewDelegate?
-
+    
     // MARK: - Components
-    // MARK: 새로운 소식, 버전기록
+    
     private let newNewsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "새로운 소식"
@@ -63,10 +64,9 @@ class NewNewsView: UIView {
         return label
     }()
     
-    
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setStyle()
         setUI()
         setLayout()
     }
@@ -75,10 +75,7 @@ class NewNewsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setStyle() {
-        self.backgroundColor = .black
-    }
-    
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(newNewsTitleLabel, versionTextLabel, versionUpdateDateLabel, versionUpdateRecordButton, versionUpdateDescriptionLabel)
     }
@@ -111,6 +108,7 @@ class NewNewsView: UIView {
         }
     }
     
+    // MARK: - Actions
     @objc private func versionUpdateRecordButtonTapped() {
         delegate?.versionUpdateRecordButtonTapped()
     }

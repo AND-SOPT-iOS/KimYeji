@@ -9,7 +9,7 @@ import UIKit
 
 class PreviewImageView: UIView {
     // MARK: - Components
-    // MARK: 미리보기 이미지
+    
     private let previewImageLabel: UILabel = {
         let label = UILabel()
         label.text = "미리 보기"
@@ -48,9 +48,9 @@ class PreviewImageView: UIView {
         return label
     }()
     
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setStyle()
         setUI()
         setLayout()
     }
@@ -59,11 +59,7 @@ class PreviewImageView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setStyle(){
-        self.backgroundColor = .black
-    }
-    
-
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(previewImageLabel, previewImageView, deviceImageView, deviceLabel)
     }

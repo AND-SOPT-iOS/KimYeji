@@ -9,7 +9,7 @@ import UIKit
 
 class AppInfoSummaryView: UIView {
     // MARK: - Components
-    // MARK: 평가 개수, 앱 수상 내역, 연령 정보
+
     private let infoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -148,9 +148,9 @@ class AppInfoSummaryView: UIView {
         return label
     }()
     
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setStyle()
         setUI()
         setLayout()
     }
@@ -159,16 +159,13 @@ class AppInfoSummaryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setStyle(){
-        self.backgroundColor = .black
-    }
-    
+    // MARK: - UI, Layout
     private func setUI() {
         rateStackView.addArrangedSubviews(rateCountLabel, rateTextLabel, rateStarLabel)
         awardStackView.addArrangedSubviews(awardLabel, awardTitleLabel, awardCategoryLabel)
         ageStackView.addArrangedSubviews(ageTitleLabel, ageTextLabel, ageUnitLabel)
-        infoStackView.addArrangedSubviews(rateStackView, verticalLine1, awardStackView, verticalLine2, ageStackView)
         
+        infoStackView.addArrangedSubviews(rateStackView, verticalLine1, awardStackView, verticalLine2, ageStackView)
         addSubviews(infoStackView)
     }
     
