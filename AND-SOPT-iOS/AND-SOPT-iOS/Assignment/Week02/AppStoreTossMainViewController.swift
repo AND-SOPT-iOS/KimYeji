@@ -106,65 +106,64 @@ class AppStoreTossMainViewController: UIViewController, RatingAndReviewViewDeleg
             $0.width.equalTo(scrollView.snp.width)
         }
         
-        
         appInfoHeaderView.snp.makeConstraints{
             $0.top.equalTo(contentView.snp.top)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         separateLine1.snp.makeConstraints {
             $0.top.equalTo(appInfoHeaderView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         appInfoSummaryView.snp.makeConstraints {
             $0.top.equalTo(separateLine1.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         separateLine2.snp.makeConstraints {
             $0.top.equalTo(appInfoSummaryView.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         newNewsView.snp.makeConstraints {
             $0.top.equalTo(separateLine2.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         separateLine3.snp.makeConstraints {
             $0.top.equalTo(newNewsView.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         previewImageView.snp.makeConstraints {
             $0.top.equalTo(separateLine3.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         separateLine4.snp.makeConstraints{
             $0.top.equalTo(previewImageView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         appDescriptionView.snp.makeConstraints {
             $0.top.equalTo(separateLine4.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
         separateLine5.snp.makeConstraints{
             $0.top.equalTo(appDescriptionView.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(0.3)
         }
         
         ratingAndReviewView.snp.makeConstraints {
             $0.top.equalTo(separateLine5.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview()
         }
     }
@@ -178,7 +177,7 @@ class AppStoreTossMainViewController: UIViewController, RatingAndReviewViewDeleg
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
         self.navigationController?.navigationBar.barTintColor = .black
-        self.title = ""
+        self.title = "뒤로 가기"
         
         let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         self.navigationController?.navigationBar.backIndicatorImage = backImage

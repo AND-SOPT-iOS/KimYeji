@@ -257,8 +257,7 @@ class RatingAndReviewView: UIView {
     
     private func setLayout() {
         ratingAndReviewLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.top.leading.equalToSuperview()
         }
         
         seeAllReviewsButton.snp.makeConstraints {
@@ -290,7 +289,7 @@ class RatingAndReviewView: UIView {
         
         separateLine6.snp.makeConstraints {
             $0.top.equalTo(maxRatingLabel.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(0.4)
         }
         
@@ -311,7 +310,7 @@ class RatingAndReviewView: UIView {
             $0.top.equalTo(tapToRateLabel.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(200)
-            $0.leading.trailing.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
         }
         
         reviewTitleLabel.snp.makeConstraints {

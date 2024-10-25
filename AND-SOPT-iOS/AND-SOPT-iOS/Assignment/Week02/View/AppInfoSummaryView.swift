@@ -14,7 +14,7 @@ class AppInfoSummaryView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-        //        stackView.distribution = .fillEqually
+//                stackView.distribution = .fillEqually
         stackView.alignment = .fill
         
         return stackView
@@ -171,8 +171,19 @@ class AppInfoSummaryView: UIView {
     
     private func setLayout() {
         infoStackView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
+            $0.verticalEdges.horizontalEdges.equalToSuperview()
+        }
+        
+        rateStackView.snp.makeConstraints {
+            $0.width.equalTo(infoStackView.snp.width).multipliedBy(1.0 / 3.0)
+        }
+        
+        awardStackView.snp.makeConstraints {
+            $0.width.equalTo(infoStackView.snp.width).multipliedBy(1.0 / 3.0)
+        }
+        
+        ageStackView.snp.makeConstraints {
+            $0.width.equalTo(infoStackView.snp.width).multipliedBy(1.0 / 3.0)
         }
         
         verticalLine1.snp.makeConstraints {

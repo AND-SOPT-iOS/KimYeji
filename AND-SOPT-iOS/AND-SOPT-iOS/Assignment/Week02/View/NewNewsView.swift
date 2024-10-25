@@ -82,8 +82,7 @@ class NewNewsView: UIView {
     
     private func setLayout() {
         newNewsTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.top.leading.equalToSuperview()
         }
         
         versionUpdateRecordButton.snp.makeConstraints{
@@ -103,7 +102,7 @@ class NewNewsView: UIView {
         
         versionUpdateDescriptionLabel.snp.makeConstraints{
             $0.top.equalTo(versionTextLabel.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }

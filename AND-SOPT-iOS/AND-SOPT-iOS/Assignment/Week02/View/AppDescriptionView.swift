@@ -90,12 +90,12 @@ class AppDescriptionView: UIView {
     private func setLayout() {
         appInstallLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.leading.trailing.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
         }
 
         appInfoLabel.snp.makeConstraints {
             $0.top.equalTo(appInstallLabel.snp.bottom).offset(5)
-            $0.leading.trailing.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview()
         }
 
         appInfoMoreButton.snp.makeConstraints {

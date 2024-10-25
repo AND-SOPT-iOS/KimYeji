@@ -78,7 +78,7 @@ class AppInfoHeaderView: UIView {
     
     private func setLayout() {
         appImageImageView.snp.makeConstraints {
-            $0.top.leading.bottom.equalToSuperview()
+            $0.verticalEdges.leading.equalToSuperview()
             $0.size.equalTo(120)
         }
         

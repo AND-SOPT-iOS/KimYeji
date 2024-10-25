@@ -71,8 +71,7 @@ class PreviewImageView: UIView {
         
         previewImageView.snp.makeConstraints {
             $0.top.equalTo(previewImageLabel.snp.bottom).offset(15)
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(400)
+            $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(600)
         }
         
