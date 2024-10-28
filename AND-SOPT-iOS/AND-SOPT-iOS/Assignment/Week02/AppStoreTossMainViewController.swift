@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppStoreTossMainViewController: UIViewController, RatingAndReviewViewDelegate, NewNewsViewDelegate  {
+class AppStoreTossMainViewController: UIViewController {
     
     // MARK: - Properties
     private let navigationBar = UINavigationBar()
@@ -183,15 +183,19 @@ class AppStoreTossMainViewController: UIViewController, RatingAndReviewViewDeleg
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
     }
-    
-    // MARK: - Delegate 메소드
-    func versionUpdateRecordButtonTapped(){
-        let versionRecordViewController = VersionRecordViewController()
-        self.navigationController?.pushViewController(versionRecordViewController, animated: true)
-    }
-    
+}
+
+// MARK: Delegate extension
+extension AppStoreTossMainViewController: RatingAndReviewViewDelegate {
     func seeAllReviewsButtonTapped() {
         let allReviewsViewController = AllReviewsViewController()
         self.navigationController?.pushViewController(allReviewsViewController, animated: true)
+    }
+}
+
+extension AppStoreTossMainViewController: NewNewsViewDelegate {
+    func versionUpdateRecordButtonTapped() {
+        let versionRecordViewController = VersionRecordViewController()
+        self.navigationController?.pushViewController(versionRecordViewController, animated: true)
     }
 }
