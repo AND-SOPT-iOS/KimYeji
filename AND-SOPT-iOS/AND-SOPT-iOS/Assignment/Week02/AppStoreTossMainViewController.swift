@@ -19,53 +19,27 @@ class AppStoreTossMainViewController: UIViewController {
     
     // 첫번째 섹션  - 앱 정보 헤더(앱 이름, 아이콘, 열기 버튼, 공유 버튼)
     private let appInfoHeaderView = AppInfoHeaderView()
-    
-    private let separateLine1: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        
-        return view
-    }()
+    private lazy var separateLine1 = createSeparateLine()
     
     // 두번째 섹션 - 앱 정보 요약(평가 개수, 수상, 연령 정보)
     private let appInfoSummaryView = AppInfoSummaryView()
+    private lazy var separateLine2 = createSeparateLine()
     
-    private let separateLine2: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        
-        return view
-    }()
     
     // 세번째 섹션 - 새로운 소식(버전 정보)
     private let newNewsView = NewNewsView()
+    private lazy var separateLine3 = createSeparateLine()
     
-    private let separateLine3: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        
-        return view
-    }()
     
     // 네번째 섹션 - 미리 보기 이미지
     private let previewImageView = PreviewImageView()
+    private lazy var separateLine4 = createSeparateLine()
     
-    private let separateLine4: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        
-        return view
-    }()
     
     // 다섯번째 섹션 - 앱 상세정보(개발자 정보)
     private let appDescriptionView = AppDescriptionView()
+    private lazy var separateLine5 = createSeparateLine()
     
-    private let separateLine5: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        
-        return view
-    }()
     
     // 여섯번째 섹션 - 평가 및 리뷰
     private let ratingAndReviewView = RatingAndReviewView()
@@ -166,6 +140,12 @@ class AppStoreTossMainViewController: UIViewController {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    private func createSeparateLine() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
     }
     
     private func setDelegates() {
