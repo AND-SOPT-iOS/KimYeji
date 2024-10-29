@@ -30,6 +30,7 @@
 		B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D02CC9E2F400E025AF /* PreviewImageView.swift */; };
 		B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D22CC9E30E00E025AF /* AppDescriptionView.swift */; };
 		B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */; };
+		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		B86B14D02CC9E2F400E025AF /* PreviewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
 		B86B14D22CC9E30E00E025AF /* AppDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionView.swift; sourceTree = "<group>"; };
 		B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAndReviewView.swift; sourceTree = "<group>"; };
+		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		B80ADC6B2CC240CF005AC520 /* Week02 */ = {
 			isa = PBXGroup;
 			children = (
+				B8EA8DDA2CD0A28200E8AAD3 /* Text */,
 				B86B14C92CC9DD9E00E025AF /* View */,
 				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
 				B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */,
@@ -230,6 +233,14 @@
 				B86B14D42CC9E36F00E025AF /* RatingAndReviewView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +390,7 @@
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
 				B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */,
+				B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */,
 				B86B14CD2CC9E29200E025AF /* AppInfoSummaryView.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
