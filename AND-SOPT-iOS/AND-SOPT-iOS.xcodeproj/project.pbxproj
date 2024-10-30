@@ -42,6 +42,9 @@
 		B888FFC52CD22BC4000A9D75 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B888FFC42CD22BC4000A9D75 /* Then */; };
 		B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFC92CD24F10000A9D75 /* PreviewImage.swift */; };
 		B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */; };
+		B888FFD02CD25D53000A9D75 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFCF2CD25D53000A9D75 /* Review.swift */; };
+		B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */; };
+		B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD32CD262AC000A9D75 /* ReviewCell.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +103,9 @@
 		B888FFBC2CD2085B000A9D75 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		B888FFC92CD24F10000A9D75 /* PreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImage.swift; sourceTree = "<group>"; };
 		B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageCell.swift; sourceTree = "<group>"; };
+		B888FFCF2CD25D53000A9D75 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperResponse.swift; sourceTree = "<group>"; };
+		B888FFD32CD262AC000A9D75 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +304,7 @@
 			children = (
 				B888FFCE2CD25AD4000A9D75 /* Model */,
 				B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */,
+				B888FFD32CD262AC000A9D75 /* ReviewCell.swift */,
 			);
 			path = Week03;
 			sourceTree = "<group>";
@@ -306,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				B888FFC92CD24F10000A9D75 /* PreviewImage.swift */,
+				B888FFCF2CD25D53000A9D75 /* Review.swift */,
+				B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +466,8 @@
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
 				B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */,
 				B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */,
+				B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */,
+				B888FFD02CD25D53000A9D75 /* Review.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B888FFAF2CD2083B000A9D75 /* CartCellTableViewController.swift in Sources */,
@@ -479,6 +490,7 @@
 				B888FFBF2CD2085B000A9D75 /* App.swift in Sources */,
 				B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */,
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
+				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);

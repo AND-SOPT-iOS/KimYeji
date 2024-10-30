@@ -8,21 +8,26 @@
 import UIKit
 
 class PreviewImageCell: UICollectionViewCell {
+    // MARK: - Properties
     static let identifier = "PreviewImageCell"
+    
+    // MARK: - Components
     
     private lazy var previewImageView = UIImageView()
     
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         setStyle()
         setUI()
         setLayout()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Style, UI, Layout
     private func setStyle() {
         previewImageView.do {
             $0.contentMode = .scaleAspectFill
@@ -32,7 +37,7 @@ class PreviewImageCell: UICollectionViewCell {
     }
     
     private func setUI() {
-        addSubview(previewImageView)
+        addSubviews(previewImageView)
     }
     
     private func setLayout() {
@@ -41,6 +46,7 @@ class PreviewImageCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Bind
     func bind(_ previewImage: PreviewImage) {
         previewImageView.image = previewImage.image
     }

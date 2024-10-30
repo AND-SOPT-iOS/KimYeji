@@ -93,90 +93,10 @@ class RatingAndReviewView: UIView {
     }();
     
     // 리뷰 내용
-    private let reviewBackgroundGrayView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiarySystemBackground
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
-        view.layer.borderColor = UIColor.systemGray4.cgColor
-        view.layer.borderWidth = 0.5
-        
-        return view
-    }()
-    
-    private let reviewTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "김예지(리뷰제목)"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.textColor = .label
-        
-        return label
-    }()
-    
-    private let reviewDateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10월 21일"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .systemGray
-        
-        return label
-    }()
-    
-    private let userNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "• ENFJ"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .systemGray
-        
-        return label
-    }()
-    
-    private let reviewStarScoreLabel: UILabel = {
-        let label = UILabel()
-        label.text = "★★★★★"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .orange
-        
-        return label
-    }()
-    
-    private let reviewContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "최근 업데이트가 토스 만의 ux 색깔 개성 자체를 잃어버린 것 같습니다. 메인 화면 볼때마다 되게 부드럽고 한눈에 보기 편했는데, 이번 업데이트로 인해 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .systemGray
-        label.numberOfLines = 3
-        
-        return label
-    }()
-    
-    private let developerResponseTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "개발자 답변"
-        label.font = .systemFont(ofSize: 15, weight: .bold)
-        label.textColor = .label
-        
-        return label
-    }()
-    
-    private let developerResponseContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서 너무나 감사합니다. 토스 화면 UI를 사용자의 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .systemGray
-        label.numberOfLines = 2
-        
-        return label
-    }()
-    
-    private let developerResponseDateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10월 22일"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .systemGray
-        
-        return label
-    }()
+    private lazy var reviewCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
     // 리뷰작성, 앱 지원
     private let reviewWriteButton: UIButton = {
@@ -209,11 +129,15 @@ class RatingAndReviewView: UIView {
         return button
     }()
     
+    // MARK: - Data
+    private let reviews = Review.sampleReviews
+    
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -223,11 +147,17 @@ class RatingAndReviewView: UIView {
     // MARK: - UI, Layout
     private func setUI() {
         addSubviews(
-            ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, reviewStarLabel, mostHelpfulLabel,
-            reviewCountsLabel, tapToRateLabel, rateStarStackView, reviewBackgroundGrayView,
-            reviewTitleLabel, reviewDateLabel, reviewStarScoreLabel, userNameLabel, reviewContentLabel,
-            developerResponseTextLabel, developerResponseDateLabel,
-            developerResponseContentLabel, reviewWriteButton, appSupportButton
+            ratingAndReviewLabel,
+            seeAllReviewsButton,
+            ratingScoreLabel,
+            reviewStarLabel,
+            mostHelpfulLabel,
+            reviewCountsLabel,
+            tapToRateLabel,
+            rateStarStackView,
+            reviewCollectionView,
+            reviewWriteButton,
+            appSupportButton
         )
         
         for _ in 1...5 {
@@ -260,63 +190,20 @@ class RatingAndReviewView: UIView {
             $0.top.equalTo(reviewStarLabel.snp.bottom).offset(5)
             $0.trailing.equalToSuperview()
         }
-    
+        
         mostHelpfulLabel.snp.makeConstraints {
             $0.top.equalTo(ratingScoreLabel.snp.bottom).offset(25)
             $0.leading.equalToSuperview()
         }
         
-        reviewBackgroundGrayView.snp.makeConstraints {
-            $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(10)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(200)
+        reviewCollectionView.snp.makeConstraints {
+            $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
-        }
-        
-        reviewTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewBackgroundGrayView).offset(15)
-            $0.leading.equalTo(reviewBackgroundGrayView).offset(15)
-        }
-        
-        reviewStarScoreLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(5)
-            $0.leading.equalTo(reviewTitleLabel.snp.leading)
-        }
-        
-        reviewDateLabel.snp.makeConstraints {
-            $0.leading.equalTo(reviewStarScoreLabel.snp.trailing).offset(5)
-            $0.centerY.equalTo(reviewStarScoreLabel.snp.centerY)
-        }
-        
-        userNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(reviewDateLabel.snp.trailing).offset(5)
-            $0.centerY.equalTo(reviewDateLabel.snp.centerY)
-        }
-        
-        reviewContentLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewStarScoreLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(reviewStarScoreLabel.snp.leading)
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
-        }
-        
-        developerResponseTextLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewContentLabel.snp.bottom).offset(13)
-            $0.leading.equalTo(reviewContentLabel.snp.leading)
-        }
-        
-        developerResponseDateLabel.snp.makeConstraints {
-            $0.centerY.equalTo(developerResponseTextLabel.snp.centerY)
-            $0.leading.equalTo(developerResponseTextLabel.snp.trailing).offset(8)
-        }
-        
-        developerResponseContentLabel.snp.makeConstraints {
-            $0.top.equalTo(developerResponseTextLabel.snp.bottom).offset(5)
-            $0.leading.equalTo(developerResponseTextLabel.snp.leading)
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+            $0.height.equalTo(200)
         }
         
         tapToRateLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewBackgroundGrayView.snp.bottom).offset(20)
+            $0.top.equalTo(reviewCollectionView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
         
@@ -333,13 +220,30 @@ class RatingAndReviewView: UIView {
             $0.leading.equalToSuperview()
             $0.trailing.equalTo(appSupportButton.snp.leading).offset(-10)
         }
-
+        
         appSupportButton.snp.makeConstraints {
             $0.top.equalTo(reviewWriteButton.snp.top)
             $0.trailing.equalToSuperview()
             $0.height.equalTo(50)
             $0.width.equalTo(reviewWriteButton)
             $0.bottom.equalToSuperview().inset(10)
+        }
+    }
+    
+    private func setCollectionView(){
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 60, height: 200)
+
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 10
+        
+        reviewCollectionView.do{
+            $0.setCollectionViewLayout(flowLayout, animated: true)
+            $0.register(ReviewCell.self,
+                        forCellWithReuseIdentifier: ReviewCell.identifier)
+            $0.delegate = self
+            $0.dataSource = self
+            $0.showsHorizontalScrollIndicator = false
         }
     }
     
@@ -359,3 +263,22 @@ class RatingAndReviewView: UIView {
         delegate?.seeAllReviewsButtonTapped()
     }
 }
+
+// MARK: - DataSource, Delegate
+extension RatingAndReviewView: UICollectionViewDelegate { }
+
+extension RatingAndReviewView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return reviews.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell else {
+            return UICollectionViewCell()
+        }
+        
+        item.bind(reviews[indexPath.item])
+        return item
+    }
+}
+

@@ -98,6 +98,7 @@ class PreviewImageView: UIView {
                         forCellWithReuseIdentifier: PreviewImageCell.identifier)
             $0.delegate = self
             $0.dataSource = self
+            $0.showsHorizontalScrollIndicator = false
         }
     }
 }
