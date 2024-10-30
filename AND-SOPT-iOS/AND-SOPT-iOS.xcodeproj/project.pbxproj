@@ -40,6 +40,8 @@
 		B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBA2CD2085B000A9D75 /* ChartCell.swift */; };
 		B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBC2CD2085B000A9D75 /* DownloadState.swift */; };
 		B888FFC52CD22BC4000A9D75 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B888FFC42CD22BC4000A9D75 /* Then */; };
+		B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFC92CD24F10000A9D75 /* PreviewImage.swift */; };
+		B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		B888FFBA2CD2085B000A9D75 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		B888FFBB2CD2085B000A9D75 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B888FFBC2CD2085B000A9D75 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
+		B888FFC92CD24F10000A9D75 /* PreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImage.swift; sourceTree = "<group>"; };
+		B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageCell.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,7 +264,7 @@
 		B888FFAD2CD20821000A9D75 /* Week03 */ = {
 			isa = PBXGroup;
 			children = (
-				B888FFBD2CD2085B000A9D75 /* TabelView */,
+				B888FFBD2CD2085B000A9D75 /* TableView */,
 				B888FFB52CD2084D000A9D75 /* CollectionView */,
 				B888FFAE2CD2083B000A9D75 /* CartCellTableViewController.swift */,
 				B888FFB02CD20843000A9D75 /* TableViewSeminarController.swift */,
@@ -278,7 +282,7 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		B888FFBD2CD2085B000A9D75 /* TabelView */ = {
+		B888FFBD2CD2085B000A9D75 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
 				B888FFB92CD2085B000A9D75 /* App.swift */,
@@ -286,14 +290,24 @@
 				B888FFBB2CD2085B000A9D75 /* ChartViewController.swift */,
 				B888FFBC2CD2085B000A9D75 /* DownloadState.swift */,
 			);
-			path = TabelView;
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		B888FFC22CD20877000A9D75 /* Week03 */ = {
 			isa = PBXGroup;
 			children = (
+				B888FFCE2CD25AD4000A9D75 /* Model */,
+				B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */,
 			);
 			path = Week03;
+			sourceTree = "<group>";
+		};
+		B888FFCE2CD25AD4000A9D75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B888FFC92CD24F10000A9D75 /* PreviewImage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -441,6 +455,7 @@
 				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
+				B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */,
 				B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
@@ -460,6 +475,7 @@
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
 				B888FFBE2CD2085B000A9D75 /* ChartViewController.swift in Sources */,
+				B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */,
 				B888FFBF2CD2085B000A9D75 /* App.swift in Sources */,
 				B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */,
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
