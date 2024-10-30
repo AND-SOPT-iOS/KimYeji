@@ -53,7 +53,7 @@ class AppDescriptionView: UIView {
         let button = UIButton()
         let shareIcon = UIImage(systemName: "chevron.forward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
         button.setImage(shareIcon, for: .normal)
-        button.tintColor = .lightGray
+        button.tintColor = .systemGray
         button.imageView?.contentMode = .scaleAspectFit
         
         return button
@@ -63,7 +63,7 @@ class AppDescriptionView: UIView {
         let label = UILabel()
         label.text = "개발자"
         label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.textColor = .lightGray
+        label.textColor = .systemGray
         
         return label
     }()

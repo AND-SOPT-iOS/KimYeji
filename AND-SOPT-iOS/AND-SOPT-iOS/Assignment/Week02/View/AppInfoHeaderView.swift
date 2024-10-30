@@ -15,8 +15,10 @@ class AppInfoHeaderView: UIView {
         image.image = UIImage(named: "toss.png")
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 20
+        image.layer.borderWidth = 0.5
+        image.layer.borderColor = UIColor.systemGray4.cgColor
         image.layer.masksToBounds = true
-        
+
         return image
     }()
     
@@ -41,7 +43,7 @@ class AppInfoHeaderView: UIView {
     private let openButton: UIButton = {
         let button = UIButton()
         button.setTitle("열기", for: .normal)
-        button.setTitleColor(.systemBackground, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 17

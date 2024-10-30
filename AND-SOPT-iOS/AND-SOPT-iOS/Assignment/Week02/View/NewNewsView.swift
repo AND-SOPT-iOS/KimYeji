@@ -47,9 +47,9 @@ class NewNewsView: UIView {
     
     private let versionUpdateRecordButton: UIButton = {
         let button = UIButton()
-        button.setTitle("버전 기록", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        button.setTitleColor(.systemBlue, for: .normal)
+        let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold))
+        button.setImage(icon, for: .normal)
+        button.tintColor = .systemGray
         button.addTarget(nil, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
         
         return button
@@ -88,7 +88,7 @@ class NewNewsView: UIView {
         
         versionUpdateRecordButton.snp.makeConstraints{
             $0.centerY.equalTo(newNewsTitleLabel.snp.centerY)
-            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(newNewsTitleLabel.snp.trailing).offset(8)
         }
         
         versionTextLabel.snp.makeConstraints{

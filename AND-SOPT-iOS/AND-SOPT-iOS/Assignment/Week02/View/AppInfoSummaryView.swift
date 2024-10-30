@@ -59,7 +59,7 @@ class AppInfoSummaryView: UIView {
     
     private let verticalLine1: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemGray2
         
         return view
     }()
@@ -106,7 +106,7 @@ class AppInfoSummaryView: UIView {
     
     private let verticalLine2: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemGray2
         
         return view
     }()

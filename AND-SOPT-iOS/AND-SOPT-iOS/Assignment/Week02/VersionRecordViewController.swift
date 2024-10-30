@@ -13,7 +13,7 @@ class VersionRecordViewController: UIViewController {
         let label = UILabel()
         label.text = "버전 기록 페이지"
         label.font = .systemFont(ofSize: 30, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -26,7 +26,7 @@ class VersionRecordViewController: UIViewController {
     }
     
     private func setStyle() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .systemBackground
     }
     
     private func setUI(){

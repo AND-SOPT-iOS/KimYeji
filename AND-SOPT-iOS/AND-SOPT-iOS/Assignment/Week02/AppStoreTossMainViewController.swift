@@ -144,7 +144,7 @@ class AppStoreTossMainViewController: UIViewController {
     
     private func createSeparateLine() -> UIView {
         let view = UIView()
-        view.backgroundColor = .separator
+        view.backgroundColor = .systemGray2
         return view
     }
     

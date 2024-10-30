@@ -34,7 +34,7 @@ class PreviewImageView: UIView {
         let deviceIcon = UIImage(systemName: "iphone", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
         imageView.image = deviceIcon
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .lightGray
+        imageView.tintColor = .systemGray
         
         return imageView
     }()
@@ -43,7 +43,7 @@ class PreviewImageView: UIView {
         let label = UILabel()
         label.text = "iPhone"
         label.font = .systemFont(ofSize: 12, weight: .bold)
-        label.textColor = .lightGray
+        label.textColor = .systemGray
         
         return label
     }()

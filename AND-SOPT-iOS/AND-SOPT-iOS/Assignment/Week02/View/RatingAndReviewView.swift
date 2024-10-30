@@ -16,6 +16,7 @@ class RatingAndReviewView: UIView {
     weak var delegate: RatingAndReviewViewDelegate?
     
     // MARK: - Components
+    
     private let ratingAndReviewLabel: UILabel = {
         let label = UILabel()
         label.text = "평가 및 리뷰"
@@ -27,9 +28,9 @@ class RatingAndReviewView: UIView {
     
     private let seeAllReviewsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("모두 보기", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold))
+        button.setImage(icon, for: .normal)
+        button.tintColor = .systemGray
         button.addTarget(nil, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
         
         return button
@@ -38,50 +39,44 @@ class RatingAndReviewView: UIView {
     private let ratingScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "4.4"
-        label.font = .systemFont(ofSize: 55, weight: .black)
+        label.font = .systemFont(ofSize: 60, weight: .black)
         label.textColor = .label
         
         return label
     }()
     
-    private let maxRatingLabel: UILabel = {
+    private let reviewStarLabel : UILabel = {
         let label = UILabel()
-        label.text = "5점 만점"
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .lightGray
+        label.text = "★ ★ ★ ★ ☆"
+        label.font = .systemFont(ofSize: 23, weight: .semibold)
+        label.textColor = .label
         
         return label
-    }()
-    
-    private let reviewStarImage: UIImageView = {
-        let starImage = UIImage(named: "star.png")
-        let imageView = UIImageView(image: starImage)
-        imageView.contentMode = .scaleAspectFit
-        
-        return imageView
     }()
     
     private let reviewCountsLabel: UILabel = {
         let label = UILabel()
         label.text = "8.4만개의 평가"
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.textColor = .systemGray
         
         return label
     }()
     
-    private let separateLine6: UIView = {
-        let view = UIView()
-        view.backgroundColor = .separator
+    private let mostHelpfulLabel: UILabel = {
+        let label = UILabel()
+        label.text = "가장 도움이 되는 리뷰"
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .label
         
-        return view
+        return label
     }()
     
     // 리뷰
     private let tapToRateLabel: UILabel = {
         let label = UILabel()
-        label.text = "탭하여 평가하기 : "
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.text = "탭하여 평가하기"
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .label
         
         return label
@@ -104,7 +99,7 @@ class RatingAndReviewView: UIView {
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         view.layer.borderColor = UIColor.systemGray4.cgColor
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 0.5
         
         return view
     }()
@@ -122,16 +117,16 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "10월 21일"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .label
+        label.textColor = .systemGray
         
         return label
     }()
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "ENFJ"
+        label.text = "• ENFJ"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .lightGray
+        label.textColor = .systemGray
         
         return label
     }()
@@ -149,7 +144,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "최근 업데이트가 토스 만의 ux 색깔 개성 자체를 잃어버린 것 같습니다. 메인 화면 볼때마다 되게 부드럽고 한눈에 보기 편했는데, 이번 업데이트로 인해 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .label
+        label.textColor = .systemGray
         label.numberOfLines = 3
         
         return label
@@ -168,7 +163,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서 너무나 감사합니다. 토스 화면 UI를 사용자의 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .darkGray
+        label.textColor = .systemGray
         label.numberOfLines = 2
         
         return label
@@ -178,7 +173,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "10월 22일"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .lightGray
+        label.textColor = .systemGray
         
         return label
     }()
@@ -191,8 +186,10 @@ class RatingAndReviewView: UIView {
         config.title = "리뷰 작성"
         config.baseForegroundColor = .systemBlue
         config.imagePadding = 5
+        config.background.backgroundColor = .tertiarySystemGroupedBackground
+        config.background.cornerRadius = 10
         button.configuration = config
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         
         return button
     }()
@@ -204,8 +201,10 @@ class RatingAndReviewView: UIView {
         config.title = "앱 지원"
         config.baseForegroundColor = .systemBlue
         config.imagePadding = 5
+        config.background.backgroundColor = .tertiarySystemGroupedBackground
+        config.background.cornerRadius = 10
         button.configuration = config
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         
         return button
     }()
@@ -224,8 +223,8 @@ class RatingAndReviewView: UIView {
     // MARK: - UI, Layout
     private func setUI() {
         addSubviews(
-            ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, reviewStarImage, maxRatingLabel,
-            reviewCountsLabel, separateLine6, tapToRateLabel, rateStarStackView, reviewBackgroundGrayView,
+            ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, reviewStarLabel, mostHelpfulLabel,
+            reviewCountsLabel, tapToRateLabel, rateStarStackView, reviewBackgroundGrayView,
             reviewTitleLabel, reviewDateLabel, reviewStarScoreLabel, userNameLabel, reviewContentLabel,
             developerResponseTextLabel, developerResponseDateLabel,
             developerResponseContentLabel, reviewWriteButton, appSupportButton
@@ -244,7 +243,7 @@ class RatingAndReviewView: UIView {
         
         seeAllReviewsButton.snp.makeConstraints {
             $0.centerY.equalTo(ratingAndReviewLabel.snp.centerY)
-            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(ratingAndReviewLabel.snp.trailing).offset(8)
         }
         
         ratingScoreLabel.snp.makeConstraints {
@@ -252,44 +251,23 @@ class RatingAndReviewView: UIView {
             $0.leading.equalToSuperview()
         }
         
-        maxRatingLabel.snp.makeConstraints {
-            $0.top.equalTo(ratingScoreLabel.snp.bottom)
-            $0.centerX.equalTo(ratingScoreLabel.snp.centerX)
-        }
-        
-        reviewStarImage.snp.makeConstraints {
-            $0.centerY.equalTo(ratingScoreLabel.snp.centerY)
+        reviewStarLabel.snp.makeConstraints {
+            $0.top.equalTo(seeAllReviewsButton.snp.bottom).offset(5)
             $0.trailing.equalToSuperview()
-            $0.width.equalTo(200)
-            $0.height.equalTo(50)
         }
         
         reviewCountsLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewStarImage.snp.bottom).offset(5)
+            $0.top.equalTo(reviewStarLabel.snp.bottom).offset(5)
             $0.trailing.equalToSuperview()
         }
-        
-        separateLine6.snp.makeConstraints {
-            $0.top.equalTo(maxRatingLabel.snp.bottom).offset(10)
-            $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(0.4)
-        }
-        
-        tapToRateLabel.snp.makeConstraints {
-            $0.top.equalTo(separateLine6.snp.bottom).offset(20)
+    
+        mostHelpfulLabel.snp.makeConstraints {
+            $0.top.equalTo(ratingScoreLabel.snp.bottom).offset(25)
             $0.leading.equalToSuperview()
         }
         
-        rateStarStackView.snp.makeConstraints {
-            $0.centerY.equalTo(tapToRateLabel.snp.centerY)
-            $0.leading.equalTo(tapToRateLabel.snp.trailing).offset(10)
-            $0.trailing.lessThanOrEqualToSuperview().inset(20)
-            $0.width.equalTo(200)
-            $0.height.equalTo(40)
-        }
-        
         reviewBackgroundGrayView.snp.makeConstraints {
-            $0.top.equalTo(tapToRateLabel.snp.bottom).offset(20)
+            $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(200)
             $0.horizontalEdges.equalToSuperview()
@@ -300,19 +278,19 @@ class RatingAndReviewView: UIView {
             $0.leading.equalTo(reviewBackgroundGrayView).offset(15)
         }
         
-        reviewDateLabel.snp.makeConstraints {
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
-            $0.centerY.equalTo(reviewTitleLabel.snp.centerY)
-        }
-        
         reviewStarScoreLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(3)
+            $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(5)
             $0.leading.equalTo(reviewTitleLabel.snp.leading)
         }
         
-        userNameLabel.snp.makeConstraints {
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
+        reviewDateLabel.snp.makeConstraints {
+            $0.leading.equalTo(reviewStarScoreLabel.snp.trailing).offset(5)
             $0.centerY.equalTo(reviewStarScoreLabel.snp.centerY)
+        }
+        
+        userNameLabel.snp.makeConstraints {
+            $0.leading.equalTo(reviewDateLabel.snp.trailing).offset(5)
+            $0.centerY.equalTo(reviewDateLabel.snp.centerY)
         }
         
         reviewContentLabel.snp.makeConstraints {
@@ -327,8 +305,8 @@ class RatingAndReviewView: UIView {
         }
         
         developerResponseDateLabel.snp.makeConstraints {
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
             $0.centerY.equalTo(developerResponseTextLabel.snp.centerY)
+            $0.leading.equalTo(developerResponseTextLabel.snp.trailing).offset(8)
         }
         
         developerResponseContentLabel.snp.makeConstraints {
@@ -337,15 +315,31 @@ class RatingAndReviewView: UIView {
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
         
-        reviewWriteButton.snp.makeConstraints {
+        tapToRateLabel.snp.makeConstraints {
             $0.top.equalTo(reviewBackgroundGrayView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().inset(-10)
+            $0.centerX.equalToSuperview()
         }
         
+        rateStarStackView.snp.makeConstraints {
+            $0.top.equalTo(tapToRateLabel.snp.bottom)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(40)
+        }
+        
+        reviewWriteButton.snp.makeConstraints {
+            $0.top.equalTo(rateStarStackView.snp.bottom).offset(20)
+            $0.height.equalTo(50)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalTo(appSupportButton.snp.leading).offset(-10)
+        }
+
         appSupportButton.snp.makeConstraints {
-            $0.centerY.equalTo(reviewWriteButton.snp.centerY)
-            $0.trailing.equalToSuperview().offset(10)
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(reviewWriteButton.snp.top)
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+            $0.width.equalTo(reviewWriteButton)
+            $0.bottom.equalToSuperview().inset(10)
         }
     }
     

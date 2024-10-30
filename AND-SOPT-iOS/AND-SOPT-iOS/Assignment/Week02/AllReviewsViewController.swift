@@ -13,7 +13,7 @@ class AllReviewsViewController: UIViewController {
         let label = UILabel()
         label.text = "모든 리뷰 페이지"
         label.font = .systemFont(ofSize: 30, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -26,7 +26,7 @@ class AllReviewsViewController: UIViewController {
     }
     
     private func setStyle() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .systemBackground
     }
     
     private func setUI(){
