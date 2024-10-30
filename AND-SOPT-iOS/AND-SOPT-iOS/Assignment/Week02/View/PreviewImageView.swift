@@ -21,7 +21,7 @@ class PreviewImageView: UIView {
     
     private let previewImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "preview.png")
+        imageView.image = UIImage(named: "tossPreview1.png")
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
