@@ -20,7 +20,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "평가 및 리뷰"
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -39,7 +39,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "4.4"
         label.font = .systemFont(ofSize: 55, weight: .black)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -72,7 +72,7 @@ class RatingAndReviewView: UIView {
     
     private let separateLine6: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .separator
         
         return view
     }()
@@ -82,7 +82,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "탭하여 평가하기 : "
         label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -100,9 +100,11 @@ class RatingAndReviewView: UIView {
     // 리뷰 내용
     private let reviewBackgroundGrayView: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .tertiarySystemBackground
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
+        view.layer.borderColor = UIColor.systemGray4.cgColor
+        view.layer.borderWidth = 1
         
         return view
     }()
@@ -111,7 +113,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "김예지(리뷰제목)"
         label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -120,7 +122,7 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "10월 21일"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .lightGray
+        label.textColor = .label
         
         return label
     }()
@@ -147,27 +149,17 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "최근 업데이트가 토스 만의 ux 색깔 개성 자체를 잃어버린 것 같습니다. 메인 화면 볼때마다 되게 부드럽고 한눈에 보기 편했는데, 이번 업데이트로 인해 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .white
+        label.textColor = .label
         label.numberOfLines = 3
         
         return label
-    }()
-    
-    private let readMoreReviewContentButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("더 보기", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-        button.backgroundColor = .darkGray
-        
-        return button
     }()
     
     private let developerResponseTextLabel: UILabel = {
         let label = UILabel()
         label.text = "개발자 답변"
         label.font = .systemFont(ofSize: 15, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -176,20 +168,10 @@ class RatingAndReviewView: UIView {
         let label = UILabel()
         label.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서 너무나 감사합니다. 토스 화면 UI를 사용자의 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .white
+        label.textColor = .darkGray
         label.numberOfLines = 2
         
         return label
-    }()
-    
-    private let readMoredeveloperResponseButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("더 보기", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-        button.backgroundColor = .darkGray
-        
-        return button
     }()
     
     private let developerResponseDateLabel: UILabel = {
@@ -245,8 +227,8 @@ class RatingAndReviewView: UIView {
             ratingAndReviewLabel, seeAllReviewsButton, ratingScoreLabel, reviewStarImage, maxRatingLabel,
             reviewCountsLabel, separateLine6, tapToRateLabel, rateStarStackView, reviewBackgroundGrayView,
             reviewTitleLabel, reviewDateLabel, reviewStarScoreLabel, userNameLabel, reviewContentLabel,
-            readMoreReviewContentButton, developerResponseTextLabel, developerResponseDateLabel,
-            developerResponseContentLabel, readMoredeveloperResponseButton, reviewWriteButton, appSupportButton
+            developerResponseTextLabel, developerResponseDateLabel,
+            developerResponseContentLabel, reviewWriteButton, appSupportButton
         )
         
         for _ in 1...5 {
@@ -339,11 +321,6 @@ class RatingAndReviewView: UIView {
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
         
-        readMoreReviewContentButton.snp.makeConstraints {
-            $0.centerY.equalTo(reviewContentLabel.snp.centerY).offset(17)
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
-        }
-        
         developerResponseTextLabel.snp.makeConstraints {
             $0.top.equalTo(reviewContentLabel.snp.bottom).offset(13)
             $0.leading.equalTo(reviewContentLabel.snp.leading)
@@ -357,11 +334,6 @@ class RatingAndReviewView: UIView {
         developerResponseContentLabel.snp.makeConstraints {
             $0.top.equalTo(developerResponseTextLabel.snp.bottom).offset(5)
             $0.leading.equalTo(developerResponseTextLabel.snp.leading)
-            $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
-        }
-        
-        readMoredeveloperResponseButton.snp.makeConstraints {
-            $0.centerY.equalTo(developerResponseContentLabel.snp.centerY).offset(7)
             $0.trailing.equalTo(reviewBackgroundGrayView).inset(15)
         }
         

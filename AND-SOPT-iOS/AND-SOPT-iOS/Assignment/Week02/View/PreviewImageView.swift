@@ -14,7 +14,7 @@ class PreviewImageView: UIView {
         let label = UILabel()
         label.text = "미리 보기"
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -23,7 +23,7 @@ class PreviewImageView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "tossPreview1.png")
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
         return imageView

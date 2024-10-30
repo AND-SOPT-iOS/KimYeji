@@ -55,7 +55,7 @@ class AppStoreTossMainViewController: UIViewController {
     }
     
     private func setStyle() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .systemBackground
     }
     
     private func setUI(){
@@ -144,7 +144,7 @@ class AppStoreTossMainViewController: UIViewController {
     
     private func createSeparateLine() -> UIView {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .separator
         return view
     }
     
@@ -156,8 +156,8 @@ class AppStoreTossMainViewController: UIViewController {
     // MARK: - 네비게이션 스타일 설정
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
-        self.navigationController?.navigationBar.barTintColor = .black
-        self.title = "뒤로 가기"
+        self.navigationController?.navigationBar.barTintColor = .systemBackground
+        self.title = ""
         
         let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         self.navigationController?.navigationBar.backIndicatorImage = backImage

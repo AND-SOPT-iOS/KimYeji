@@ -24,7 +24,7 @@ class AppInfoHeaderView: UIView {
         let label = UILabel()
         label.text = "토스"
         label.font = .systemFont(ofSize: 23 , weight: .bold)
-        label.textColor = .white
+        label.textColor = .label
         
         return label
     }()
@@ -41,7 +41,7 @@ class AppInfoHeaderView: UIView {
     private let openButton: UIButton = {
         let button = UIButton()
         button.setTitle("열기", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.systemBackground, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 17

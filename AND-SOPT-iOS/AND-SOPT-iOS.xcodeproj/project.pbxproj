@@ -39,6 +39,7 @@
 		B888FFBF2CD2085B000A9D75 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFB92CD2085B000A9D75 /* App.swift */; };
 		B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBA2CD2085B000A9D75 /* ChartCell.swift */; };
 		B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBC2CD2085B000A9D75 /* DownloadState.swift */; };
+		B888FFC52CD22BC4000A9D75 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B888FFC42CD22BC4000A9D75 /* Then */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B80ADC762CC25A2C005AC520 /* SnapKit in Frameworks */,
+				B888FFC52CD22BC4000A9D75 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +394,7 @@
 			mainGroup = B84C07E42CB7A0F500AFE373;
 			packageReferences = (
 				B80ADC742CC25A2C005AC520 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B888FFC32CD22BC4000A9D75 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = B84C07EE2CB7A0F500AFE373 /* Products */;
 			projectDirPath = "";
@@ -804,6 +807,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		B888FFC32CD22BC4000A9D75 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -811,6 +822,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B80ADC742CC25A2C005AC520 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		B888FFC42CD22BC4000A9D75 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B888FFC32CD22BC4000A9D75 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
