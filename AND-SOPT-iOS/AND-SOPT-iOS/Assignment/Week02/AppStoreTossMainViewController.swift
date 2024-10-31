@@ -47,7 +47,6 @@ class AppStoreTossMainViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationStyle()
         setStyle()
         setUI()
         setLayout()
@@ -151,17 +150,6 @@ class AppStoreTossMainViewController: UIViewController {
     private func setDelegates() {
         ratingAndReviewView.delegate = self
         newNewsView.delegate = self
-    }
-    
-    // MARK: - 네비게이션 스타일 설정
-    private func setNavigationStyle() {
-        self.navigationController?.navigationBar.tintColor = .systemBlue
-        self.navigationController?.navigationBar.barTintColor = .systemBackground
-        self.title = ""
-        
-        let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-        self.navigationController?.navigationBar.backIndicatorImage = backImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
     }
 }
 

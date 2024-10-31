@@ -9,6 +9,7 @@ import UIKit
 
 class FreeChartView: UIView {
     // MARK: - Components
+    weak var delegate: RankAppCollectionCellDelegate?
     
     private let freeChartLabel = UILabel().then{
         $0.font = .systemFont(ofSize: 18, weight: .bold)
@@ -21,7 +22,7 @@ class FreeChartView: UIView {
         $0.setImage(icon, for: .normal)
         $0.tintColor = .systemGray
     }
-
+    
     private lazy var freeChartCollectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
@@ -47,7 +48,7 @@ class FreeChartView: UIView {
     private func setUI() {
         addSubviews(freeChartLabel, freeChartMoreButton, freeChartCollectionView)
     }
-
+    
     private func setLayout(){
         freeChartLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(10)
@@ -96,6 +97,7 @@ extension FreeChartView: UICollectionViewDataSource {
         }
         
         item.bind(freeApps[indexPath.item])
+        item.delegate = delegate
         return item
     }
 }

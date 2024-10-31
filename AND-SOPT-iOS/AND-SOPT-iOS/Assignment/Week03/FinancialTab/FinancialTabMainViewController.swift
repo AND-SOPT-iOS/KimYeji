@@ -28,6 +28,7 @@ class FinancialTabMainViewController: UIViewController {
         setUI()
         setLayout()
         setNavigationStyle()
+        setDelegates()
     }
     
     private func setStyle() {
@@ -74,6 +75,10 @@ class FinancialTabMainViewController: UIViewController {
         
     }
     
+    private func setDelegates() {
+        freeChartView.delegate = self
+    }
+    
     // MARK: - 네비게이션 스타일 설정
     private func setNavigationStyle() {
         self.navigationController?.navigationBar.tintColor = .systemBlue
@@ -83,5 +88,16 @@ class FinancialTabMainViewController: UIViewController {
         let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+    }
+}
+
+// MARK: - Delegate extension
+extension FinancialTabMainViewController: RankAppCollectionCellDelegate {
+    
+    func downloadButtonTapped(for app: RankingApp) {
+        if app.appName == "토스" {
+            let tossViewController = AppStoreTossMainViewController()
+            navigationController?.pushViewController(tossViewController, animated: true)
+        }
     }
 }

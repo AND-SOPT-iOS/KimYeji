@@ -9,8 +9,16 @@ import UIKit
 import SnapKit
 import Then
 
+protocol RankAppCollectionCellDelegate: AnyObject {
+    func downloadButtonTapped(for app: RankingApp)
+}
+
 class RankAppCollectionCell: UICollectionViewCell {
+    // MARK: - Properties
     static let identifier: String = "RankAppCollectionCell"
+    weak var delegate: RankAppCollectionCellDelegate?
+    private var app: RankingApp?
+    
     
     // MARK: - Components
     private let iconImageView = UIImageView().then {
@@ -18,7 +26,7 @@ class RankAppCollectionCell: UICollectionViewCell {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 0.5
-        $0.layer.borderColor = UIColor.systemGray4.cgColor 
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
     }
     
     private let rankLabel = UILabel().then{
@@ -44,6 +52,7 @@ class RankAppCollectionCell: UICollectionViewCell {
         $0.backgroundColor = .tertiarySystemFill
         $0.layer.cornerRadius = 15
         $0.clipsToBounds = true
+        $0.addTarget(nil, action: #selector(downloadButtonTapped), for: .touchUpInside)
     }
     
     private let inAppPurchaseLabel = UILabel().then {
@@ -116,11 +125,17 @@ class RankAppCollectionCell: UICollectionViewCell {
     }
     
     func bind(_ app : RankingApp) {
+        self.app = app
         iconImageView.image = app.appIcon
         rankLabel.text = app.ranking
         appNameLabel.text = app.appName
         appDescriptionLabel.text = app.appDescription
         downloadButton.setTitle(app.buttonText, for: .normal)
         inAppPurchaseLabel.text = app.inAppPurchaseText
+    }
+    
+    @objc private func downloadButtonTapped() {
+        guard let app = app else { return }
+        delegate?.downloadButtonTapped(for: app)
     }
 }
