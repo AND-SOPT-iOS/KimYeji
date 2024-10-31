@@ -77,6 +77,7 @@ class FinancialTabMainViewController: UIViewController {
     
     private func setDelegates() {
         freeChartView.delegate = self
+        freeChartView.cellDelegate = self
     }
     
     // MARK: - 네비게이션 스타일 설정
@@ -93,11 +94,17 @@ class FinancialTabMainViewController: UIViewController {
 
 // MARK: - Delegate extension
 extension FinancialTabMainViewController: RankAppCollectionCellDelegate {
-    
     func downloadButtonTapped(for app: RankingApp) {
         if app.appName == "토스" {
             let tossViewController = AppStoreTossMainViewController()
             navigationController?.pushViewController(tossViewController, animated: true)
         }
+    }
+}
+
+extension FinancialTabMainViewController: FreeChartViewDelegate {
+    func freeChartMoreButtonTapped() {
+        let chartViewController = ChartViewController()
+        navigationController?.pushViewController(chartViewController, animated: true)
     }
 }

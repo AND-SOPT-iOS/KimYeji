@@ -7,20 +7,26 @@
 
 import UIKit
 
+protocol FreeChartViewDelegate: AnyObject {
+    func freeChartMoreButtonTapped()
+}
+
 class FreeChartView: UIView {
-    // MARK: - Components
-    weak var delegate: RankAppCollectionCellDelegate?
-    
-    private let freeChartLabel = UILabel().then{
+    // MARK: - Properties
+    weak var cellDelegate: RankAppCollectionCellDelegate?
+    weak var delegate: FreeChartViewDelegate?
+
+    private let freeChartLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 18, weight: .bold)
         $0.text = "무료 순위"
         $0.textColor = .label
     }
     
-    private let freeChartMoreButton = UIButton().then{
+    private let freeChartMoreButton = UIButton().then {
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18, weight: .bold))
         $0.setImage(icon, for: .normal)
         $0.tintColor = .systemGray
+        $0.addTarget(nil, action: #selector(freeChartMoreButtonTapped), for: .touchUpInside)
     }
     
     private lazy var freeChartCollectionView = UICollectionView(
@@ -49,28 +55,28 @@ class FreeChartView: UIView {
         addSubviews(freeChartLabel, freeChartMoreButton, freeChartCollectionView)
     }
     
-    private func setLayout(){
-        freeChartLabel.snp.makeConstraints{
+    private func setLayout() {
+        freeChartLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
         }
         
-        freeChartMoreButton.snp.makeConstraints{
+        freeChartMoreButton.snp.makeConstraints {
             $0.centerY.equalTo(freeChartLabel.snp.centerY)
             $0.leading.equalTo(freeChartLabel.snp.trailing).offset(5)
         }
         
-        freeChartCollectionView.snp.makeConstraints{
+        freeChartCollectionView.snp.makeConstraints {
             $0.top.equalTo(freeChartMoreButton.snp.bottom).offset(5)
             $0.height.equalTo(290)
             $0.horizontalEdges.bottom.equalToSuperview()
         }
     }
     
-    private func setCollectionView(){
+    private func setCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         let itemSize = (UIScreen.main.bounds.width - 60)
         
-        flowLayout.itemSize =  CGSize(width: itemSize, height: 90)
+        flowLayout.itemSize = CGSize(width: itemSize, height: 90)
         flowLayout.minimumLineSpacing = 10
         flowLayout.scrollDirection = .horizontal
         
@@ -82,11 +88,13 @@ class FreeChartView: UIView {
             $0.showsHorizontalScrollIndicator = false
         }
     }
+    
+    @objc private func freeChartMoreButtonTapped() {
+        delegate?.freeChartMoreButtonTapped()
+    }
 }
 
-extension FreeChartView: UICollectionViewDelegate { }
-
-extension FreeChartView: UICollectionViewDataSource {
+extension FreeChartView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return freeApps.count
     }
@@ -97,7 +105,7 @@ extension FreeChartView: UICollectionViewDataSource {
         }
         
         item.bind(freeApps[indexPath.item])
-        item.delegate = delegate
+        item.delegate = cellDelegate
         return item
     }
 }

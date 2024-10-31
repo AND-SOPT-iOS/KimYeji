@@ -35,7 +35,7 @@
 		B888FFB62CD2084D000A9D75 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFB42CD2084D000A9D75 /* PhotoViewController.swift */; };
 		B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFB22CD2084D000A9D75 /* Photo.swift */; };
 		B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFB32CD2084D000A9D75 /* PhotoCell.swift */; };
-		B888FFBE2CD2085B000A9D75 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBB2CD2085B000A9D75 /* ChartViewController.swift */; };
+		B888FFBE2CD2085B000A9D75 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBB2CD2085B000A9D75 /* ChartController.swift */; };
 		B888FFBF2CD2085B000A9D75 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFB92CD2085B000A9D75 /* App.swift */; };
 		B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBA2CD2085B000A9D75 /* ChartCell.swift */; };
 		B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFBC2CD2085B000A9D75 /* DownloadState.swift */; };
@@ -56,6 +56,8 @@
 		B888FFF12CD3CF8B000A9D75 /* RankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */; };
 		B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */; };
 		B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */; };
+		B888FFF72CD3FB8E000A9D75 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */; };
+		B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +112,7 @@
 		B888FFB42CD2084D000A9D75 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		B888FFB92CD2085B000A9D75 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		B888FFBA2CD2085B000A9D75 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
-		B888FFBB2CD2085B000A9D75 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		B888FFBB2CD2085B000A9D75 /* ChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
 		B888FFBC2CD2085B000A9D75 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		B888FFC92CD24F10000A9D75 /* PreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImage.swift; sourceTree = "<group>"; };
 		B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 		B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingApp.swift; sourceTree = "<group>"; };
 		B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppCollectionCell.swift; sourceTree = "<group>"; };
 		B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeChartView.swift; sourceTree = "<group>"; };
+		B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppTableCell.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +252,7 @@
 		B84C07EF2CB7A0F500AFE373 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B888FFFA2CD424A5000A9D75 /* Presentation */,
 				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
 				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
 				B80ADC6A2CC23B55005AC520 /* Application */,
@@ -315,7 +320,7 @@
 			children = (
 				B888FFB92CD2085B000A9D75 /* App.swift */,
 				B888FFBA2CD2085B000A9D75 /* ChartCell.swift */,
-				B888FFBB2CD2085B000A9D75 /* ChartViewController.swift */,
+				B888FFBB2CD2085B000A9D75 /* ChartController.swift */,
 				B888FFBC2CD2085B000A9D75 /* DownloadState.swift */,
 			);
 			path = TableView;
@@ -357,6 +362,7 @@
 				B888FFE02CD299D7000A9D75 /* Cell */,
 				B888FFD82CD29697000A9D75 /* View */,
 				B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */,
+				B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */,
 			);
 			path = FinancialTab;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				B888FFE42CD2A07A000A9D75 /* RecommendationCell.swift */,
 				B888FFEC2CD37AF5000A9D75 /* EssentialFinancialCell.swift */,
 				B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */,
+				B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -390,6 +397,13 @@
 				B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B888FFFA2CD424A5000A9D75 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -555,6 +569,7 @@
 				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
 				B888FFB12CD20843000A9D75 /* TableViewSeminarController.swift in Sources */,
 				B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */,
+				B888FFF72CD3FB8E000A9D75 /* ChartViewController.swift in Sources */,
 				B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */,
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
@@ -567,7 +582,7 @@
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
 				B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */,
-				B888FFBE2CD2085B000A9D75 /* ChartViewController.swift in Sources */,
+				B888FFBE2CD2085B000A9D75 /* ChartController.swift in Sources */,
 				B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */,
 				B888FFED2CD37AF5000A9D75 /* EssentialFinancialCell.swift in Sources */,
 				B888FFBF2CD2085B000A9D75 /* App.swift in Sources */,
@@ -575,6 +590,7 @@
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
 				B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */,
+				B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);
