@@ -17,6 +17,8 @@ class RankAppCollectionCell: UICollectionViewCell {
         $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 0.5
+        $0.layer.borderColor = UIColor.systemGray4.cgColor 
     }
     
     private let rankLabel = UILabel().then{

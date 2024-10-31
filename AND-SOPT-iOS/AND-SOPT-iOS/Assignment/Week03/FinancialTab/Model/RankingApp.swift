@@ -31,7 +31,7 @@ extension RankingApp {
     ]
     
     static let freeApps: [RankingApp] = [
-        RankingApp(appIcon: UIImage(named: "silson24.png")!, ranking: "1", appName: "실손24", appDescription: "간편한 실손보험 청구", buttonText: "받기", inAppPurchaseText: nil),
+        RankingApp(appIcon: UIImage(named: "toss.png")!, ranking: "1", appName: "토스", appDescription: "금융이 쉬워진다", buttonText: "열기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "naverpay.png")!, ranking: "2", appName: "네이버페이", appDescription: "지갑 없이 매장에서 결제", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "kakaopay.png")!, ranking: "3", appName: "카카오페이", appDescription: "마음 놓고 금융하다", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "kbpay.png")!, ranking: "4", appName: "KB Pay", appDescription: "모든 금융을 한번에, 한손에, 한눈에 담다", buttonText: "받기", inAppPurchaseText: nil),
