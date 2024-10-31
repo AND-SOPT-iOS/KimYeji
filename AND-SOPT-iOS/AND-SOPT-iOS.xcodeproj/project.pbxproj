@@ -45,8 +45,10 @@
 		B888FFD02CD25D53000A9D75 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFCF2CD25D53000A9D75 /* Review.swift */; };
 		B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */; };
 		B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD32CD262AC000A9D75 /* ReviewCell.swift */; };
-		B888FFDA2CD296CC000A9D75 /* FinancialTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD92CD296CC000A9D75 /* FinancialTabViewController.swift */; };
+		B888FFDA2CD296CC000A9D75 /* FinancialTabMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */; };
 		B888FFDE2CD29757000A9D75 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFDD2CD29757000A9D75 /* RecommendationView.swift */; };
+		B888FFE32CD29BC5000A9D75 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFE22CD29BC5000A9D75 /* Recommendation.swift */; };
+		B888FFE52CD2A07A000A9D75 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFE42CD2A07A000A9D75 /* RecommendationCell.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,8 +110,10 @@
 		B888FFCF2CD25D53000A9D75 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperResponse.swift; sourceTree = "<group>"; };
 		B888FFD32CD262AC000A9D75 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
-		B888FFD92CD296CC000A9D75 /* FinancialTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTabViewController.swift; sourceTree = "<group>"; };
+		B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTabMainViewController.swift; sourceTree = "<group>"; };
 		B888FFDD2CD29757000A9D75 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
+		B888FFE22CD29BC5000A9D75 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		B888FFE42CD2A07A000A9D75 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,8 +347,10 @@
 		B888FFD72CD27CA7000A9D75 /* FinancialTab */ = {
 			isa = PBXGroup;
 			children = (
+				B888FFE12CD29BB1000A9D75 /* Model */,
+				B888FFE02CD299D7000A9D75 /* Cell */,
 				B888FFD82CD29697000A9D75 /* View */,
-				B888FFD92CD296CC000A9D75 /* FinancialTabViewController.swift */,
+				B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */,
 			);
 			path = FinancialTab;
 			sourceTree = "<group>";
@@ -355,6 +361,22 @@
 				B888FFDD2CD29757000A9D75 /* RecommendationView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B888FFE02CD299D7000A9D75 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B888FFE42CD2A07A000A9D75 /* RecommendationCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B888FFE12CD29BB1000A9D75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B888FFE22CD29BC5000A9D75 /* Recommendation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -503,7 +525,9 @@
 				B888FFDE2CD29757000A9D75 /* RecommendationView.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
+				B888FFE52CD2A07A000A9D75 /* RecommendationCell.swift in Sources */,
 				B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */,
+				B888FFE32CD29BC5000A9D75 /* Recommendation.swift in Sources */,
 				B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */,
 				B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */,
 				B888FFD02CD25D53000A9D75 /* Review.swift in Sources */,
@@ -518,7 +542,7 @@
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
-				B888FFDA2CD296CC000A9D75 /* FinancialTabViewController.swift in Sources */,
+				B888FFDA2CD296CC000A9D75 /* FinancialTabMainViewController.swift in Sources */,
 				B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */,
 				B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */,
 				B86B14CD2CC9E29200E025AF /* AppInfoSummaryView.swift in Sources */,
