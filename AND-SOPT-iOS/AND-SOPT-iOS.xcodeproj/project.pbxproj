@@ -15,13 +15,11 @@
 		B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84036832CBC3389004AAAB4 /* UIView+.swift */; };
 		B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */; };
 		B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */; };
-		B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */; };
 		B84C07FA2CB7A0F600AFE373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84C07F92CB7A0F600AFE373 /* Assets.xcassets */; };
 		B84C07FD2CB7A0F600AFE373 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B84C07FC2CB7A0F600AFE373 /* Base */; };
 		B84C08082CB7A0F600AFE373 /* AND_SOPT_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08072CB7A0F600AFE373 /* AND_SOPT_iOSTests.swift */; };
 		B84C08122CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */; };
 		B84C08142CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */; };
-		B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */; };
 		B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */; };
 		B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */; };
 		B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86B14CA2CC9E0ED00E025AF /* AppInfoHeaderView.swift */; };
@@ -87,7 +85,6 @@
 		B84C07ED2CB7A0F500AFE373 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C07F02CB7A0F500AFE373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B84C07F92CB7A0F600AFE373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B84C07FC2CB7A0F600AFE373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84C07FE2CB7A0F600AFE373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +93,6 @@
 		B84C080D2CB7A0F600AFE373 /* AND-SOPT-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AND-SOPT-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C08112CB7A0F600AFE373 /* AND_SOPT_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITests.swift; sourceTree = "<group>"; };
 		B84C08132CB7A0F600AFE373 /* AND_SOPT_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AND_SOPT_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCountViewController.swift; sourceTree = "<group>"; };
 		B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRecordViewController.swift; sourceTree = "<group>"; };
 		B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
 		B86B14CA2CC9E0ED00E025AF /* AppInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoHeaderView.swift; sourceTree = "<group>"; };
@@ -162,25 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B80ADC682CC23980005AC520 /* Assignment */ = {
-			isa = PBXGroup;
-			children = (
-				B888FFC22CD20877000A9D75 /* Week03 */,
-				B80ADC6B2CC240CF005AC520 /* Week02 */,
-				B80ADC692CC23A35005AC520 /* Week01 */,
-			);
-			path = Assignment;
-			sourceTree = "<group>";
-		};
-		B80ADC692CC23A35005AC520 /* Week01 */ = {
-			isa = PBXGroup;
-			children = (
-				B84C08202CB7A5A400AFE373 /* AnswerCountViewController.swift */,
-				B84C07F42CB7A0F500AFE373 /* QuizViewController.swift */,
-			);
-			path = Week01;
-			sourceTree = "<group>";
-		};
 		B80ADC6A2CC23B55005AC520 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,18 +165,6 @@
 				B84C07F22CB7A0F500AFE373 /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		B80ADC6B2CC240CF005AC520 /* Week02 */ = {
-			isa = PBXGroup;
-			children = (
-				B8EA8DDA2CD0A28200E8AAD3 /* Text */,
-				B86B14C92CC9DD9E00E025AF /* View */,
-				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
-				B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */,
-				B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */,
-			);
-			path = Week02;
 			sourceTree = "<group>";
 		};
 		B80ADC6C2CC240D7005AC520 /* Seminar */ = {
@@ -256,7 +221,6 @@
 				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
 				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
 				B80ADC6A2CC23B55005AC520 /* Application */,
-				B80ADC682CC23980005AC520 /* Assignment */,
 				B84036812CBC32B7004AAAB4 /* Global */,
 				B84C07FB2CB7A0F600AFE373 /* LaunchScreen.storyboard */,
 				B80ADC6C2CC240D7005AC520 /* Seminar */,
@@ -294,6 +258,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B88800012CD42D06000A9D75 /* FinancialTab */ = {
+			isa = PBXGroup;
+			children = (
+				B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */,
+				B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */,
+				B888FFD82CD29697000A9D75 /* View */,
+				B888FFE02CD299D7000A9D75 /* Cell */,
+				B888FFE12CD29BB1000A9D75 /* Model */,
+			);
+			path = FinancialTab;
+			sourceTree = "<group>";
+		};
+		B88800022CD42D38000A9D75 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */,
+				B888FFD32CD262AC000A9D75 /* ReviewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B888FFAD2CD20821000A9D75 /* Week03 */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,16 +311,6 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		B888FFC22CD20877000A9D75 /* Week03 */ = {
-			isa = PBXGroup;
-			children = (
-				B888FFD72CD27CA7000A9D75 /* FinancialTab */,
-				B888FFD52CD27C46000A9D75 /* PreviewImage */,
-				B888FFCE2CD25AD4000A9D75 /* Model */,
-			);
-			path = Week03;
-			sourceTree = "<group>";
-		};
 		B888FFCE2CD25AD4000A9D75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,27 +319,6 @@
 				B888FFD12CD25EF6000A9D75 /* DeveloperResponse.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B888FFD52CD27C46000A9D75 /* PreviewImage */ = {
-			isa = PBXGroup;
-			children = (
-				B888FFCB2CD24FCF000A9D75 /* PreviewImageCell.swift */,
-				B888FFD32CD262AC000A9D75 /* ReviewCell.swift */,
-			);
-			path = PreviewImage;
-			sourceTree = "<group>";
-		};
-		B888FFD72CD27CA7000A9D75 /* FinancialTab */ = {
-			isa = PBXGroup;
-			children = (
-				B888FFE12CD29BB1000A9D75 /* Model */,
-				B888FFE02CD299D7000A9D75 /* Cell */,
-				B888FFD82CD29697000A9D75 /* View */,
-				B888FFD92CD296CC000A9D75 /* FinancialTabMainViewController.swift */,
-				B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */,
-			);
-			path = FinancialTab;
 			sourceTree = "<group>";
 		};
 		B888FFD82CD29697000A9D75 /* View */ = {
@@ -402,8 +356,24 @@
 		B888FFFA2CD424A5000A9D75 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B88800012CD42D06000A9D75 /* FinancialTab */,
+				B888FFFF2CD42CD2000A9D75 /* AppDetail */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B888FFFF2CD42CD2000A9D75 /* AppDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B86B14C92CC9DD9E00E025AF /* View */,
+				B888FFCE2CD25AD4000A9D75 /* Model */,
+				B88800022CD42D38000A9D75 /* Cell */,
+				B80ADC722CC242BE005AC520 /* AppStoreTossMainViewController.swift */,
+				B85C18EB2CC820D800B40A88 /* VersionRecordViewController.swift */,
+				B85C18ED2CC820E400B40A88 /* AllReviewsViewController.swift */,
+				B8EA8DDA2CD0A28200E8AAD3 /* Text */,
+			);
+			path = AppDetail;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -548,7 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
 				B888FFEF2CD3CF5B000A9D75 /* PaidChartView.swift in Sources */,
 				B888FFDE2CD29757000A9D75 /* RecommendationView.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
@@ -572,7 +541,6 @@
 				B888FFF72CD3FB8E000A9D75 /* ChartViewController.swift in Sources */,
 				B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */,
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
-				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
 				B888FFDA2CD296CC000A9D75 /* FinancialTabMainViewController.swift in Sources */,
 				B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */,
