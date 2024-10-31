@@ -55,6 +55,7 @@
 		B888FFEF2CD3CF5B000A9D75 /* PaidChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */; };
 		B888FFF12CD3CF8B000A9D75 /* RankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */; };
 		B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */; };
+		B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidChartView.swift; sourceTree = "<group>"; };
 		B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingApp.swift; sourceTree = "<group>"; };
 		B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppCollectionCell.swift; sourceTree = "<group>"; };
+		B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeChartView.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -365,6 +367,7 @@
 				B888FFDD2CD29757000A9D75 /* RecommendationView.swift */,
 				B888FFE62CD36875000A9D75 /* EssentialFinancialView.swift */,
 				B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */,
+				B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
 				B888FFB12CD20843000A9D75 /* TableViewSeminarController.swift in Sources */,
+				B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */,
 				B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */,
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
 				B84C08212CB7A5A400AFE373 /* AnswerCountViewController.swift in Sources */,

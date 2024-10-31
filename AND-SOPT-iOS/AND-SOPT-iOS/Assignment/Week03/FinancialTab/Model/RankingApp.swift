@@ -31,11 +31,11 @@ extension RankingApp {
     ]
     
     static let freeApps: [RankingApp] = [
-        RankingApp(appIcon: UIImage(named: "silson.png")!, ranking: "1", appName: "실손24", appDescription: "간편한 실손보험 청구", buttonText: "받기", inAppPurchaseText: nil),
+        RankingApp(appIcon: UIImage(named: "silson24.png")!, ranking: "1", appName: "실손24", appDescription: "간편한 실손보험 청구", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "naverpay.png")!, ranking: "2", appName: "네이버페이", appDescription: "지갑 없이 매장에서 결제", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "kakaopay.png")!, ranking: "3", appName: "카카오페이", appDescription: "마음 놓고 금융하다", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "kbpay.png")!, ranking: "4", appName: "KB Pay", appDescription: "모든 금융을 한번에, 한손에, 한눈에 담다", buttonText: "받기", inAppPurchaseText: nil),
-        RankingApp(appIcon: UIImage(named: "kbBank.png")!, ranking: "5", appName: "KB스타뱅킹", appDescription: "모바일 신분증, 결제, 통신도 다 되는 은행", buttonText: "받기", inAppPurchaseText: nil),
+        RankingApp(appIcon: UIImage(named: "kbBanking.png")!, ranking: "5", appName: "KB스타뱅킹", appDescription: "모바일 신분증, 결제, 통신도 다 되는 은행", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "3jjum3.png")!, ranking: "6", appName: "삼쩜삼 - 세금 신고/환급 도우미", appDescription: "잠자고 있는 내 세금 얼마일까?", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "hanabank.png")!, ranking: "7", appName: "하나은행", appDescription: "하나원큐는 돈기운 가득한 은행 앱, 송금, 해외송금, 유학생송금, 은행, KEB, 외환은행", buttonText: "받기", inAppPurchaseText: nil),
         RankingApp(appIcon: UIImage(named: "monimo.png")!, ranking: "8", appName: "monimo (모니모, 삼성금융네트웍스)", appDescription: "모이는 금융, 커지는 혜택! monimo 모니모", buttonText: "받기", inAppPurchaseText: nil),

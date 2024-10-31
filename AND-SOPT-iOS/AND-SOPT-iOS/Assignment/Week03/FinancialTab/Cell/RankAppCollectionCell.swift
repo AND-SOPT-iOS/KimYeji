@@ -113,12 +113,12 @@ class RankAppCollectionCell: UICollectionViewCell {
         }
     }
     
-    func bind(_ paidApps: RankingApp) {
-        iconImageView.image = paidApps.appIcon
-        rankLabel.text = paidApps.ranking
-        appNameLabel.text = paidApps.appName
-        appDescriptionLabel.text = paidApps.appDescription
-        downloadButton.setTitle(paidApps.buttonText, for: .normal)
-        inAppPurchaseLabel.text = paidApps.inAppPurchaseText
+    func bind(_ app : RankingApp) {
+        iconImageView.image = app.appIcon
+        rankLabel.text = app.ranking
+        appNameLabel.text = app.appName
+        appDescriptionLabel.text = app.appDescription
+        downloadButton.setTitle(app.buttonText, for: .normal)
+        inAppPurchaseLabel.text = app.inAppPurchaseText
     }
 }
