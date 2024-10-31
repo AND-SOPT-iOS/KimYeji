@@ -233,7 +233,7 @@ class RatingAndReviewView: UIView {
     private func setCollectionView(){
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 60, height: 200)
-
+        
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 10
         

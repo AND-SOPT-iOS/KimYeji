@@ -18,7 +18,7 @@ class RecommendationView: UIView {
     
     // MARK: - Data
     private let recommendationItem = Recommendation.recommendationItems
-
+    
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,15 +38,16 @@ class RecommendationView: UIView {
     
     private func setLayout(){
         recommendationCollectionView.snp.makeConstraints{
-            $0.horizontalEdges.equalToSuperview()
+            $0.verticalEdges.horizontalEdges.equalToSuperview()
             $0.height.equalTo(300)
+            $0.bottom.equalToSuperview()
         }
     }
     
     private func setCollectionView(){
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 60, height: 280)
-
+        
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 10
         
