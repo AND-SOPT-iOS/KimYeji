@@ -18,6 +18,7 @@ class FinancialTabMainViewController: UIViewController {
     // MARK: - Components
     private let recommendationView = RecommendationView()
     private let essentialFinancialView = EssentialFinancialView()
+    private let paidChartView = PaidChartView()
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class FinancialTabMainViewController: UIViewController {
     private func setUI(){
         view.addSubviews(navigationBar, scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(recommendationView, essentialFinancialView)
+        contentView.addSubviews(recommendationView, essentialFinancialView, paidChartView)
     }
     
     private func setLayout() {
@@ -57,7 +58,11 @@ class FinancialTabMainViewController: UIViewController {
         essentialFinancialView.snp.makeConstraints{
             $0.top.equalTo(recommendationView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
-            
+        }
+        
+        paidChartView.snp.makeConstraints{
+            $0.top.equalTo(essentialFinancialView.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview()
         }
         

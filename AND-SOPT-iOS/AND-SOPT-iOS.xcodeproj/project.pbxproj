@@ -52,6 +52,9 @@
 		B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFE62CD36875000A9D75 /* EssentialFinancialView.swift */; };
 		B888FFE92CD37045000A9D75 /* EssentialFinancialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFE82CD37045000A9D75 /* EssentialFinancialApp.swift */; };
 		B888FFED2CD37AF5000A9D75 /* EssentialFinancialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFEC2CD37AF5000A9D75 /* EssentialFinancialCell.swift */; };
+		B888FFEF2CD3CF5B000A9D75 /* PaidChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */; };
+		B888FFF12CD3CF8B000A9D75 /* RankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */; };
+		B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +123,9 @@
 		B888FFE62CD36875000A9D75 /* EssentialFinancialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFinancialView.swift; sourceTree = "<group>"; };
 		B888FFE82CD37045000A9D75 /* EssentialFinancialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFinancialApp.swift; sourceTree = "<group>"; };
 		B888FFEC2CD37AF5000A9D75 /* EssentialFinancialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFinancialCell.swift; sourceTree = "<group>"; };
+		B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidChartView.swift; sourceTree = "<group>"; };
+		B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingApp.swift; sourceTree = "<group>"; };
+		B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppCollectionCell.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				B888FFD72CD27CA7000A9D75 /* FinancialTab */,
-				B888FFD62CD27C55000A9D75 /* PopularList */,
 				B888FFD52CD27C46000A9D75 /* PreviewImage */,
 				B888FFCE2CD25AD4000A9D75 /* Model */,
 			);
@@ -343,13 +348,6 @@
 			path = PreviewImage;
 			sourceTree = "<group>";
 		};
-		B888FFD62CD27C55000A9D75 /* PopularList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PopularList;
-			sourceTree = "<group>";
-		};
 		B888FFD72CD27CA7000A9D75 /* FinancialTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +364,7 @@
 			children = (
 				B888FFDD2CD29757000A9D75 /* RecommendationView.swift */,
 				B888FFE62CD36875000A9D75 /* EssentialFinancialView.swift */,
+				B888FFEE2CD3CF5B000A9D75 /* PaidChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +374,7 @@
 			children = (
 				B888FFE42CD2A07A000A9D75 /* RecommendationCell.swift */,
 				B888FFEC2CD37AF5000A9D75 /* EssentialFinancialCell.swift */,
+				B888FFF22CD3D9CA000A9D75 /* RankAppCollectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -384,6 +384,7 @@
 			children = (
 				B888FFE22CD29BC5000A9D75 /* Recommendation.swift */,
 				B888FFE82CD37045000A9D75 /* EssentialFinancialApp.swift */,
+				B888FFF02CD3CF8B000A9D75 /* RankingApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -531,9 +532,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B84C07F52CB7A0F500AFE373 /* QuizViewController.swift in Sources */,
+				B888FFEF2CD3CF5B000A9D75 /* PaidChartView.swift in Sources */,
 				B888FFDE2CD29757000A9D75 /* RecommendationView.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B888FFE92CD37045000A9D75 /* EssentialFinancialApp.swift in Sources */,
+				B888FFF12CD3CF8B000A9D75 /* RankingApp.swift in Sources */,
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
 				B888FFE52CD2A07A000A9D75 /* RecommendationCell.swift in Sources */,
 				B888FFCC2CD24FCF000A9D75 /* PreviewImageCell.swift in Sources */,
@@ -559,6 +562,7 @@
 				B888FFB62CD2084D000A9D75 /* PhotoViewController.swift in Sources */,
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
+				B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */,
 				B888FFBE2CD2085B000A9D75 /* ChartViewController.swift in Sources */,
 				B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */,
 				B888FFED2CD37AF5000A9D75 /* EssentialFinancialCell.swift in Sources */,
