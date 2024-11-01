@@ -10,12 +10,17 @@ import SnapKit
 import Then
 
 class ChartViewController: UIViewController {
+    // MARK: - Components
+    
     private let tableView = UITableView().then {
         $0.register(RankAppTableCell.self, forCellReuseIdentifier: RankAppTableCell.identifier)
         $0.rowHeight = 90
     }
+    
+    // MARK: - Data
     private let appList = RankingApp.chartApps
-
+    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -25,6 +30,7 @@ class ChartViewController: UIViewController {
         setNavigationStyle()
     }
     
+    // MARK: - Style, UI, Layout
     private func setStyle() {
         self.view.backgroundColor = .systemBackground
     }
@@ -52,6 +58,8 @@ class ChartViewController: UIViewController {
     }
 }
 
+// MARK: - Delegate extension
+
 extension ChartViewController: RankAppTableCellDelegate {
     func downloadButtonTapped(for app: RankingApp) {
         if app.appName == "토스" {
@@ -68,7 +76,7 @@ extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RankAppTableCell.identifier, for: indexPath) as? RankAppTableCell else { return UITableViewCell()
-    }
+        }
         cell.bind(appList[indexPath.item])
         cell.delegate = self
         return cell

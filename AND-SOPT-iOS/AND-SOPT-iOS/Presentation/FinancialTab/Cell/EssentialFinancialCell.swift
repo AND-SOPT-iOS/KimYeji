@@ -105,6 +105,7 @@ class EssentialFinancialCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Bind
     func bind(_ essentialFinancial: EssentialFinancialApp) {
         iconImageView.image = essentialFinancial.icon
         appNameLabel.text = essentialFinancial.appName

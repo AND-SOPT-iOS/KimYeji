@@ -53,6 +53,7 @@ class RankAppTableCell: UITableViewCell {
         $0.addTarget(nil, action: #selector(downloadButtonTapped), for: .touchUpInside)
     }
     
+    // MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -64,6 +65,7 @@ class RankAppTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI, Layout
     private func setUI(){
         addSubviews(iconImageView, rankLabel, appNameLabel, appDescriptionLabel, downloadButton)
     }
@@ -100,6 +102,7 @@ class RankAppTableCell: UITableViewCell {
         }
     }
     
+    // MARK: - Bind
     func bind(_ app : RankingApp) {
         self.app = app
         iconImageView.image = app.appIcon
@@ -109,6 +112,7 @@ class RankAppTableCell: UITableViewCell {
         downloadButton.setTitle(app.buttonText, for: .normal)
     }
     
+    // MARK: - Actions
     @objc private func downloadButtonTapped() {
         guard let app = app else { return }
         delegate?.downloadButtonTapped(for: app)

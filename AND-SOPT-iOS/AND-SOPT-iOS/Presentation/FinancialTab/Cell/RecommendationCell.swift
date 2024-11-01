@@ -95,7 +95,6 @@ class RecommendationCell: UICollectionViewCell {
             button,
             inAppPurchaseLabel
         )
-        
     }
     
     private func setLayout() {

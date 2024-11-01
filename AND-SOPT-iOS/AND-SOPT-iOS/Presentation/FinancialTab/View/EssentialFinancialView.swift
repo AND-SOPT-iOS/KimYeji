@@ -50,28 +50,28 @@ class EssentialFinancialView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - UI, Layout, CollectionView
     private func setUI() {
         addSubviews(essentialFinancialLabel, editorSelectLabel, essentialAppMoreButton, essentialFinancialCollectionView)
     }
     
-    private func setLayout(){
-        essentialFinancialLabel.snp.makeConstraints{
+    private func setLayout() {
+        essentialFinancialLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
         }
         
-        essentialAppMoreButton.snp.makeConstraints{
+        essentialAppMoreButton.snp.makeConstraints {
             $0.centerY.equalTo(essentialFinancialLabel.snp.centerY)
             $0.leading.equalTo(essentialFinancialLabel.snp.trailing).offset(5)
         }
         
-        editorSelectLabel.snp.makeConstraints{
+        editorSelectLabel.snp.makeConstraints {
             $0.top.equalTo(essentialFinancialLabel.snp.bottom).offset(5)
             $0.horizontalEdges.equalToSuperview()
         }
         
-        essentialFinancialCollectionView.snp.makeConstraints{
+        essentialFinancialCollectionView.snp.makeConstraints {
             $0.top.equalTo(editorSelectLabel.snp.bottom).offset(5)
             $0.height.equalTo(290)
             $0.horizontalEdges.bottom.equalToSuperview()
@@ -96,6 +96,7 @@ class EssentialFinancialView: UIView {
     }
 }
 
+// MARK: - Delegate, DataSource
 extension EssentialFinancialView: UICollectionViewDelegate { }
 
 extension EssentialFinancialView: UICollectionViewDataSource {

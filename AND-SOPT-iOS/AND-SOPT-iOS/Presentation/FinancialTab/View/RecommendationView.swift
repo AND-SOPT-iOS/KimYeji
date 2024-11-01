@@ -16,7 +16,7 @@ class RecommendationView: UIView {
         collectionViewLayout: UICollectionViewFlowLayout()
     )
     
-    // MARK: - Data
+    // MARK: - Properties
     private let recommendationItem = Recommendation.recommendationItems
     
     // MARK: - Initializer

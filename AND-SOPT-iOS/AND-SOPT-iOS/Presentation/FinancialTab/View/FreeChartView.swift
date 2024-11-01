@@ -89,11 +89,13 @@ class FreeChartView: UIView {
         }
     }
     
+    // MARK: - Actions
     @objc private func freeChartMoreButtonTapped() {
         delegate?.freeChartMoreButtonTapped()
     }
 }
 
+// MARK: - Delegate, DataSource
 extension FreeChartView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return freeApps.count

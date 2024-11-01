@@ -9,13 +9,10 @@ import UIKit
 import SnapKit
 
 class FinancialTabMainViewController: UIViewController {
+    // MARK: - Components
     
-    // MARK: - Properties
-    private let navigationBar = UINavigationBar()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    
-    // MARK: - Components
     private let recommendationView = RecommendationView()
     private let essentialFinancialView = EssentialFinancialView()
     private let paidChartView = PaidChartView()
@@ -31,19 +28,21 @@ class FinancialTabMainViewController: UIViewController {
         setDelegates()
     }
     
+    // MARK: - Style, UI, Layout
     private func setStyle() {
-        self.view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBackground
     }
     
-    private func setUI(){
-        view.addSubviews(navigationBar, scrollView)
+    private func setUI() {
+        view.addSubviews(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(recommendationView, essentialFinancialView, paidChartView, freeChartView)
     }
     
     private func setLayout() {
         scrollView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
         
@@ -52,32 +51,26 @@ class FinancialTabMainViewController: UIViewController {
             $0.width.equalTo(scrollView.snp.width)
         }
         
-        recommendationView.snp.makeConstraints{
+        recommendationView.snp.makeConstraints {
             $0.top.equalTo(contentView.snp.top)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
-        essentialFinancialView.snp.makeConstraints{
+        essentialFinancialView.snp.makeConstraints {
             $0.top.equalTo(recommendationView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
-        paidChartView.snp.makeConstraints{
+        paidChartView.snp.makeConstraints {
             $0.top.equalTo(essentialFinancialView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
-        freeChartView.snp.makeConstraints{
+        freeChartView.snp.makeConstraints {
             $0.top.equalTo(paidChartView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview()
         }
-        
-    }
-    
-    private func setDelegates() {
-        freeChartView.delegate = self
-        freeChartView.cellDelegate = self
     }
     
     // MARK: - 네비게이션 스타일 설정
@@ -89,6 +82,12 @@ class FinancialTabMainViewController: UIViewController {
         let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+    }
+    
+    // MARK: - Delegate
+    private func setDelegates() {
+        freeChartView.delegate = self
+        freeChartView.cellDelegate = self
     }
 }
 

@@ -124,6 +124,7 @@ class RankAppCollectionCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Bind
     func bind(_ app : RankingApp) {
         self.app = app
         iconImageView.image = app.appIcon
@@ -134,6 +135,7 @@ class RankAppCollectionCell: UICollectionViewCell {
         inAppPurchaseLabel.text = app.inAppPurchaseText
     }
     
+    // MARK: - Actions
     @objc private func downloadButtonTapped() {
         guard let app = app else { return }
         delegate?.downloadButtonTapped(for: app)
