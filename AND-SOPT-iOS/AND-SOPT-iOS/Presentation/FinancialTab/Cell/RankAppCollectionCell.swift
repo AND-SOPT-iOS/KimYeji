@@ -46,13 +46,13 @@ class RankAppCollectionCell: UICollectionViewCell {
         $0.numberOfLines = 2
     }
     
-    private let downloadButton = UIButton().then {
+    private lazy var downloadButton = UIButton().then {
         $0.titleLabel?.font = .systemFont(ofSize: 13, weight: .bold)
         $0.setTitleColor(.systemBlue, for: .normal)
         $0.backgroundColor = .tertiarySystemFill
         $0.layer.cornerRadius = 15
         $0.clipsToBounds = true
-        $0.addTarget(nil, action: #selector(downloadButtonTapped), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(downloadButtonTapped), for: .touchUpInside)
     }
     
     private let inAppPurchaseLabel = UILabel().then {
@@ -91,6 +91,8 @@ class RankAppCollectionCell: UICollectionViewCell {
             $0.leading.equalTo(iconImageView.snp.trailing).offset(8)
             $0.top.equalToSuperview().offset(25)
         }
+        rankLabel.setContentHuggingPriority(.required, for: .horizontal)
+        rankLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         
         appNameLabel.snp.makeConstraints {
             $0.leading.equalTo(rankLabel.snp.trailing).offset(10)

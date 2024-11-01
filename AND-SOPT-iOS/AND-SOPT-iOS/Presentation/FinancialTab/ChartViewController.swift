@@ -75,8 +75,7 @@ extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RankAppTableCell.identifier, for: indexPath) as? RankAppTableCell else { return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RankAppTableCell.identifier, for: indexPath) as? RankAppTableCell else { return UITableViewCell()}
         cell.bind(appList[indexPath.item])
         cell.delegate = self
         return cell
