@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PreviewImageCell: UICollectionViewCell {
+final class PreviewImageCell: UICollectionViewCell {
     // MARK: - Properties
     static let identifier = "PreviewImageCell"
     
