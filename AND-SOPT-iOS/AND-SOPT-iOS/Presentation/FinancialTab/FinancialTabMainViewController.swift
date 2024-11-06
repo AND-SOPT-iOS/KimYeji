@@ -54,6 +54,7 @@ class FinancialTabMainViewController: UIViewController {
         recommendationView.snp.makeConstraints {
             $0.top.equalTo(contentView.snp.top)
             $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalTo(300)
         }
         
         essentialFinancialView.snp.makeConstraints {

@@ -39,8 +39,6 @@ class RecommendationView: UIView {
     private func setLayout(){
         recommendationCollectionView.snp.makeConstraints{
             $0.verticalEdges.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(300)
-            $0.bottom.equalToSuperview()
         }
     }
     

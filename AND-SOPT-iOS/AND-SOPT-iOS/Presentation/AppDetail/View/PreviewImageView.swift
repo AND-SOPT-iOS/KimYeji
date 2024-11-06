@@ -88,7 +88,7 @@ class PreviewImageView: UIView {
     
     private func setCollectionView(){
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = .init(width: 300, height: 600)
+        flowLayout.itemSize = .init(width: UIScreen.main.bounds.width - 100, height: 600)
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 10
         
