@@ -12,11 +12,8 @@ import Alamofire
 class LoginService {
     func login(username: String, password: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         let url = Environment.baseURL + "/login"
-        
-        // 요청에 필요한 데이터를 LoginRequest 구조체로 설정
         let parameters = LoginRequest(username: username, password: password)
         
-        // Alamofire를 사용하여 로그인 요청을 보냄
         AF.request(
             url,
             method: .post,
@@ -24,7 +21,7 @@ class LoginService {
             encoder: JSONParameterEncoder.default
         )
         .validate()
-        .response { [weak self] response in
+        .responseDecodable(of: LoginResponse.self) { [weak self] response in
             
             guard let statusCode = response.response?.statusCode,
                   let data = response.data,
@@ -35,8 +32,15 @@ class LoginService {
             }
             
             switch response.result {
-            case .success:
-                completion(.success(true))
+            case .success(let loginResponse):
+                let token = loginResponse.result.token
+                if KeychainManager.save(key: "userToken", token: token) {
+                    print("토큰 저장 성공")
+                    completion(.success(true))
+                } else {
+                    print("토큰 저장 실패")
+                    completion(.failure(.unknownError))
+                }
             case .failure:
                 let error = self.handleStatusCode(statusCode, data: data)
                 completion(.failure(error))

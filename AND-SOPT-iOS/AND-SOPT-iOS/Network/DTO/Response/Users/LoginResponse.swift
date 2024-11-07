@@ -9,5 +9,5 @@ import Foundation
 
 // 로그인 API
 struct LoginResponse: Codable {
-    let result: String
+    let result: TokenResponse
 }

@@ -68,6 +68,10 @@
 		B8E1EC2E2CDD1AA100F5C341 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2D2CDD1AA100F5C341 /* LoginRequest.swift */; };
 		B8E1EC302CDD1B4400F5C341 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2F2CDD1B4400F5C341 /* LoginService.swift */; };
 		B8E1EC332CDD1BCB00F5C341 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC322CDD1BCB00F5C341 /* LoginResponse.swift */; };
+		B8E1EC352CDD211400F5C341 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC342CDD211400F5C341 /* KeychainManager.swift */; };
+		B8E1EC372CDD231400F5C341 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC362CDD231400F5C341 /* TokenResponse.swift */; };
+		B8E1EC3C2CDD24C400F5C341 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3B2CDD24C400F5C341 /* LoginView.swift */; };
+		B8E1EC3E2CDD24DD00F5C341 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +156,10 @@
 		B8E1EC2D2CDD1AA100F5C341 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		B8E1EC2F2CDD1B4400F5C341 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		B8E1EC322CDD1BCB00F5C341 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		B8E1EC342CDD211400F5C341 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B8E1EC362CDD231400F5C341 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		B8E1EC3B2CDD24C400F5C341 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,8 +391,7 @@
 		B888FFFA2CD424A5000A9D75 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B8E1EC1F2CDD0CCA00F5C341 /* Register */,
-				B8E1EC0F2CDCFB4A00F5C341 /* Hobby */,
+				B8E1EC382CDD249400F5C341 /* ServerTab */,
 				B88800012CD42D06000A9D75 /* FinancialTab */,
 				B888FFFF2CD42CD2000A9D75 /* AppDetail */,
 			);
@@ -445,6 +452,7 @@
 				B8E1EC1E2CDD0CB700F5C341 /* DTO */,
 				B8E1EC182CDD0B5100F5C341 /* Environment.swift */,
 				B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */,
+				B8E1EC342CDD211400F5C341 /* KeychainManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -458,13 +466,13 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		B8E1EC1F2CDD0CCA00F5C341 /* Register */ = {
+		B8E1EC1F2CDD0CCA00F5C341 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				B8E1EC202CDD0CD400F5C341 /* View */,
 				B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */,
 			);
-			path = Register;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		B8E1EC202CDD0CD400F5C341 /* View */ = {
@@ -521,8 +529,36 @@
 			isa = PBXGroup;
 			children = (
 				B8E1EC322CDD1BCB00F5C341 /* LoginResponse.swift */,
+				B8E1EC362CDD231400F5C341 /* TokenResponse.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		B8E1EC382CDD249400F5C341 /* ServerTab */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC392CDD24A800F5C341 /* Login */,
+				B8E1EC0F2CDCFB4A00F5C341 /* Hobby */,
+				B8E1EC1F2CDD0CCA00F5C341 /* SignUp */,
+			);
+			path = ServerTab;
+			sourceTree = "<group>";
+		};
+		B8E1EC392CDD24A800F5C341 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC3A2CDD24B500F5C341 /* View */,
+				B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B8E1EC3A2CDD24B500F5C341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC3B2CDD24C400F5C341 /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -698,15 +734,18 @@
 				B8E1EC2E2CDD1AA100F5C341 /* LoginRequest.swift in Sources */,
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
+				B8E1EC372CDD231400F5C341 /* TokenResponse.swift in Sources */,
 				B888FFDA2CD296CC000A9D75 /* FinancialTabMainViewController.swift in Sources */,
 				B86B14CF2CC9E2CD00E025AF /* NewNewsView.swift in Sources */,
 				B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */,
+				B8E1EC3E2CDD24DD00F5C341 /* LoginViewController.swift in Sources */,
 				B86B14CD2CC9E29200E025AF /* AppInfoSummaryView.swift in Sources */,
 				B888FFB62CD2084D000A9D75 /* PhotoViewController.swift in Sources */,
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
 				B8E1EC282CDD0F5F00F5C341 /* UserService.swift in Sources */,
 				B8E1EC332CDD1BCB00F5C341 /* LoginResponse.swift in Sources */,
+				B8E1EC352CDD211400F5C341 /* KeychainManager.swift in Sources */,
 				B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */,
 				B888FFBE2CD2085B000A9D75 /* ChartController.swift in Sources */,
 				B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */,
@@ -720,6 +759,7 @@
 				B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */,
 				B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */,
 				B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */,
+				B8E1EC3C2CDD24C400F5C341 /* LoginView.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
 			);

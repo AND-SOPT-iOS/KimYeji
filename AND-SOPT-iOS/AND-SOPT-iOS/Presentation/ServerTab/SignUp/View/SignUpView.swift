@@ -46,9 +46,17 @@ class SignUpView: UIView {
     }
     
     let signUpButton = UIButton().then {
-        $0.setTitle("Sign Up", for: .normal)
+        $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemBlue
+        $0.backgroundColor = .systemGreen
+        $0.layer.cornerRadius = 8
+        $0.clipsToBounds = true
+    }
+    
+    let loginButton = UIButton().then{
+        $0.setTitle("로그인 하러가기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemBrown
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
     }
@@ -71,7 +79,7 @@ class SignUpView: UIView {
     
     // MARK: - UI, Layout
     private func setUI() {
-        addSubviews(userNameTextField, passwordTextField, hobbyTextField, signUpButton, resultLabel)
+        addSubviews(userNameTextField, passwordTextField, hobbyTextField, signUpButton, loginButton, resultLabel)
     }
     
     private func setLayout() {
@@ -99,8 +107,14 @@ class SignUpView: UIView {
             $0.height.equalTo(50)
         }
         
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalTo(50)
+        }
+        
         resultLabel.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(40)
+            $0.top.equalTo(loginButton.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
         }
     }

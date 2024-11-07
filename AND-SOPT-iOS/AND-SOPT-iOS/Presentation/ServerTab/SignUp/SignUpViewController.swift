@@ -39,6 +39,8 @@ class SignUpViewController: UIViewController {
     
     private func setTargets() {
       signUpView.signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        
+        signUpView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     @objc func signUpButtonTapped() {
@@ -71,4 +73,9 @@ class SignUpViewController: UIViewController {
              }
          }
      }
+    
+    @objc func loginButtonTapped() {
+        let loginViewController = LoginViewController()
+        navigationController?.pushViewController(loginViewController, animated: true)
+    }
  }
