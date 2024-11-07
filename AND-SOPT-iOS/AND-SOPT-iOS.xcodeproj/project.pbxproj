@@ -56,6 +56,8 @@
 		B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */; };
 		B888FFF72CD3FB8E000A9D75 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */; };
 		B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */; };
+		B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */; };
+		B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeChartView.swift; sourceTree = "<group>"; };
 		B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppTableCell.swift; sourceTree = "<group>"; };
+		B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,8 +192,8 @@
 		B84036812CBC32B7004AAAB4 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				B84036832CBC3389004AAAB4 /* UIView+.swift */,
-				B80ADC792CC35E3F005AC520 /* UIStackView+.swift */,
+				B8E1EC0D2CDCF69C00F5C341 /* TabBar */,
+				B8E1EC0C2CDCF68000F5C341 /* Extension */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 		B888FFFA2CD424A5000A9D75 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B8E1EC0F2CDCFB4A00F5C341 /* Hobby */,
 				B88800012CD42D06000A9D75 /* FinancialTab */,
 				B888FFFF2CD42CD2000A9D75 /* AppDetail */,
 			);
@@ -374,6 +379,31 @@
 				B8EA8DDA2CD0A28200E8AAD3 /* Text */,
 			);
 			path = AppDetail;
+			sourceTree = "<group>";
+		};
+		B8E1EC0C2CDCF68000F5C341 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B84036832CBC3389004AAAB4 /* UIView+.swift */,
+				B80ADC792CC35E3F005AC520 /* UIStackView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B8E1EC0D2CDCF69C00F5C341 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		B8E1EC0F2CDCFB4A00F5C341 /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */,
+			);
+			path = Hobby;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -530,7 +560,9 @@
 				B86B14D32CC9E30E00E025AF /* AppDescriptionView.swift in Sources */,
 				B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */,
 				B888FFD02CD25D53000A9D75 /* Review.swift in Sources */,
+				B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
+				B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B888FFAF2CD2083B000A9D75 /* CartCellTableViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
