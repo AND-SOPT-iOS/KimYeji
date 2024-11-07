@@ -31,7 +31,7 @@ class MyHobbyView: UIView {
         label.textAlignment = .center
         return label
     }()
-
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -45,7 +45,6 @@ class MyHobbyView: UIView {
     }
     
     // MARK: - Setup UI
-    
     private func setUI() {
         addSubviews(myHobbyTitleLabel, myHobbyBoxView)
         myHobbyBoxView.addSubview(myHobbyLabel)

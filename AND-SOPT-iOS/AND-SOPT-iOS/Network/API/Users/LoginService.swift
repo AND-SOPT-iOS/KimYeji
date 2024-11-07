@@ -35,7 +35,7 @@ class LoginService {
             case .success(let loginResponse):
                 let token = loginResponse.result.token
                 if KeychainManager.save(key: "userToken", token: token) {
-                    print("토큰 저장 성공")
+                    print("토큰 저장 성공", token)
                     completion(.success(true))
                 } else {
                     print("토큰 저장 실패")

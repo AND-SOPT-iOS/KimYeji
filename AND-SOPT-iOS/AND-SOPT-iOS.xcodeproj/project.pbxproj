@@ -74,10 +74,11 @@
 		B8E1EC3E2CDD24DD00F5C341 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */; };
 		B8E1EC402CDD28E400F5C341 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3F2CDD28E400F5C341 /* NetworkUtils.swift */; };
 		B8E1EC422CDD2B2400F5C341 /* MyHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC412CDD2B2400F5C341 /* MyHobbyView.swift */; };
-		B8E1EC462CDD352B00F5C341 /* MyHobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC452CDD352B00F5C341 /* MyHobbyResponse.swift */; };
+		B8E1EC462CDD352B00F5C341 /* HobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC452CDD352B00F5C341 /* HobbyResponse.swift */; };
 		B8E1EC492CDD356A00F5C341 /* MyHobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC482CDD356A00F5C341 /* MyHobbyService.swift */; };
-		B8E1EC4B2CDD385600F5C341 /* HobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4A2CDD385600F5C341 /* HobbyResponse.swift */; };
+		B8E1EC4B2CDD385600F5C341 /* HobbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4A2CDD385600F5C341 /* HobbyData.swift */; };
 		B8E1EC4D2CDD396300F5C341 /* OtherHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4C2CDD396300F5C341 /* OtherHobbyView.swift */; };
+		B8E1EC4F2CDD41B600F5C341 /* OtherHobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,10 +169,11 @@
 		B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B8E1EC3F2CDD28E400F5C341 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		B8E1EC412CDD2B2400F5C341 /* MyHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHobbyView.swift; sourceTree = "<group>"; };
-		B8E1EC452CDD352B00F5C341 /* MyHobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHobbyResponse.swift; sourceTree = "<group>"; };
+		B8E1EC452CDD352B00F5C341 /* HobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyResponse.swift; sourceTree = "<group>"; };
 		B8E1EC482CDD356A00F5C341 /* MyHobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHobbyService.swift; sourceTree = "<group>"; };
-		B8E1EC4A2CDD385600F5C341 /* HobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyResponse.swift; sourceTree = "<group>"; };
+		B8E1EC4A2CDD385600F5C341 /* HobbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyData.swift; sourceTree = "<group>"; };
 		B8E1EC4C2CDD396300F5C341 /* OtherHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHobbyView.swift; sourceTree = "<group>"; };
+		B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHobbyService.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -581,8 +583,8 @@
 		B8E1EC432CDD34E200F5C341 /* Hobby */ = {
 			isa = PBXGroup;
 			children = (
-				B8E1EC452CDD352B00F5C341 /* MyHobbyResponse.swift */,
-				B8E1EC4A2CDD385600F5C341 /* HobbyResponse.swift */,
+				B8E1EC452CDD352B00F5C341 /* HobbyResponse.swift */,
+				B8E1EC4A2CDD385600F5C341 /* HobbyData.swift */,
 			);
 			path = Hobby;
 			sourceTree = "<group>";
@@ -591,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E1EC482CDD356A00F5C341 /* MyHobbyService.swift */,
+				B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */,
 			);
 			path = Hobby;
 			sourceTree = "<group>";
@@ -758,11 +761,12 @@
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
+				B8E1EC4F2CDD41B600F5C341 /* OtherHobbyService.swift in Sources */,
 				B888FFAF2CD2083B000A9D75 /* CartCellTableViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B8E1EC402CDD28E400F5C341 /* NetworkUtils.swift in Sources */,
-				B8E1EC462CDD352B00F5C341 /* MyHobbyResponse.swift in Sources */,
+				B8E1EC462CDD352B00F5C341 /* HobbyResponse.swift in Sources */,
 				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
 				B888FFB12CD20843000A9D75 /* TableViewSeminarController.swift in Sources */,
 				B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */,
@@ -794,7 +798,7 @@
 				B8E1EC492CDD356A00F5C341 /* MyHobbyService.swift in Sources */,
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
-				B8E1EC4B2CDD385600F5C341 /* HobbyResponse.swift in Sources */,
+				B8E1EC4B2CDD385600F5C341 /* HobbyData.swift in Sources */,
 				B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */,
 				B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */,
 				B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */,
