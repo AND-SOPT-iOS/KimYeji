@@ -36,8 +36,8 @@ class MyHobbyView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
-        setupLayout()
+        setUI()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -46,21 +46,21 @@ class MyHobbyView: UIView {
     
     // MARK: - Setup UI
     
-    private func setupUI() {
+    private func setUI() {
         addSubviews(myHobbyTitleLabel, myHobbyBoxView)
         myHobbyBoxView.addSubview(myHobbyLabel)
     }
     
-    private func setupLayout() {
+    private func setLayout() {
         myHobbyTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(20)
-            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().offset(10)
+            $0.horizontalEdges.equalToSuperview()
         }
         
         myHobbyBoxView.snp.makeConstraints {
             $0.top.equalTo(myHobbyTitleLabel.snp.bottom).offset(20)
-            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(100)
+            $0.horizontalEdges.bottom.equalToSuperview()
         }
         
         myHobbyLabel.snp.makeConstraints {

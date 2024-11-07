@@ -8,8 +8,13 @@
 import UIKit
 
 class HobbyViewController: UIViewController {
+    private let contentView = UIView()
+
+
     private let myHobbyView = MyHobbyView()
     private let myHobbyService = MyHobbyService()
+    
+    private let otherHobbyView = OtherHobbyView()
     
     
     // MARK: - Lifecycle
@@ -23,11 +28,27 @@ class HobbyViewController: UIViewController {
     // MARK: - UI, Layout
     private func setUI() {
         view.backgroundColor = .systemBackground
-        view.addSubview(myHobbyView)
+        view.addSubview(contentView)
+        contentView.addSubviews(myHobbyView, otherHobbyView)
     }
     
     private func setLayout(){
-        myHobbyView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        contentView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+
+        myHobbyView.snp.makeConstraints {
+            $0.top.equalTo(contentView.snp.top)
+            $0.horizontalEdges.equalToSuperview().inset(20)
+        }
+
+        otherHobbyView.snp.makeConstraints {
+            $0.top.equalTo(myHobbyView.snp.bottom).offset(25)
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.bottom.lessThanOrEqualTo(contentView.snp.bottom).offset(-20)
+        }
     }
     
     // MARK: - API
