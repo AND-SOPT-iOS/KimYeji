@@ -18,16 +18,16 @@ class TabBarController: UITabBarController {
     private func setupTabBar() {
         let financialTabMainViewController = FinancialTabMainViewController()
         let chartViewController = ChartViewController()
-        let hobbyViewController = HobbyViewController()
+        let signUpViewController = SignUpViewController()
         
         let financialNavicationController = UINavigationController(rootViewController: financialTabMainViewController)
         let chartNavigationController = UINavigationController(rootViewController: chartViewController)
-        let hobbyNavigationController = UINavigationController(rootViewController: hobbyViewController)
+        let signUpNavigationController = UINavigationController(rootViewController: signUpViewController)
         
         financialNavicationController.tabBarItem = UITabBarItem(title: "금융", image: UIImage(systemName: "wonsign"), tag: 0)
         chartNavigationController.tabBarItem = UITabBarItem(title: "차트", image: UIImage(systemName: "chart.bar.doc.horizontal"), tag: 1)
-        hobbyNavigationController.tabBarItem = UITabBarItem(title: "서버", image: UIImage(systemName: "heart.fill"), tag: 2)
+        signUpViewController.tabBarItem = UITabBarItem(title: "서버", image: UIImage(systemName: "heart.fill"), tag: 2)
         
-        self.viewControllers = [financialNavicationController, chartNavigationController, hobbyNavigationController]
+        self.viewControllers = [financialNavicationController, chartNavigationController, signUpNavigationController]
     }
 }

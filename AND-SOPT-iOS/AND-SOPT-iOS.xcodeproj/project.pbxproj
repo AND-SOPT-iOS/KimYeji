@@ -61,6 +61,10 @@
 		B8E1EC152CDD06FE00F5C341 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B8E1EC142CDD06FE00F5C341 /* Alamofire */; };
 		B8E1EC192CDD0B5100F5C341 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC182CDD0B5100F5C341 /* Environment.swift */; };
 		B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */; };
+		B8E1EC1D2CDD0C7F00F5C341 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC1C2CDD0C7F00F5C341 /* RegisterRequest.swift */; };
+		B8E1EC282CDD0F5F00F5C341 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC272CDD0F5F00F5C341 /* UserService.swift */; };
+		B8E1EC2A2CDD0FB500F5C341 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */; };
+		B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2B2CDD10D100F5C341 /* SignUpView.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +142,10 @@
 		B8E1EC162CDD098500F5C341 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B8E1EC182CDD0B5100F5C341 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B8E1EC1C2CDD0C7F00F5C341 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		B8E1EC272CDD0F5F00F5C341 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B8E1EC2B2CDD10D100F5C341 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -369,6 +377,7 @@
 		B888FFFA2CD424A5000A9D75 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B8E1EC1F2CDD0CCA00F5C341 /* Register */,
 				B8E1EC0F2CDCFB4A00F5C341 /* Hobby */,
 				B88800012CD42D06000A9D75 /* FinancialTab */,
 				B888FFFF2CD42CD2000A9D75 /* AppDetail */,
@@ -426,10 +435,77 @@
 		B8E1EC172CDD0B2C00F5C341 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B8E1EC242CDD0E5D00F5C341 /* API */,
+				B8E1EC1E2CDD0CB700F5C341 /* DTO */,
 				B8E1EC182CDD0B5100F5C341 /* Environment.swift */,
 				B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		B8E1EC1E2CDD0CB700F5C341 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC232CDD0DA800F5C341 /* Response */,
+				B8E1EC222CDD0DA100F5C341 /* Request */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		B8E1EC1F2CDD0CCA00F5C341 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC202CDD0CD400F5C341 /* View */,
+				B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		B8E1EC202CDD0CD400F5C341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC2B2CDD10D100F5C341 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8E1EC222CDD0DA100F5C341 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC252CDD0EE800F5C341 /* Users */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B8E1EC232CDD0DA800F5C341 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B8E1EC242CDD0E5D00F5C341 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC262CDD0F4F00F5C341 /* Users */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B8E1EC252CDD0EE800F5C341 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC1C2CDD0C7F00F5C341 /* RegisterRequest.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		B8E1EC262CDD0F4F00F5C341 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC272CDD0F5F00F5C341 /* UserService.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -579,6 +655,7 @@
 				B888FFDE2CD29757000A9D75 /* RecommendationView.swift in Sources */,
 				B84C07F12CB7A0F500AFE373 /* AppDelegate.swift in Sources */,
 				B888FFE92CD37045000A9D75 /* EssentialFinancialApp.swift in Sources */,
+				B8E1EC2A2CDD0FB500F5C341 /* SignUpViewController.swift in Sources */,
 				B888FFF12CD3CF8B000A9D75 /* RankingApp.swift in Sources */,
 				B80ADC732CC242BE005AC520 /* AppStoreTossMainViewController.swift in Sources */,
 				B888FFE52CD2A07A000A9D75 /* RecommendationCell.swift in Sources */,
@@ -589,6 +666,7 @@
 				B888FFD02CD25D53000A9D75 /* Review.swift in Sources */,
 				B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */,
 				B8E1EC192CDD0B5100F5C341 /* Environment.swift in Sources */,
+				B8E1EC1D2CDD0C7F00F5C341 /* RegisterRequest.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
@@ -609,6 +687,7 @@
 				B888FFB62CD2084D000A9D75 /* PhotoViewController.swift in Sources */,
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
+				B8E1EC282CDD0F5F00F5C341 /* UserService.swift in Sources */,
 				B888FFF32CD3D9CA000A9D75 /* RankAppCollectionCell.swift in Sources */,
 				B888FFBE2CD2085B000A9D75 /* ChartController.swift in Sources */,
 				B888FFCA2CD24F10000A9D75 /* PreviewImage.swift in Sources */,
@@ -618,6 +697,7 @@
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
 				B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */,
+				B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */,
 				B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */,
 				B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
@@ -671,6 +751,7 @@
 /* Begin XCBuildConfiguration section */
 		B84C08152CB7A0F600AFE373 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E1EC162CDD098500F5C341 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
