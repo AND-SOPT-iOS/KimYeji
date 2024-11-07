@@ -59,6 +59,8 @@
 		B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */; };
 		B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */; };
 		B8E1EC152CDD06FE00F5C341 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B8E1EC142CDD06FE00F5C341 /* Alamofire */; };
+		B8E1EC192CDD0B5100F5C341 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC182CDD0B5100F5C341 /* Environment.swift */; };
+		B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,9 @@
 		B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppTableCell.swift; sourceTree = "<group>"; };
 		B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		B8E1EC162CDD098500F5C341 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		B8E1EC182CDD0B5100F5C341 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +228,7 @@
 		B84C07EF2CB7A0F500AFE373 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B8E1EC172CDD0B2C00F5C341 /* Network */,
 				B888FFFA2CD424A5000A9D75 /* Presentation */,
 				B84C07FE2CB7A0F600AFE373 /* Info.plist */,
 				B84C07F92CB7A0F600AFE373 /* Assets.xcassets */,
@@ -230,6 +236,7 @@
 				B84036812CBC32B7004AAAB4 /* Global */,
 				B84C07FB2CB7A0F600AFE373 /* LaunchScreen.storyboard */,
 				B80ADC6C2CC240D7005AC520 /* Seminar */,
+				B8E1EC162CDD098500F5C341 /* Config.xcconfig */,
 			);
 			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
@@ -416,6 +423,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B8E1EC172CDD0B2C00F5C341 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC182CDD0B5100F5C341 /* Environment.swift */,
+				B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +588,7 @@
 				B888FFD22CD25EF6000A9D75 /* DeveloperResponse.swift in Sources */,
 				B888FFD02CD25D53000A9D75 /* Review.swift in Sources */,
 				B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */,
+				B8E1EC192CDD0B5100F5C341 /* Environment.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
 				B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
@@ -601,6 +618,7 @@
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
 				B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */,
+				B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */,
 				B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */,
 				B85C18EC2CC820D800B40A88 /* VersionRecordViewController.swift in Sources */,
 				B84036842CBC3389004AAAB4 /* UIView+.swift in Sources */,
@@ -716,6 +734,7 @@
 		};
 		B84C08162CB7A0F600AFE373 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E1EC162CDD098500F5C341 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
