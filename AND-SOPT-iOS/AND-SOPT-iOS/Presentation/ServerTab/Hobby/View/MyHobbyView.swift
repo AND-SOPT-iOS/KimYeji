@@ -25,9 +25,8 @@ class MyHobbyView: UIView {
         return view
     }()
     
-    private let myHobbyLabel: UILabel = {
+    let myHobbyLabel: UILabel = {
         let label = UILabel()
-        label.text = "취미취미"
         label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
         return label
