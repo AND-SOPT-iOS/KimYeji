@@ -65,41 +65,9 @@ class UserService {
                 completion(.success(true))
             case .failure:
                 /// 네트워크 요청이 실패했을 때, 어떤 이유인지 파악하여 escaping closure을 실행하고 파악된 error를 넘김
-                let error = self.handleStatusCode(statusCode, data: data)
+                let error = NetworkUtils.handleStatusCode(statusCode, data: data)
                 completion(.failure(error))
             }
         }
-    }
-    
-    /// 서버의 명세서 기반으로 에러 처리를 진행해줌
-    func handleStatusCode(
-        _ statusCode: Int,
-        data: Data
-    ) -> NetworkError {
-        let errorCode = decodeError(data: data)
-        print("Status Code: \(statusCode), Error Code: \(errorCode)")
-        
-        switch (statusCode, errorCode) {
-        case (400, "00"):
-            return .invalidRequest
-        case (400, "01"):
-            return .expressionError
-        case (404, ""):
-            return .invalidURL
-        case (409, "00"):
-            return .duplicateError
-        case (500, ""):
-            return .serverError
-        default:
-            return .unknownError
-        }
-    }
-    
-    func decodeError(data: Data) -> String {
-        guard let errorResponse = try? JSONDecoder().decode(
-            ErrorResponse.self,
-            from: data
-        ) else { return "" }
-        return errorResponse.code
     }
 }

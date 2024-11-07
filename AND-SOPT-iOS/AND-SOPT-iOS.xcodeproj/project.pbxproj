@@ -72,6 +72,7 @@
 		B8E1EC372CDD231400F5C341 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC362CDD231400F5C341 /* TokenResponse.swift */; };
 		B8E1EC3C2CDD24C400F5C341 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3B2CDD24C400F5C341 /* LoginView.swift */; };
 		B8E1EC3E2CDD24DD00F5C341 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */; };
+		B8E1EC402CDD28E400F5C341 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC3F2CDD28E400F5C341 /* NetworkUtils.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		B8E1EC362CDD231400F5C341 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		B8E1EC3B2CDD24C400F5C341 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B8E1EC3D2CDD24DD00F5C341 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B8E1EC3F2CDD28E400F5C341 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -453,6 +455,7 @@
 				B8E1EC182CDD0B5100F5C341 /* Environment.swift */,
 				B8E1EC1A2CDD0B6E00F5C341 /* NetworkError.swift */,
 				B8E1EC342CDD211400F5C341 /* KeychainManager.swift */,
+				B8E1EC3F2CDD28E400F5C341 /* NetworkUtils.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				B888FFAF2CD2083B000A9D75 /* CartCellTableViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
+				B8E1EC402CDD28E400F5C341 /* NetworkUtils.swift in Sources */,
 				B85C18EE2CC820E400B40A88 /* AllReviewsViewController.swift in Sources */,
 				B888FFB12CD20843000A9D75 /* TableViewSeminarController.swift in Sources */,
 				B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */,
