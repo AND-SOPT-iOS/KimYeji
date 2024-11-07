@@ -49,6 +49,9 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success:
                     self.loginView.resultLabel.text = "😻 로그인 성공!"
+                    let myHobbyViewController = HobbyViewController()
+                    self.navigationController?.pushViewController(myHobbyViewController, animated: true)
+                    
                 case .failure(let error):
                     self.loginView.resultLabel.text = error.errorMessage
                 }
