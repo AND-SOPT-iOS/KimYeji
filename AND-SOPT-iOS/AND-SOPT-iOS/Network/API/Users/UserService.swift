@@ -8,8 +8,7 @@
 import Foundation
 import Alamofire
 
-/// 클래스는 라우터 별로 나눠줄 수 있음!
-/// 라우터란 URL의 분기점. 이 클래스의 분기점은 /user 임
+// 유저 API : /user
 class UserService {
     
     /// 등록 API 콜이 일어나는 메소드
@@ -27,7 +26,7 @@ class UserService {
         /// 파라미터는 Request Body,
         /// HTTP 요청에서 전송되는 데이터를 일반적으로 "parameters" 또는 "params"라고 부름.
         /// GET 요청의 쿼리 파라미터나 POST 요청의 바디 데이터 모두 "parameters"로 통일해서 부름
-        let parameters = RegisterRequest(
+        let parameters = SignUpRequest(
             username: username,
             password: password,
             hobby: hobby
