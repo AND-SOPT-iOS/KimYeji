@@ -45,12 +45,12 @@ class NewNewsView: UIView {
         return label
     }()
     
-    private let versionUpdateRecordButton: UIButton = {
+    private lazy var versionUpdateRecordButton: UIButton = {
         let button = UIButton()
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold))
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
-        button.addTarget(nil, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(versionUpdateRecordButtonTapped), for: .touchUpInside)
         
         return button
     }()

@@ -30,12 +30,12 @@ class AppDescriptionView: UIView {
         return label
     }()
     
-    private let appInfoMoreButton: UIButton = {
+    private lazy var appInfoMoreButton: UIButton = {
         let button = UIButton()
         button.setTitle("더 보기", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
-        button.addTarget(nil, action: #selector(appInfoMoreButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(appInfoMoreButtonTapped), for: .touchUpInside)
         
         return button
     }()

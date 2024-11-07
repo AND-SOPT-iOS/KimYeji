@@ -26,12 +26,12 @@ class RatingAndReviewView: UIView {
         return label
     }()
     
-    private let seeAllReviewsButton: UIButton = {
+    private lazy var seeAllReviewsButton: UIButton = {
         let button = UIButton()
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .bold))
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
-        button.addTarget(nil, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(seeAllReviewsButtonTapped), for: .touchUpInside)
         
         return button
     }()

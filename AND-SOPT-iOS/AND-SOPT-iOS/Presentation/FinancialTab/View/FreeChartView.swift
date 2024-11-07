@@ -22,11 +22,11 @@ class FreeChartView: UIView {
         $0.textColor = .label
     }
     
-    private let freeChartMoreButton = UIButton().then {
+    private lazy var freeChartMoreButton = UIButton().then {
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18, weight: .bold))
         $0.setImage(icon, for: .normal)
         $0.tintColor = .systemGray
-        $0.addTarget(nil, action: #selector(freeChartMoreButtonTapped), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(freeChartMoreButtonTapped), for: .touchUpInside)
     }
     
     private lazy var freeChartCollectionView = UICollectionView(
