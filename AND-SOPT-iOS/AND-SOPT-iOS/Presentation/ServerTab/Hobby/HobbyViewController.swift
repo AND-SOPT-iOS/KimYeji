@@ -57,6 +57,7 @@ class HobbyViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     private func setActions() {
         otherHobbyView.fetchHobbyButton.addTarget(self, action: #selector(fetchOtherHobby), for: .touchUpInside)
         

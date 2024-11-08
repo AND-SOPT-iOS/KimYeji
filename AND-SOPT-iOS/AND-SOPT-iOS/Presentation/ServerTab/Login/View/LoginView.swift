@@ -7,68 +7,61 @@
 
 import UIKit
 import SnapKit
+import Then
 
 class LoginView: UIView {
-    // MARK: - UI Components
+    // MARK: - Components
     
-    let usernameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "유저 이름을 입력하세요"
-        textField.layer.cornerRadius = 8
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.systemGray4.cgColor
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
-        textField.leftViewMode = .always
-        return textField
-    }()
+    let usernameTextField = UITextField().then {
+        $0.placeholder = "유저 이름을 입력하세요"
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
+        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        $0.leftViewMode = .always
+    }
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "비밀번호를 입력하세요"
-        textField.isSecureTextEntry = true
-        textField.layer.cornerRadius = 8
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.systemGray4.cgColor
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
-        textField.leftViewMode = .always
-        return textField
-    }()
+    let passwordTextField = UITextField().then {
+        $0.placeholder = "비밀번호를 입력하세요"
+        $0.isSecureTextEntry = true
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
+        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        $0.leftViewMode = .always
+    }
     
-    let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("로그인", for: .normal)
-        button.backgroundColor = .systemBrown
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8
-        return button
-    }()
+    let loginButton = UIButton(type: .system).then {
+        $0.setTitle("로그인", for: .normal)
+        $0.backgroundColor = .systemBrown
+        $0.setTitleColor(.white, for: .normal)
+        $0.layer.cornerRadius = 8
+    }
     
-    let resultLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemRed
-        label.textAlignment = .center
-        return label
-    }()
+    let resultLabel = UILabel().then {
+        $0.textColor = .systemRed
+        $0.textAlignment = .center
+    }
     
     // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
-        setupLayout()
+        setUI()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup UI
+    // MARK: - UI, Layout
     
-    private func setupUI() {
+    private func setUI() {
         addSubviews(usernameTextField, passwordTextField, loginButton, resultLabel)
     }
     
-    private func setupLayout() {
+    private func setLayout() {
         usernameTextField.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)

@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class UserUpdateGuideView: UIView {
-    // MARK: - UI Components
+    // MARK: - Components
     private let userInfoUpdateTitleLabel = UILabel().then {
         $0.text = "🤠 유저 정보 변경하기"
         $0.font = .systemFont(ofSize: 25, weight: .bold)

@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController {
       signUpView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
+    // MARK: - Target 
     private func setTargets() {
       signUpView.signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         

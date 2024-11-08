@@ -8,32 +8,25 @@
 import UIKit
 
 class MyHobbyView: UIView {
-    // MARK: - UI Components
-    private let myHobbyTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "🤩 나의 취미는?"
-        label.font = .systemFont(ofSize: .init(25), weight: .bold)
-        return label
-    }()
+    // MARK: - Components
+    private let myHobbyTitleLabel = UILabel().then {
+        $0.text = "🤩 나의 취미는?"
+        $0.font = .systemFont(ofSize: 25, weight: .bold)
+    }
     
-    private let myHobbyBoxView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.systemGray4.cgColor
-        view.clipsToBounds = true
-        return view
-    }()
+    private let myHobbyBoxView = UIView().then {
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
+        $0.clipsToBounds = true
+    }
     
-    let myHobbyLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
-        label.textAlignment = .center
-        return label
-    }()
+    let myHobbyLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 18)
+        $0.textAlignment = .center
+    }
     
     // MARK: - Initializer
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -44,7 +37,7 @@ class MyHobbyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup UI
+    // MARK: - UI, Layout
     private func setUI() {
         addSubviews(myHobbyTitleLabel, myHobbyBoxView)
         myHobbyBoxView.addSubview(myHobbyLabel)

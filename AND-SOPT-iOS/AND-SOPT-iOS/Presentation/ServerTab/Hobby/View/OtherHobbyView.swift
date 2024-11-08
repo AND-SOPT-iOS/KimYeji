@@ -14,14 +14,12 @@ class OtherHobbyView: UIView {
         $0.font = .systemFont(ofSize: 25, weight: .bold)
     }
     
-    private let otherHobbyBoxView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.systemGray4.cgColor
-        view.clipsToBounds = true
-        return view
-    }()
+    private let otherHobbyBoxView = UIView().then {
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemGray4.cgColor
+        $0.clipsToBounds = true
+    }
     
     let otherHobbyLabel = UILabel().then{
         $0.font = .systemFont(ofSize: 18)
@@ -48,8 +46,8 @@ class OtherHobbyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup UI
-    
+    // MARK: - UI, Layout
+
     private func setUI() {
         addSubviews(otherHobbytitleLabel, otherHobbyBoxView, fetchHobbyButton)
         otherHobbyBoxView.addSubview(otherHobbyLabel)
