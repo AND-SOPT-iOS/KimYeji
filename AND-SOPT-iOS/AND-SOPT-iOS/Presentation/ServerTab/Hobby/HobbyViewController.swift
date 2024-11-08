@@ -51,13 +51,13 @@ class HobbyViewController: UIViewController {
         }
         
         otherHobbyView.snp.makeConstraints {
-            $0.top.equalTo(myHobbyView.snp.bottom).offset(25)
+            $0.top.equalTo(myHobbyView.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(20)
             
         }
         
         userUpdateGuideView.snp.makeConstraints{
-            $0.top.equalTo(otherHobbyView.snp.bottom).offset(25)
+            $0.top.equalTo(otherHobbyView.snp.bottom).offset(40)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.lessThanOrEqualTo(contentView.snp.bottom).offset(-20)
         }

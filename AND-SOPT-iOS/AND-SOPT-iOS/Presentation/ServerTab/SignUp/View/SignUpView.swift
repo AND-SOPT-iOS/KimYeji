@@ -20,7 +20,7 @@ class SignUpView: UIView {
     // MARK: - Components
     private var userNameTextField = UITextField().then {
         $0.placeholder = "유저 이름을 입력하세요"
-        $0.font = .systemFont(ofSize: 14)
+        $0.font = .systemFont(ofSize: 15)
         $0.layer.cornerRadius = 7
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -31,7 +31,7 @@ class SignUpView: UIView {
     
     private var passwordTextField = UITextField().then {
         $0.placeholder = "비밀번호를 입력하세요"
-        $0.font = .systemFont(ofSize: 14)
+        $0.font = .systemFont(ofSize: 15)
         $0.isSecureTextEntry = true
         $0.layer.cornerRadius = 7
         $0.clipsToBounds = true
@@ -43,7 +43,7 @@ class SignUpView: UIView {
     
     private var hobbyTextField = UITextField().then {
         $0.placeholder = "취미를 입력하세요"
-        $0.font = .systemFont(ofSize: 14)
+        $0.font = .systemFont(ofSize: 15)
         $0.layer.cornerRadius = 7
         $0.clipsToBounds = true
         $0.layer.borderWidth = 1
@@ -55,7 +55,7 @@ class SignUpView: UIView {
     private lazy var signUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemGreen
+        $0.backgroundColor = .systemOrange
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
         $0.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
@@ -95,35 +95,35 @@ class SignUpView: UIView {
         userNameTextField.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(userNameTextField.snp.bottom).offset(20)
+            $0.top.equalTo(userNameTextField.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         hobbyTextField.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         signUpButton.snp.makeConstraints {
-            $0.top.equalTo(hobbyTextField.snp.bottom).offset(20)
+            $0.top.equalTo(hobbyTextField.snp.bottom).offset(25)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
         
         resultLabel.snp.makeConstraints {
-            $0.top.equalTo(loginButton.snp.bottom).offset(40)
+            $0.top.equalTo(loginButton.snp.bottom).offset(30)
             $0.centerX.equalToSuperview()
         }
     }

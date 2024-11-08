@@ -25,7 +25,7 @@ class UserUpdateGuideView: UIView {
     private lazy var goToUserInfoUpdateButton = UIButton().then {
         $0.setTitle("😮 유저 정보 변경하러 가기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemTeal
+        $0.backgroundColor = .systemBrown
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(goToUserInfoUpdateButtonTapped), for: .touchUpInside)
     }

@@ -46,7 +46,7 @@ class UserInfoUpdateView: UIView {
     
     private lazy var updateButton = UIButton().then {
         $0.setTitle("🤫 정보 변경하기", for: .normal)
-        $0.backgroundColor = .systemBlue
+        $0.backgroundColor = .systemOrange
         $0.layer.cornerRadius = 8
         $0.setTitleColor(.white, for: .normal)
         $0.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
@@ -82,13 +82,13 @@ class UserInfoUpdateView: UIView {
         hobbyTextField.snp.makeConstraints {
             $0.top.equalTo(userUpdateInfoTitleLabel.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         passwordTextField.snp.makeConstraints {
             $0.top.equalTo(hobbyTextField.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
         updateButton.snp.makeConstraints {

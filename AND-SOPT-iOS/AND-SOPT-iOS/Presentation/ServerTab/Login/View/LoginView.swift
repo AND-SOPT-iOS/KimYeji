@@ -39,9 +39,10 @@ class LoginView: UIView {
     
     private lazy var loginButton = UIButton(type: .system).then {
         $0.setTitle("로그인", for: .normal)
-        $0.backgroundColor = .systemBrown
+        $0.backgroundColor = .systemOrange
         $0.setTitleColor(.white, for: .normal)
         $0.layer.cornerRadius = 8
+        $0.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
@@ -80,7 +81,7 @@ class LoginView: UIView {
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(25)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }

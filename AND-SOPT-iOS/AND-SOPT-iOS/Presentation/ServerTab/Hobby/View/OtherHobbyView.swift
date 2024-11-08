@@ -35,7 +35,7 @@ class OtherHobbyView: UIView {
     private lazy var fetchHobbyButton = UIButton().then {
         $0.setTitle("😎 랜덤 주인공 뽑기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemBlue
+        $0.backgroundColor = .systemOrange
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
         $0.addTarget(self, action: #selector(fetchHobbyButtonTapped), for: .touchUpInside)
@@ -67,7 +67,7 @@ class OtherHobbyView: UIView {
         }
         
         otherHobbyBoxView.snp.makeConstraints {
-            $0.top.equalTo(otherHobbytitleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(otherHobbytitleLabel.snp.bottom).offset(25)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(100)
         }
@@ -77,7 +77,7 @@ class OtherHobbyView: UIView {
         }
         
         fetchHobbyButton.snp.makeConstraints {
-            $0.top.equalTo(otherHobbyBoxView.snp.bottom).offset(30)
+            $0.top.equalTo(otherHobbyBoxView.snp.bottom).offset(15)
             $0.height.equalTo(50)
             $0.horizontalEdges.bottom.equalToSuperview()
         }
