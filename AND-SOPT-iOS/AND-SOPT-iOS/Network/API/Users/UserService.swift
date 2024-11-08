@@ -11,8 +11,7 @@ import Alamofire
 // 유저 API : /user
 class UserService {
     
-    /// 등록 API 콜이 일어나는 메소드
-    /// 파라미터는 Request Body에 필요한 것들
+    // 회원가입
     func register(
         username: String,
         password: String,
@@ -93,24 +92,25 @@ class UserService {
         .response { [weak self] response in
             
             guard let statusCode = response.response?.statusCode,
-                  let data = response.data else {
+                  let self
+            else {
                 completion(.failure(.unknownError))
                 return
             }
-            
-            print("상태 코드: \(statusCode)")
-            if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
-                print("응답 데이터: \(jsonData)")
-            }
-            
+                        
             switch response.result {
             case .success:
+                print("유저 정보 수정 성공!")
                 completion(.success(true))
-            case .failure:
-                let error = NetworkUtils.handleStatusCode(statusCode, data: data)
-                completion(.failure(error))
+            case .failure(let error):
+                if let data = response.data{
+                    print(data)
+                    let error = NetworkUtils.handleStatusCode(statusCode, data: data)
+                    completion(.failure(error))
+                }
+                print("오류 메시지: \(error.localizedDescription)")
             }
-            
         }
     }
 }
+

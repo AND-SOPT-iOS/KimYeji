@@ -9,9 +9,16 @@
 
 import UIKit
 import SnapKit
+import Then
 
 class UserInfoUpdateView: UIView {
     // MARK: - Components
+    private let userUpdateInfoTitleLabel = UILabel().then{
+        $0.text = "😮 사용자 정보 변경"
+        $0.font = .systemFont(ofSize: 25 , weight: .bold)
+        $0.textAlignment = .center
+    }
+    
     let hobbyTextField = UITextField().then {
         $0.placeholder = "새로운 취미를 입력하세요."
         $0.layer.cornerRadius = 7
@@ -40,6 +47,7 @@ class UserInfoUpdateView: UIView {
     
     let resultLabel = UILabel().then{
         $0.font = .systemFont(ofSize: 18)
+        $0.textAlignment = .center
     }
     
     // MARK: - Initializer
@@ -55,12 +63,17 @@ class UserInfoUpdateView: UIView {
     
     // MARK: - UI, Layout
     private func setUI() {
-        addSubviews(hobbyTextField, passwordTextField, updateButton, resultLabel)
+        addSubviews(userUpdateInfoTitleLabel, hobbyTextField, passwordTextField, updateButton, resultLabel)
     }
     
     private func setLayout() {
-        hobbyTextField.snp.makeConstraints {
+        userUpdateInfoTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
+            $0.horizontalEdges.equalToSuperview()
+        }
+        
+        hobbyTextField.snp.makeConstraints {
+            $0.top.equalTo(userUpdateInfoTitleLabel.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(40)
         }
@@ -78,8 +91,8 @@ class UserInfoUpdateView: UIView {
         }
         
         resultLabel.snp.makeConstraints {
-            $0.top.equalTo(updateButton.snp.bottom).offset(10)
-            $0.horizontalEdges.bottom.equalToSuperview()
+            $0.top.equalTo(updateButton.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
     }
 }
