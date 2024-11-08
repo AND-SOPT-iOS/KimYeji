@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private let loginView = LoginView()
-    private let loginService = LoginService()
+    private let authService = AuthService()
     
     // MARK: - Lifecycle
     
@@ -45,7 +45,7 @@ extension LoginViewController: LoginViewDelegate {
             return
         }
         
-        loginService.login(username: username, password: password) { [weak self] result in
+        authService.login(username: username, password: password) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 

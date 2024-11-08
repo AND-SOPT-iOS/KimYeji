@@ -97,7 +97,7 @@ class UserService {
                 completion(.failure(.unknownError))
                 return
             }
-                        
+            
             switch response.result {
             case .success:
                 print("유저 정보 수정 성공!")
@@ -113,4 +113,3 @@ class UserService {
         }
     }
 }
-

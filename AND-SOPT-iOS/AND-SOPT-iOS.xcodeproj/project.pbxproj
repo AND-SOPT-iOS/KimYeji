@@ -56,6 +56,7 @@
 		B888FFF52CD3E68A000A9D75 /* FreeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */; };
 		B888FFF72CD3FB8E000A9D75 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */; };
 		B888FFF92CD40BC5000A9D75 /* RankAppTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */; };
+		B8B491722CDE2426004AD42E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B491712CDE2426004AD42E /* AuthService.swift */; };
 		B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */; };
 		B8E1EC112CDCFB7300F5C341 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */; };
 		B8E1EC152CDD06FE00F5C341 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B8E1EC142CDD06FE00F5C341 /* Alamofire */; };
@@ -66,7 +67,6 @@
 		B8E1EC2A2CDD0FB500F5C341 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */; };
 		B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2B2CDD10D100F5C341 /* SignUpView.swift */; };
 		B8E1EC2E2CDD1AA100F5C341 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2D2CDD1AA100F5C341 /* LoginRequest.swift */; };
-		B8E1EC302CDD1B4400F5C341 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC2F2CDD1B4400F5C341 /* LoginService.swift */; };
 		B8E1EC332CDD1BCB00F5C341 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC322CDD1BCB00F5C341 /* LoginResponse.swift */; };
 		B8E1EC352CDD211400F5C341 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC342CDD211400F5C341 /* KeychainManager.swift */; };
 		B8E1EC372CDD231400F5C341 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC362CDD231400F5C341 /* TokenResponse.swift */; };
@@ -155,6 +155,7 @@
 		B888FFF42CD3E68A000A9D75 /* FreeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeChartView.swift; sourceTree = "<group>"; };
 		B888FFF62CD3FB8E000A9D75 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		B888FFF82CD40BC5000A9D75 /* RankAppTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankAppTableCell.swift; sourceTree = "<group>"; };
+		B8B491712CDE2426004AD42E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B8E1EC0A2CDCF5B500F5C341 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B8E1EC102CDCFB7300F5C341 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 		B8E1EC162CDD098500F5C341 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -165,7 +166,6 @@
 		B8E1EC292CDD0FB500F5C341 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B8E1EC2B2CDD10D100F5C341 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B8E1EC2D2CDD1AA100F5C341 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		B8E1EC2F2CDD1B4400F5C341 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		B8E1EC322CDD1BCB00F5C341 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		B8E1EC342CDD211400F5C341 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B8E1EC362CDD231400F5C341 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
@@ -549,7 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E1EC272CDD0F5F00F5C341 /* UserService.swift */,
-				B8E1EC2F2CDD1B4400F5C341 /* LoginService.swift */,
+				B8B491712CDE2426004AD42E /* AuthService.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -793,6 +793,7 @@
 				B8E1EC4F2CDD41B600F5C341 /* OtherHobbyService.swift in Sources */,
 				B888FFAF2CD2083B000A9D75 /* CartCellTableViewController.swift in Sources */,
 				B84C07F32CB7A0F500AFE373 /* SceneDelegate.swift in Sources */,
+				B8B491722CDE2426004AD42E /* AuthService.swift in Sources */,
 				B80ADC6F2CC24105005AC520 /* NickNameDetailViewController.swift in Sources */,
 				B8E1EC402CDD28E400F5C341 /* NetworkUtils.swift in Sources */,
 				B8E1EC462CDD352B00F5C341 /* HobbyResponse.swift in Sources */,
@@ -825,7 +826,6 @@
 				B888FFED2CD37AF5000A9D75 /* EssentialFinancialCell.swift in Sources */,
 				B888FFBF2CD2085B000A9D75 /* App.swift in Sources */,
 				B888FFC02CD2085B000A9D75 /* ChartCell.swift in Sources */,
-				B8E1EC302CDD1B4400F5C341 /* LoginService.swift in Sources */,
 				B8E1EC492CDD356A00F5C341 /* MyHobbyService.swift in Sources */,
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
