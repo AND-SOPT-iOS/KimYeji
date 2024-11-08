@@ -17,7 +17,7 @@ class UserUpdateViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setActions()
+        setDelegates()
     }
     
     // MARK: - UI, Layout
@@ -41,27 +41,29 @@ class UserUpdateViewController: UIViewController {
         }
     }
     
-    private func setActions() {
-        userUpdateInfoView.updateButton.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
+    // MARK: - Delegates
+    private func setDelegates(){
+        userUpdateInfoView.delegate = self
     }
-    
-    
-    // MARK: - Actions
-    @objc private func updateButtonTapped() {
-        let hobby = userUpdateInfoView.hobbyTextField.text ?? ""
-        let password = userUpdateInfoView.passwordTextField.text ?? ""
+}
+
+// MARK: - Delegate extension
+extension UserUpdateViewController: UserInfoUpdateViewDelegate {
+    func updateButtonTapped(hobby: String?, password: String?) {
+        let hobbyText = hobby ?? ""
+        let passwordText = password ?? ""
         
-        if !hobby.isEmpty && hobby.count > 8 || !password.isEmpty && password.count > 8 {
+        if !hobbyText.isEmpty && hobbyText.count > 8 || !passwordText.isEmpty && passwordText.count > 8 {
             userUpdateInfoView.resultLabel.text = "🚨 최대 8자까지 입력 가능합니다."
             return
         }
         
-        if hobby.isEmpty && password.isEmpty {
+        if hobbyText.isEmpty && passwordText.isEmpty {
             userUpdateInfoView.resultLabel.text = "🥵 하나 이상 입력해주세요."
             return
         }
         
-        userService.updateUserInfo(hobby: hobby, password: password) { [weak self] result in
+        userService.updateUserInfo(hobby: hobbyText, password: passwordText) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 
@@ -69,7 +71,7 @@ class UserUpdateViewController: UIViewController {
                 case .success:
                     self.userUpdateInfoView.resultLabel.text = "😇 성공적으로 변경되었습니다."
                 case .failure(let error):
-                    self.userUpdateInfoView.resultLabel.text = "😭 변경 실패했습니다.. :  \(error.errorMessage)"
+                    self.userUpdateInfoView.resultLabel.text = "😭 변경 실패했습니다.. : \(error.errorMessage)"
                 }
             }
         }

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol OtherHobbyViewDelegate: AnyObject {
+    func fetchHobbyButtonTapped()
+}
+
 class OtherHobbyView: UIView {
+    weak var delegate: OtherHobbyViewDelegate?
+    
     // MARK: - Components
     private let otherHobbytitleLabel = UILabel().then {
         $0.text = "🥸 랜덤 사용자의 취미는?"
@@ -26,12 +32,13 @@ class OtherHobbyView: UIView {
         $0.textAlignment = .center
     }
     
-    let fetchHobbyButton = UIButton().then {
+    private lazy var fetchHobbyButton = UIButton().then {
         $0.setTitle("😎 랜덤 주인공 뽑기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemBlue
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+        $0.addTarget(self, action: #selector(fetchHobbyButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Initializer
@@ -47,7 +54,7 @@ class OtherHobbyView: UIView {
     }
     
     // MARK: - UI, Layout
-
+    
     private func setUI() {
         addSubviews(otherHobbytitleLabel, otherHobbyBoxView, fetchHobbyButton)
         otherHobbyBoxView.addSubview(otherHobbyLabel)
@@ -74,5 +81,10 @@ class OtherHobbyView: UIView {
             $0.height.equalTo(50)
             $0.horizontalEdges.bottom.equalToSuperview()
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func fetchHobbyButtonTapped() {
+        delegate?.fetchHobbyButtonTapped()
     }
 }

@@ -11,7 +11,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol UserInfoUpdateViewDelegate: AnyObject {
+    func updateButtonTapped(hobby: String?, password: String?)
+}
+
 class UserInfoUpdateView: UIView {
+    weak var delegate: UserInfoUpdateViewDelegate?
+
     // MARK: - Components
     private let userUpdateInfoTitleLabel = UILabel().then{
         $0.text = "😮 사용자 정보 변경"
@@ -19,7 +25,7 @@ class UserInfoUpdateView: UIView {
         $0.textAlignment = .center
     }
     
-    let hobbyTextField = UITextField().then {
+    private var hobbyTextField = UITextField().then {
         $0.placeholder = "새로운 취미를 입력하세요."
         $0.layer.cornerRadius = 7
         $0.layer.borderWidth = 1
@@ -28,7 +34,7 @@ class UserInfoUpdateView: UIView {
         $0.leftViewMode = .always
     }
     
-    let passwordTextField = UITextField().then {
+    private var passwordTextField = UITextField().then {
         $0.placeholder = "새로운 비밀번호를 입력하세요."
         $0.isSecureTextEntry = true
         $0.layer.cornerRadius = 7
@@ -38,11 +44,12 @@ class UserInfoUpdateView: UIView {
         $0.leftViewMode = .always
     }
     
-    let updateButton = UIButton().then {
+    private lazy var updateButton = UIButton().then {
         $0.setTitle("🤫 정보 변경하기", for: .normal)
         $0.backgroundColor = .systemBlue
         $0.layer.cornerRadius = 8
         $0.setTitleColor(.white, for: .normal)
+        $0.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
     }
     
     let resultLabel = UILabel().then{
@@ -94,5 +101,10 @@ class UserInfoUpdateView: UIView {
             $0.top.equalTo(updateButton.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func updateButtonTapped() {
+        delegate?.updateButtonTapped(hobby: hobbyTextField.text, password: passwordTextField.text)
     }
 }

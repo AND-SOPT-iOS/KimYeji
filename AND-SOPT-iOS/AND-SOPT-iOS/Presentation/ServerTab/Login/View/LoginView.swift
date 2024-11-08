@@ -9,10 +9,16 @@ import UIKit
 import SnapKit
 import Then
 
+protocol LoginViewDelegate: AnyObject {
+    func loginButtonTapped(username: String?, password: String?)
+}
+
 class LoginView: UIView {
+    weak var delegate: LoginViewDelegate?
+    
     // MARK: - Components
     
-    let usernameTextField = UITextField().then {
+    private var usernameTextField = UITextField().then {
         $0.placeholder = "유저 이름을 입력하세요"
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
@@ -21,7 +27,7 @@ class LoginView: UIView {
         $0.leftViewMode = .always
     }
     
-    let passwordTextField = UITextField().then {
+    private var passwordTextField = UITextField().then {
         $0.placeholder = "비밀번호를 입력하세요"
         $0.isSecureTextEntry = true
         $0.layer.cornerRadius = 8
@@ -31,11 +37,12 @@ class LoginView: UIView {
         $0.leftViewMode = .always
     }
     
-    let loginButton = UIButton(type: .system).then {
+    private lazy var loginButton = UIButton(type: .system).then {
         $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = .systemBrown
         $0.setTitleColor(.white, for: .normal)
         $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     let resultLabel = UILabel().then {
@@ -44,7 +51,6 @@ class LoginView: UIView {
     }
     
     // MARK: - Initializer
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -56,7 +62,6 @@ class LoginView: UIView {
     }
     
     // MARK: - UI, Layout
-    
     private func setUI() {
         addSubviews(usernameTextField, passwordTextField, loginButton, resultLabel)
     }
@@ -84,5 +89,10 @@ class LoginView: UIView {
             $0.top.equalTo(loginButton.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func loginButtonTapped() {
+        delegate?.loginButtonTapped(username: usernameTextField.text, password: passwordTextField.text)
     }
 }

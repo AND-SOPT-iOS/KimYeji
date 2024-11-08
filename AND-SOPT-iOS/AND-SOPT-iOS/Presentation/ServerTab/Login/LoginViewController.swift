@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setActions()
+        setDelegates()
     }
     
     // MARK: - UI, Layout
@@ -30,14 +30,17 @@ class LoginViewController: UIViewController {
         loginView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
-    // MARK: - Actions
-    private func setActions() {
-        loginView.loginButton.addTarget(self, action: #selector(handleLoginButtonTapped), for: .touchUpInside)
+    // MARK: - Delegates
+    private func setDelegates(){
+        loginView.delegate = self
     }
-    
-    @objc private func handleLoginButtonTapped() {
-        guard let username = loginView.usernameTextField.text, !username.isEmpty,
-              let password = loginView.passwordTextField.text, !password.isEmpty else {
+}
+
+// MARK: - Delegate extension
+extension LoginViewController: LoginViewDelegate {
+    func loginButtonTapped(username: String?, password: String?) {
+        guard let username = username, !username.isEmpty,
+              let password = password, !password.isEmpty else {
             loginView.resultLabel.text = "😭 유저 이름과 비밀번호를 모두 작성해주세요."
             return
         }

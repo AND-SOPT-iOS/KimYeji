@@ -9,9 +9,16 @@ import UIKit
 import SnapKit
 import Then
 
+protocol SignUpViewDelegate: AnyObject {
+    func signUpButtonTapped(username: String?, password: String?, hobby: String?)
+    func loginButtonTapped()
+}
+
 class SignUpView: UIView {
+    weak var delegate: SignUpViewDelegate?
+    
     // MARK: - Components
-    let userNameTextField = UITextField().then {
+    private var userNameTextField = UITextField().then {
         $0.placeholder = "유저 이름을 입력하세요"
         $0.font = .systemFont(ofSize: 14)
         $0.layer.cornerRadius = 7
@@ -22,7 +29,7 @@ class SignUpView: UIView {
         $0.leftViewMode = .always
     }
     
-    let passwordTextField = UITextField().then {
+    private var passwordTextField = UITextField().then {
         $0.placeholder = "비밀번호를 입력하세요"
         $0.font = .systemFont(ofSize: 14)
         $0.isSecureTextEntry = true
@@ -34,7 +41,7 @@ class SignUpView: UIView {
         $0.leftViewMode = .always
     }
     
-    let hobbyTextField = UITextField().then {
+    private var hobbyTextField = UITextField().then {
         $0.placeholder = "취미를 입력하세요"
         $0.font = .systemFont(ofSize: 14)
         $0.layer.cornerRadius = 7
@@ -45,20 +52,22 @@ class SignUpView: UIView {
         $0.leftViewMode = .always
     }
     
-    let signUpButton = UIButton().then {
+    private lazy var signUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemGreen
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+        $0.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
     
-    let loginButton = UIButton().then{
+    private lazy var loginButton = UIButton().then{
         $0.setTitle("로그인 하러가기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemBrown
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
+        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     let resultLabel = UILabel().then {
@@ -117,5 +126,14 @@ class SignUpView: UIView {
             $0.top.equalTo(loginButton.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func signUpButtonTapped() {
+        delegate?.signUpButtonTapped(username: userNameTextField.text, password: passwordTextField.text, hobby: hobbyTextField.text)
+    }
+    
+    @objc private func loginButtonTapped() {
+        delegate?.loginButtonTapped()
     }
 }

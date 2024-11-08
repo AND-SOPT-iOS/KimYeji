@@ -15,13 +15,13 @@ class HobbyViewController: UIViewController {
     private let otherHobbyService = OtherHobbyService()
     private let userUpdateGuideView = UserUpdateGuideView()
     
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setActions()
+        setDelegates()
+        
         fetchMyHobby()
     }
     
@@ -57,11 +57,10 @@ class HobbyViewController: UIViewController {
         }
     }
     
-    // MARK: - Actions
-    private func setActions() {
-        otherHobbyView.fetchHobbyButton.addTarget(self, action: #selector(fetchOtherHobby), for: .touchUpInside)
-        
-        userUpdateGuideView.goToUserInfoUpdateButton.addTarget(self, action: #selector(goToUserInfoUpdateButtonTapped), for: .touchUpInside)
+    // MARK: - Delegates
+    private func setDelegates(){
+        otherHobbyView.delegate = self
+        userUpdateGuideView.delegate = self
     }
     
     // MARK: - API
@@ -80,7 +79,11 @@ class HobbyViewController: UIViewController {
         }
     }
     
-    @objc private func fetchOtherHobby() {
+}
+
+// MARK: - Delegate extension
+extension HobbyViewController: OtherHobbyViewDelegate {
+    func fetchHobbyButtonTapped() {
         let randomUserNo = Int.random(in: 1...600)
         
         otherHobbyService.fetchOtherHobby(userNo: randomUserNo) { [weak self] result in
@@ -96,10 +99,11 @@ class HobbyViewController: UIViewController {
             }
         }
     }
-    
-    @objc private func goToUserInfoUpdateButtonTapped(){
-        let userUpdateViewController  = UserUpdateViewController()
+}
+
+extension HobbyViewController: UserUpdateGuideViewDelegate {
+    func goToUserInfoUpdateButtonTapped() {
+        let userUpdateViewController = UserUpdateViewController()
         navigationController?.pushViewController(userUpdateViewController, animated: true)
     }
-    
 }
