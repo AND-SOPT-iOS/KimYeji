@@ -22,7 +22,13 @@ class HobbyViewController: UIViewController {
         setLayout()
         setDelegates()
         
-        fetchMyHobby()
+//        fetchMyHobby()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchMyHobby() 
     }
     
     // MARK: - UI, Layout
