@@ -13,6 +13,8 @@ class HobbyViewController: UIViewController {
     private let myHobbyService = MyHobbyService()
     private let otherHobbyView = OtherHobbyView()
     private let otherHobbyService = OtherHobbyService()
+    private let userUpdateGuideView = UserUpdateGuideView()
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class HobbyViewController: UIViewController {
     private func setUI() {
         view.backgroundColor = .systemBackground
         view.addSubview(contentView)
-        contentView.addSubviews(myHobbyView, otherHobbyView)
+        contentView.addSubviews(myHobbyView, otherHobbyView, userUpdateGuideView)
     }
     
     private func setLayout(){
@@ -45,14 +47,21 @@ class HobbyViewController: UIViewController {
         otherHobbyView.snp.makeConstraints {
             $0.top.equalTo(myHobbyView.snp.bottom).offset(25)
             $0.horizontalEdges.equalToSuperview().inset(20)
+            
+        }
+        
+        userUpdateGuideView.snp.makeConstraints{
+            $0.top.equalTo(otherHobbyView.snp.bottom).offset(25)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.lessThanOrEqualTo(contentView.snp.bottom).offset(-20)
         }
     }
     
     private func setActions() {
         otherHobbyView.fetchHobbyButton.addTarget(self, action: #selector(fetchOtherHobby), for: .touchUpInside)
+        
+        userUpdateGuideView.goToUserInfoUpdateButton.addTarget(self, action: #selector(goToUserInfoUpdateButtonTapped), for: .touchUpInside)
     }
-    
     
     // MARK: - API
     private func fetchMyHobby(){
@@ -86,4 +95,10 @@ class HobbyViewController: UIViewController {
             }
         }
     }
+    
+    @objc private func goToUserInfoUpdateButtonTapped(){
+        let userUpdateViewController  = UserUpdateViewController()
+        navigationController?.pushViewController(userUpdateViewController, animated: true)
+    }
+    
 }

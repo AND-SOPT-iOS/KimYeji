@@ -79,6 +79,10 @@
 		B8E1EC4B2CDD385600F5C341 /* HobbyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4A2CDD385600F5C341 /* HobbyData.swift */; };
 		B8E1EC4D2CDD396300F5C341 /* OtherHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4C2CDD396300F5C341 /* OtherHobbyView.swift */; };
 		B8E1EC4F2CDD41B600F5C341 /* OtherHobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */; };
+		B8E1EC512CDD4C6300F5C341 /* UserInfoUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC502CDD4C6300F5C341 /* UserInfoUpdateRequest.swift */; };
+		B8E1EC542CDD4DE500F5C341 /* UserInfoUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC532CDD4DE500F5C341 /* UserInfoUpdateView.swift */; };
+		B8E1EC582CDD5A4300F5C341 /* UserUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC572CDD5A4300F5C341 /* UserUpdateViewController.swift */; };
+		B8E1EC5A2CDD5BA300F5C341 /* UserUpdateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E1EC592CDD5BA300F5C341 /* UserUpdateGuideView.swift */; };
 		B8EA8DDC2CD0A2A800E8AAD3 /* AppInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +178,10 @@
 		B8E1EC4A2CDD385600F5C341 /* HobbyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyData.swift; sourceTree = "<group>"; };
 		B8E1EC4C2CDD396300F5C341 /* OtherHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHobbyView.swift; sourceTree = "<group>"; };
 		B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHobbyService.swift; sourceTree = "<group>"; };
+		B8E1EC502CDD4C6300F5C341 /* UserInfoUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateRequest.swift; sourceTree = "<group>"; };
+		B8E1EC532CDD4DE500F5C341 /* UserInfoUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateView.swift; sourceTree = "<group>"; };
+		B8E1EC572CDD5A4300F5C341 /* UserUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateViewController.swift; sourceTree = "<group>"; };
+		B8E1EC592CDD5BA300F5C341 /* UserUpdateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateGuideView.swift; sourceTree = "<group>"; };
 		B8EA8DDB2CD0A2A800E8AAD3 /* AppInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -457,6 +465,7 @@
 			children = (
 				B8E1EC412CDD2B2400F5C341 /* MyHobbyView.swift */,
 				B8E1EC4C2CDD396300F5C341 /* OtherHobbyView.swift */,
+				B8E1EC592CDD5BA300F5C341 /* UserUpdateGuideView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -531,6 +540,7 @@
 			children = (
 				B8E1EC1C2CDD0C7F00F5C341 /* SignUpRequest.swift */,
 				B8E1EC2D2CDD1AA100F5C341 /* LoginRequest.swift */,
+				B8E1EC502CDD4C6300F5C341 /* UserInfoUpdateRequest.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -556,6 +566,7 @@
 		B8E1EC382CDD249400F5C341 /* ServerTab */ = {
 			isa = PBXGroup;
 			children = (
+				B8E1EC552CDD5A0F00F5C341 /* UserInfoUpdate */,
 				B8E1EC392CDD24A800F5C341 /* Login */,
 				B8E1EC0F2CDCFB4A00F5C341 /* Hobby */,
 				B8E1EC1F2CDD0CCA00F5C341 /* SignUp */,
@@ -596,6 +607,23 @@
 				B8E1EC4E2CDD41B600F5C341 /* OtherHobbyService.swift */,
 			);
 			path = Hobby;
+			sourceTree = "<group>";
+		};
+		B8E1EC552CDD5A0F00F5C341 /* UserInfoUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC562CDD5A2100F5C341 /* View */,
+				B8E1EC572CDD5A4300F5C341 /* UserUpdateViewController.swift */,
+			);
+			path = UserInfoUpdate;
+			sourceTree = "<group>";
+		};
+		B8E1EC562CDD5A2100F5C341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1EC532CDD4DE500F5C341 /* UserInfoUpdateView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B8EA8DDA2CD0A28200E8AAD3 /* Text */ = {
@@ -759,6 +787,7 @@
 				B8E1EC192CDD0B5100F5C341 /* Environment.swift in Sources */,
 				B8E1EC1D2CDD0C7F00F5C341 /* SignUpRequest.swift in Sources */,
 				B86B14D52CC9E36F00E025AF /* RatingAndReviewView.swift in Sources */,
+				B8E1EC582CDD5A4300F5C341 /* UserUpdateViewController.swift in Sources */,
 				B8E1EC0B2CDCF5B500F5C341 /* TabBarController.swift in Sources */,
 				B80ADC712CC24123005AC520 /* NickNameMainViewController.swift in Sources */,
 				B8E1EC4F2CDD41B600F5C341 /* OtherHobbyService.swift in Sources */,
@@ -774,6 +803,7 @@
 				B86B14D12CC9E2F400E025AF /* PreviewImageView.swift in Sources */,
 				B8E1EC2E2CDD1AA100F5C341 /* LoginRequest.swift in Sources */,
 				B86B14CB2CC9E0ED00E025AF /* AppInfoHeaderView.swift in Sources */,
+				B8E1EC542CDD4DE500F5C341 /* UserInfoUpdateView.swift in Sources */,
 				B80ADC7A2CC35E3F005AC520 /* UIStackView+.swift in Sources */,
 				B8E1EC372CDD231400F5C341 /* TokenResponse.swift in Sources */,
 				B888FFDA2CD296CC000A9D75 /* FinancialTabMainViewController.swift in Sources */,
@@ -784,6 +814,7 @@
 				B8E1EC422CDD2B2400F5C341 /* MyHobbyView.swift in Sources */,
 				B888FFB62CD2084D000A9D75 /* PhotoViewController.swift in Sources */,
 				B888FFB72CD2084D000A9D75 /* Photo.swift in Sources */,
+				B8E1EC512CDD4C6300F5C341 /* UserInfoUpdateRequest.swift in Sources */,
 				B888FFB82CD2084D000A9D75 /* PhotoCell.swift in Sources */,
 				B8E1EC282CDD0F5F00F5C341 /* UserService.swift in Sources */,
 				B8E1EC332CDD1BCB00F5C341 /* LoginResponse.swift in Sources */,
@@ -799,6 +830,7 @@
 				B888FFC12CD2085B000A9D75 /* DownloadState.swift in Sources */,
 				B888FFD42CD262AC000A9D75 /* ReviewCell.swift in Sources */,
 				B8E1EC4B2CDD385600F5C341 /* HobbyData.swift in Sources */,
+				B8E1EC5A2CDD5BA300F5C341 /* UserUpdateGuideView.swift in Sources */,
 				B888FFE72CD36875000A9D75 /* EssentialFinancialView.swift in Sources */,
 				B8E1EC2C2CDD10D100F5C341 /* SignUpView.swift in Sources */,
 				B8E1EC1B2CDD0B6E00F5C341 /* NetworkError.swift in Sources */,

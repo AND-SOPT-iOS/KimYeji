@@ -70,4 +70,47 @@ class UserService {
             }
         }
     }
+    
+    // 유저 정보 수정
+    func updateUserInfo(hobby: String, password: String, completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        guard let token = KeychainManager.load(key: "userToken") else {
+            completion(.failure(.invalidRequest))
+            return
+        }
+        
+        let url = Environment.baseURL + "/user"
+        let headers: HTTPHeaders = ["token": token]
+        let parameters = UserInfoUpdateRequest(hobby: hobby, password: password)
+        
+        AF.request(
+            url,
+            method: .put,
+            parameters: parameters,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        )
+        .validate()
+        .response { [weak self] response in
+            
+            guard let statusCode = response.response?.statusCode,
+                  let data = response.data else {
+                completion(.failure(.unknownError))
+                return
+            }
+            
+            print("상태 코드: \(statusCode)")
+            if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
+                print("응답 데이터: \(jsonData)")
+            }
+            
+            switch response.result {
+            case .success:
+                completion(.success(true))
+            case .failure:
+                let error = NetworkUtils.handleStatusCode(statusCode, data: data)
+                completion(.failure(error))
+            }
+            
+        }
+    }
 }
