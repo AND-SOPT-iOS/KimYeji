@@ -20,6 +20,10 @@ struct NetworkUtils {
             return .invalidRequest
         case (400, "01"):
             return .expressionError
+        case (400, "02"):
+            return .noLoginInfoError
+        case (403, "01"):
+            return .invalidPassword
         case (404, ""):
             return .invalidURL
         case (409, "00"):

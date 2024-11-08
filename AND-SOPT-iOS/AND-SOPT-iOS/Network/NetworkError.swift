@@ -17,6 +17,8 @@ enum NetworkError: Error {
     case unknownError
     case duplicateError
     case expressionError
+    case noLoginInfoError
+    case invalidPassword
     
     var errorMessage: String {
         switch self {
@@ -38,6 +40,10 @@ enum NetworkError: Error {
             return "중복 에러입니다"
         case .expressionError:
             return "표현식 오류입니다"
+        case .noLoginInfoError:
+            return "로그인 정보가 없습니다."
+        case .invalidPassword:
+            return "잘못된 비밀번호입니다."
         }
     }
 }
