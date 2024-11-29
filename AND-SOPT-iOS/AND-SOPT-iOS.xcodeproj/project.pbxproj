@@ -315,17 +315,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B84CA58B2CF9BD3200A0CDE9 /* HostingViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HostingViewController;
-			sourceTree = "<group>";
-		};
 		B85E48B92CF9A1160066E1AC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				B84CA58B2CF9BD3200A0CDE9 /* HostingViewController */,
 				B84CA58A2CF9BD2000A0CDE9 /* View */,
 			);
 			path = SwiftUI;

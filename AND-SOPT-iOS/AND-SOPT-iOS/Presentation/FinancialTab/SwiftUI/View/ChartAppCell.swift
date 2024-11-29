@@ -49,12 +49,13 @@ struct ChartAppCell: View {
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.blue)
                     .padding(.vertical, 6)
-                    .padding(.horizontal, 15)
+                    .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
                     .cornerRadius(15)
             }
         }
-        .padding(16)
+        .frame(height: 90)
+        .padding(.horizontal, 20)
     }
 }
 
