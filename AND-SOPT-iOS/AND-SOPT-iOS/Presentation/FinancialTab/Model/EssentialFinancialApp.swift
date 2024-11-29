@@ -18,7 +18,7 @@ struct EssentialFinancialApp {
 
 extension EssentialFinancialApp {
     static let essentialFinancialApps: [EssentialFinancialApp] = [
-        EssentialFinancialApp(icon: UIImage(named: "moneyControl.png")!,
+        EssentialFinancialApp(icon: UIImage(named: "moneycontrol.png")!,
                               appName: "Money Control Spending Tracker",
                               appDescription: "금융",
                               buttonText: "받기",
